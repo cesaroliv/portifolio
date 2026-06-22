@@ -71,6 +71,7 @@ p { margin: 0; }
   border-bottom: 1px solid color-mix(in srgb, var(--ink) 9%, transparent);
 }
 .brand { display: inline-flex; align-items: center; gap: .5em; font-family: var(--display); }
+.brand-logo { height: 46px; width: auto; display: block; }
 .brand-mark { color: var(--roxo); font-size: 1.3rem; line-height: 1; }
 .brand-name { font-weight: 700; letter-spacing: .12em; font-size: .98rem; }
 .brand-dot { color: var(--roxo); }
@@ -305,10 +306,31 @@ p { margin: 0; }
   padding: 5px 12px; border-radius: 100px;
 }
 .card-name { font-family: var(--display); font-weight: 600; font-size: 1.05rem; letter-spacing: .02em; }
-.card-price { font-family: var(--display); font-weight: 700; font-size: 2rem; margin: 10px 0 4px; }
+.card-price { font-family: var(--display); font-weight: 700; margin: 10px 0 4px; }
 .card-price .from { display: block; font-size: .72rem; font-weight: 500; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; }
 .card-featured .card-price .from { color: rgba(255,255,255,.75); }
 .card-price .per { font-size: 1rem; font-weight: 500; }
+.price-old { display: inline-block; font-size: 1.1rem; font-weight: 500; color: var(--muted); text-decoration: line-through; text-decoration-color: color-mix(in srgb, var(--muted) 70%, transparent); margin-top: 4px; }
+.card-featured .price-old { color: rgba(255,255,255,.7); }
+.price-new { display: flex; align-items: baseline; gap: 10px; font-size: 2rem; font-weight: 700; color: var(--ink); margin-top: 2px; }
+.card-featured .price-new { color: #fff; }
+.price-new .off {
+  font-family: var(--display); font-size: .72rem; font-weight: 700; letter-spacing: .04em;
+  background: var(--roxo); color: #fff; padding: 3px 9px; border-radius: 100px; transform: translateY(-2px);
+}
+.card-featured .price-new .off { background: #fff; color: var(--roxo-deep); }
+
+/* Selo e urgência da oferta de lançamento */
+.launch-badge {
+  display: inline-flex; align-items: center; gap: 7px; margin: 0 0 16px;
+  font-family: var(--display); font-weight: 700; font-size: .82rem; letter-spacing: .06em;
+  background: var(--roxo); color: #fff; padding: 7px 15px; border-radius: 100px;
+  box-shadow: 0 8px 22px rgba(90,63,224,.28);
+}
+.launch-urgency {
+  margin-top: 16px; max-width: 52ch; color: var(--muted); font-size: .95rem;
+  border-left: 3px solid var(--roxo); padding-left: 14px;
+}
 .card-desc { color: var(--muted); font-size: .96rem; margin: 12px 0 22px; flex: 1; }
 .card-cta { font-family: var(--display); font-weight: 600; color: var(--roxo); align-self: flex-start; }
 .card-featured .card-cta { color: #fff; }
@@ -425,6 +447,7 @@ p { margin: 0; }
   border-top: 1.5px solid color-mix(in srgb, var(--ink) 14%, transparent); padding-top: 30px;
 }
 .footer-brand { font-size: 1.1rem; letter-spacing: .12em; }
+.footer-logo { height: 48px; width: auto; display: block; margin-bottom: 4px; }
 .footer-tag { color: var(--muted); margin-top: 8px; }
 .footer-links { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; font-family: var(--display); font-weight: 500; }
 .footer-links a { color: var(--muted); }

@@ -7,7 +7,7 @@
 const CONTATO = {
   // WhatsApp: só números, com código do país (55) + DDD + número.
   // Exemplo: (11) 91234-5678  ->  "5511912345678"
-  whatsapp: "5511999999999",
+  whatsapp: "5511978230487",
 
   // Mensagem que já vem escrita quando o cliente abre seu WhatsApp:
   whatsappMensagem: "Olá! Vi seu portfólio e quero meu diagnóstico grátis.",

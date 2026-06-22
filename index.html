@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Estúdio — De uma foto no celular a uma campanha inteira</title>
+  <title>Criando com IA — De uma foto no celular a uma campanha inteira</title>
   <meta name="description" content="Criação de criativos com IA. De uma foto crua a uma campanha completa que vende. Veja o case da rosa mosqueta." />
+
+  <!-- Favicon (símbolo da marca) -->
+  <link rel="icon" type="image/png" href="assets/favicon-symbol.png" />
+  <link rel="apple-touch-icon" href="assets/favicon-180.png" />
 
   <!-- Fontes da identidade visual (Space Grotesk + Mulish) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,8 +22,7 @@
   <!-- ====================== BARRA SUPERIOR ====================== -->
   <header class="topbar" aria-label="Topo">
     <a href="#topo" class="brand" id="topo">
-      <span class="brand-mark" aria-hidden="true">◗</span>
-      <span class="brand-name">ESTÚDIO<span class="brand-dot">.</span></span>
+      <img src="assets/logo-header.png" alt="Criando com IA" class="brand-logo" />
     </a>
     <nav class="topnav" aria-label="Navegação">
       <a href="#case">O case</a>
@@ -277,14 +280,20 @@
     <section class="services" id="servicos" aria-label="Serviços e pacotes">
       <div class="case-intro">
         <p class="section-label"><span class="num">02</span> Pacotes</p>
+        <p class="launch-badge"><span aria-hidden="true">✦</span> Preço de lançamento · 50% OFF</p>
         <h2 class="section-title">Escolha por onde começar.</h2>
         <p class="section-lead">Do criativo avulso ao pacote completo de criativos. Preços pensados pra quem está começando a escalar.</p>
+        <p class="launch-urgency">Condição para os primeiros clientes — em troca, autorização para usar o trabalho como case.</p>
       </div>
 
       <div class="cards">
         <article class="card">
           <p class="card-name">Vitrine</p>
-          <p class="card-price"><span class="from">a partir de</span> R$197</p>
+          <p class="card-price">
+            <span class="from">a partir de</span>
+            <span class="price-old">R$197</span>
+            <span class="price-new">R$98 <span class="off">-50%</span></span>
+          </p>
           <p class="card-desc">8 imagens de produto profissionais (1 foto limpa + variações de cena). O essencial pra renovar o catálogo.</p>
           <a href="#contato" class="card-cta" data-cta="whatsapp">Quero esse →</a>
         </article>
@@ -292,21 +301,33 @@
         <article class="card card-featured">
           <span class="card-badge">Mais escolhido</span>
           <p class="card-name">Kit de Anúncio</p>
-          <p class="card-price"><span class="from">a partir de</span> R$697</p>
+          <p class="card-price">
+            <span class="from">a partir de</span>
+            <span class="price-old">R$697</span>
+            <span class="price-new">R$348 <span class="off">-50%</span></span>
+          </p>
           <p class="card-desc">8 imagens + 3 cenas + 1 influencer com IA + 1 vídeo UGC + copy dos criativos. O pacote pra começar a anunciar de verdade.</p>
           <a href="#contato" class="card-cta" data-cta="whatsapp">Quero esse →</a>
         </article>
 
         <article class="card">
           <p class="card-name">Pacote Completo</p>
-          <p class="card-price"><span class="from">a partir de</span> R$1.500</p>
+          <p class="card-price">
+            <span class="from">a partir de</span>
+            <span class="price-old">R$1.500</span>
+            <span class="price-new">R$750 <span class="off">-50%</span></span>
+          </p>
           <p class="card-desc">Tudo do Kit de Anúncio + landing page pronta. Entrega dos criativos e da página — a gestão dos anúncios fica por conta do cliente.</p>
           <a href="#contato" class="card-cta" data-cta="whatsapp">Quero esse →</a>
         </article>
 
         <article class="card">
           <p class="card-name">Mensalidade de Criativos</p>
-          <p class="card-price"><span class="from">a partir de</span> R$600<span class="per">/mês</span></p>
+          <p class="card-price">
+            <span class="from">a partir de</span>
+            <span class="price-old">R$600<span class="per">/mês</span></span>
+            <span class="price-new">R$300<span class="per">/mês</span> <span class="off">-50%</span></span>
+          </p>
           <p class="card-desc">8 imagens + 2 vídeos novos por mês, pra nunca cansar o público.</p>
           <a href="#contato" class="card-cta" data-cta="whatsapp">Quero esse →</a>
         </article>
@@ -378,11 +399,11 @@
     <section class="aiproof" aria-label="Tudo feito com IA">
       <div class="aiproof-card">
         <span class="aiproof-seal" aria-hidden="true">✦ IA</span>
-        <p class="aiproof-title">Tudo aqui foi feito com IA.</p>
+        <p class="aiproof-title">Não é “filtro de IA”.</p>
         <p class="aiproof-text">
-          As fotos, as cenas, a influenciadora, o vídeo, os depoimentos, os textos
-          e este próprio site. Sem estúdio, sem ensaio, sem equipe.
-          <strong>É a amostra viva do que eu posso fazer pelo seu produto.</strong>
+          Cada imagem, vídeo e página aqui foi construído com engenharia de prompt
+          e direção criativa — o tipo de resultado que a ferramenta sozinha não entrega,
+          só quem sabe conduzi-la. <strong>É essa diferença que eu coloco no seu produto.</strong>
         </p>
       </div>
     </section>
@@ -400,9 +421,12 @@
           <a href="#" class="btn btn-wpp" data-cta="whatsapp">
             <span class="btn-ico" aria-hidden="true">✆</span> Falar no WhatsApp
           </a>
+          <!-- INSTAGRAM (desativado por enquanto — sem perfil ainda).
+               Para reativar: descomente o bloco abaixo e preencha o @ no script.js.
           <a href="#" class="btn btn-insta" data-cta="instagram">
             <span class="btn-ico" aria-hidden="true">◎</span> Ver no Instagram
           </a>
+          -->
         </div>
         <p class="cta-note">Diagnóstico sem compromisso · resposta no mesmo dia</p>
       </div>
@@ -413,17 +437,19 @@
   <footer class="footer">
     <div class="footer-grid">
       <div>
-        <span class="brand-name footer-brand">ESTÚDIO<span class="brand-dot">.</span></span>
+        <img src="assets/logo-header.png" alt="Criando com IA" class="footer-logo" />
         <p class="footer-tag">Criativos com IA que viram venda.</p>
       </div>
       <div class="footer-links">
         <a href="#" data-cta="whatsapp">WhatsApp</a>
+        <!-- INSTAGRAM desativado por enquanto. Para reativar: descomente a linha abaixo.
         <a href="#" data-cta="instagram">Instagram</a>
+        -->
         <a href="#case">O case</a>
         <a href="#servicos">Pacotes</a>
       </div>
     </div>
-    <p class="footer-copy">© <span id="ano">2026</span> Estúdio. Feito com IA, pensado pra vender.</p>
+    <p class="footer-copy">© <span id="ano">2026</span> Criando com IA. Feito com IA, pensado pra vender.</p>
   </footer>
 
   <script src="script.js"></script>
