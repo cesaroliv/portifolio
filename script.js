@@ -49,50 +49,50 @@ if (anoEl) anoEl.textContent = new Date().getFullYear();
    Comparador ANTES → DEPOIS (arrastar para revelar)
    ========================================================================= */
 (function () {
-  const compare = document.getElementById("compare");
-  const before = document.getElementById("compareBefore");
-  const handle = document.getElementById("compareHandle");
-  if (!compare || !before || !handle) return;
+  // Funciona para QUALQUER comparador .compare na página (rosa, biotina, etc.)
+  document.querySelectorAll(".compare").forEach(function (compare) {
+    const handle = compare.querySelector(".compare-handle");
+    if (!handle) return;
 
-  let dragging = false;
+    let dragging = false;
 
-  function setPos(clientX) {
-    const rect = compare.getBoundingClientRect();
-    let pct = ((clientX - rect.left) / rect.width) * 100;
-    pct = Math.max(0, Math.min(100, pct));
-    before.style.width = pct + "%";
-    handle.style.left = pct + "%";
-    handle.setAttribute("aria-valuenow", Math.round(pct));
-  }
+    function apply(pct) {
+      pct = Math.max(0, Math.min(100, pct));
+      compare.style.setProperty("--pos", pct + "%"); // controla clip-path + alça
+      handle.setAttribute("aria-valuenow", Math.round(pct));
+    }
+    function setFromX(clientX) {
+      const rect = compare.getBoundingClientRect();
+      apply(((clientX - rect.left) / rect.width) * 100);
+    }
+    function startDrag(x) { dragging = true; compare.classList.add("dragging"); setFromX(x); }
+    function moveDrag(x) { if (dragging) setFromX(x); }
+    function endDrag() { dragging = false; compare.classList.remove("dragging"); }
 
-  function startDrag(x) { dragging = true; compare.classList.add("dragging"); setPos(x); }
-  function moveDrag(x) { if (dragging) setPos(x); }
-  function endDrag() { dragging = false; compare.classList.remove("dragging"); }
+    // Mouse
+    compare.addEventListener("mousedown", (e) => { e.preventDefault(); startDrag(e.clientX); });
+    window.addEventListener("mousemove", (e) => moveDrag(e.clientX));
+    window.addEventListener("mouseup", endDrag);
 
-  // Mouse
-  compare.addEventListener("mousedown", (e) => { e.preventDefault(); startDrag(e.clientX); });
-  window.addEventListener("mousemove", (e) => moveDrag(e.clientX));
-  window.addEventListener("mouseup", endDrag);
+    // Toque (celular)
+    compare.addEventListener("touchstart", (e) => startDrag(e.touches[0].clientX), { passive: true });
+    compare.addEventListener("touchmove", (e) => moveDrag(e.touches[0].clientX), { passive: true });
+    compare.addEventListener("touchend", endDrag);
 
-  // Toque (celular)
-  compare.addEventListener("touchstart", (e) => startDrag(e.touches[0].clientX), { passive: true });
-  compare.addEventListener("touchmove", (e) => moveDrag(e.touches[0].clientX), { passive: true });
-  compare.addEventListener("touchend", endDrag);
+    // Teclado (acessibilidade): setas movem a alça
+    handle.addEventListener("keydown", (e) => {
+      const current = parseFloat(handle.getAttribute("aria-valuenow")) || 50;
+      let next = current;
+      if (e.key === "ArrowLeft") next = current - 4;
+      else if (e.key === "ArrowRight") next = current + 4;
+      else if (e.key === "Home") next = 0;
+      else if (e.key === "End") next = 100;
+      else return;
+      e.preventDefault();
+      apply(next);
+    });
 
-  // Teclado (acessibilidade): setas movem a alça
-  handle.addEventListener("keydown", (e) => {
-    const current = parseFloat(handle.getAttribute("aria-valuenow")) || 50;
-    let next = current;
-    if (e.key === "ArrowLeft") next = current - 4;
-    else if (e.key === "ArrowRight") next = current + 4;
-    else if (e.key === "Home") next = 0;
-    else if (e.key === "End") next = 100;
-    else return;
-    e.preventDefault();
-    next = Math.max(0, Math.min(100, next));
-    before.style.width = next + "%";
-    handle.style.left = next + "%";
-    handle.setAttribute("aria-valuenow", Math.round(next));
+    apply(50); // posição inicial (meio)
   });
 })();
 
