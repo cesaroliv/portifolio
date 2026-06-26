@@ -95,3 +95,70 @@ if (anoEl) anoEl.textContent = new Date().getFullYear();
     handle.setAttribute("aria-valuenow", Math.round(next));
   });
 })();
+
+
+/* =========================================================================
+   Overlay de Cases — abre o case em tela cheia (X, ESC, clique fora)
+   ========================================================================= */
+(function () {
+  const overlay = document.getElementById("caseOverlay");
+  const scroll = document.getElementById("caseOverlayScroll");
+  const panel = document.getElementById("caseOverlayPanel");
+  const sources = document.querySelector(".case-sources");
+  if (!overlay || !scroll || !panel || !sources) return;
+
+  let activeContent = null; // bloco de conteúdo atualmente exibido
+  let lastTrigger = null;   // card/botão que abriu (pra devolver o foco ao fechar)
+
+  function openById(id, trigger) {
+    const content = document.getElementById(id);
+    if (!content) return;
+    activeContent = content;
+    lastTrigger = trigger || null;
+    scroll.appendChild(content);                  // move o conteúdo pro overlay
+    overlay.classList.add("is-open");
+    overlay.setAttribute("aria-hidden", "false");
+    document.body.classList.add("overlay-open");  // trava o scroll do fundo
+    scroll.scrollTop = 0;
+    panel.focus();                                // foco vai pro overlay
+  }
+
+  function closeCase() {
+    if (!overlay.classList.contains("is-open")) return;
+    overlay.classList.remove("is-open");
+    overlay.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("overlay-open");
+    if (activeContent) { sources.appendChild(activeContent); activeContent = null; } // devolve à origem
+    if (lastTrigger && typeof lastTrigger.focus === "function") lastTrigger.focus(); // volta o foco ao card
+    lastTrigger = null;
+  }
+
+  // Resolve o id do bloco-alvo a partir do data-attribute:
+  //  - data-open-case="rosa"      -> #case-rosa     (overlay do projeto inteiro)
+  //  - data-open-gallery="fotos"  -> #gallery-fotos (overlay de um serviço, por projeto)
+  function targetId(el) {
+    if (el.hasAttribute("data-open-case")) return "case-" + el.getAttribute("data-open-case");
+    if (el.hasAttribute("data-open-gallery")) return "gallery-" + el.getAttribute("data-open-gallery");
+    return null;
+  }
+
+  document.querySelectorAll("[data-open-case], [data-open-gallery]").forEach(function (el) {
+    el.addEventListener("click", function () { const id = targetId(el); if (id) openById(id, el); });
+    // cards usam role="button": ativar com Enter/Espaço
+    el.addEventListener("keydown", function (e) {
+      if (el.getAttribute("role") === "button" && (e.key === "Enter" || e.key === " ")) {
+        e.preventDefault();
+        const id = targetId(el); if (id) openById(id, el);
+      }
+    });
+  });
+
+  // Fechar: botão X, fundo (backdrop) — tudo que tem data-close-case
+  overlay.querySelectorAll("[data-close-case]").forEach(function (el) {
+    el.addEventListener("click", closeCase);
+  });
+  // Fechar com ESC
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeCase();
+  });
+})();

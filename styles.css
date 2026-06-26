@@ -151,6 +151,162 @@ p { margin: 0; }
 .section-lead { margin-top: 18px; color: var(--muted); font-size: clamp(1.02rem, 1.5vw, 1.18rem); max-width: 52ch; }
 
 /* =========================================================
+   SERVIÇOS (capacidades / vitrine)
+   ========================================================= */
+.services-cap { padding-left: var(--gutter); padding-right: var(--gutter); }
+.svc-grid {
+  max-width: var(--maxw); margin: clamp(34px, 5vw, 56px) auto 0;
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(20px, 3vw, 40px);
+}
+.svc-item {
+  border-top: 2px solid var(--ink); padding-top: 18px;
+  display: flex; flex-direction: column;
+}
+.svc-media {
+  display: grid; grid-template-columns: 1fr; gap: 8px; margin-bottom: 18px;
+  border-radius: var(--radius); overflow: hidden;
+}
+.svc-media-2 { grid-template-columns: 1fr 1fr; }
+.svc-media img {
+  width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 12px;
+  background: var(--card);
+}
+.svc-media:not(.svc-media-2) img { aspect-ratio: 16/10; }
+.svc-title { font-size: clamp(1.3rem, 2.4vw, 1.9rem); font-weight: 700; margin-bottom: 8px; }
+.svc-desc { color: var(--muted); margin-bottom: 16px; flex: 1; }
+.svc-item { cursor: pointer; transition: transform .18s ease; }
+.svc-item:hover { transform: translateY(-3px); }
+.svc-item:focus-visible { outline: 3px solid var(--roxo); outline-offset: 6px; border-radius: 8px; }
+.svc-link {
+  align-self: flex-start;
+  font-family: var(--display); font-weight: 600; font-size: .95rem; color: var(--roxo);
+}
+.svc-item:hover .svc-link { text-decoration: underline; }
+
+@media (max-width: 760px) {
+  .svc-grid { grid-template-columns: 1fr; gap: 0; }
+  .svc-item { border-top: none; border-bottom: 1.5px solid color-mix(in srgb, var(--ink) 12%, transparent); padding: 26px 0; }
+}
+
+/* =========================================================
+   CASES — galeria de cards
+   ========================================================= */
+.cases { padding-left: var(--gutter); padding-right: var(--gutter); }
+.cases-grid {
+  max-width: var(--maxw); margin: clamp(34px, 5vw, 56px) auto 0;
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(18px, 2.5vw, 30px);
+}
+.case-card {
+  background: var(--card); border-radius: var(--radius); overflow: hidden; cursor: pointer;
+  border: 1.5px solid color-mix(in srgb, var(--ink) 8%, transparent);
+  display: flex; flex-direction: column; transition: transform .18s ease, box-shadow .2s ease;
+}
+.case-card:hover { transform: translateY(-4px); box-shadow: 0 20px 48px rgba(27,26,32,.14); }
+.case-card:focus-visible { outline: 3px solid var(--roxo); outline-offset: 3px; }
+.case-card-cover { position: relative; aspect-ratio: 16/11; overflow: hidden; }
+.case-card-cover img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.case-card:hover .case-card-cover img { transform: scale(1.04); }
+.case-card-tag {
+  position: absolute; top: 14px; left: 14px; background: var(--ink); color: var(--bg);
+  font-family: var(--display); font-weight: 600; font-size: .72rem; letter-spacing: .1em;
+  padding: 5px 12px; border-radius: 100px;
+}
+.case-card-body { padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 8px; }
+.case-card-name { font-size: clamp(1.4rem, 2.6vw, 2rem); font-weight: 700; }
+.case-card-line { color: var(--muted); }
+.case-card-open { font-family: var(--display); font-weight: 600; color: var(--roxo); margin-top: 4px; }
+
+@media (max-width: 760px) { .cases-grid { grid-template-columns: 1fr; } }
+
+/* =========================================================
+   OVERLAY DE CASE (tela cheia)
+   ========================================================= */
+.case-overlay { position: fixed; inset: 0; z-index: 200; display: none; }
+.case-overlay.is-open { display: block; }
+.case-overlay-backdrop {
+  position: absolute; inset: 0; background: rgba(27,26,32,.55);
+  backdrop-filter: blur(3px); animation: overlayFade .2s ease;
+}
+.case-overlay-panel {
+  position: absolute; inset: clamp(0px, 2vw, 28px);
+  background: var(--bg); border-radius: clamp(0px, 2vw, 22px); overflow: hidden;
+  display: flex; flex-direction: column; box-shadow: 0 30px 80px rgba(0,0,0,.4);
+  animation: overlayPanel .25s ease;
+}
+.case-overlay-close {
+  position: absolute; top: 14px; right: 14px; z-index: 5;
+  width: 48px; height: 48px; border-radius: 50%; border: none; cursor: pointer;
+  background: var(--ink); color: var(--bg); font-size: 1.15rem;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,.28); transition: background .2s ease, transform .15s ease;
+}
+.case-overlay-close:hover { background: var(--roxo); transform: scale(1.05); }
+.case-overlay-close:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+.case-overlay-scroll { height: 100%; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+.case-overlay-panel:focus-visible { outline: none; }
+.case-content { padding: clamp(40px, 6vw, 80px) var(--gutter) clamp(40px, 7vw, 90px); }
+.case-content .case-intro { padding-top: 0; } /* o case-content já dá o respiro do topo */
+.case-content .case-intro .num { /* o "01" interno do case fica discreto dentro do overlay */ }
+.case-placeholder { max-width: 40ch; margin: 10vh auto; text-align: center; color: var(--muted); font-size: 1.1rem; }
+
+body.overlay-open { overflow: hidden; }
+
+/* --- Galerias por serviço (agrupadas por projeto) --- */
+.gallery-project { max-width: var(--maxw); margin: 0 auto clamp(36px, 5vw, 60px); }
+.gallery-project-title {
+  font-family: var(--display); font-weight: 700; font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+  margin-bottom: 18px; padding-bottom: 10px;
+  border-bottom: 2px solid var(--ink);
+}
+.gallery-grid { columns: 240px; column-gap: clamp(12px, 1.6vw, 18px); }
+.gallery-grid figure { margin: 0 0 clamp(12px, 1.6vw, 18px); break-inside: avoid; }
+.gallery-grid img { width: 100%; height: auto; border-radius: 14px; display: block; }
+.gallery-grid video {
+  width: 100%; aspect-ratio: 9/16; object-fit: cover; border-radius: 14px;
+  display: block; background: var(--ink);
+}
+
+/* --- Conteúdo específico do case Biotina --- */
+.biotina-compliance { margin-top: 12px; font-size: .85rem; color: var(--muted); font-style: italic; }
+.biotina-grid {
+  max-width: var(--maxw); margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(12px, 1.8vw, 20px);
+}
+.biotina-grid figure { margin: 0; }
+.biotina-grid img, .biotina-grid video {
+  width: 100%; aspect-ratio: 9/16; object-fit: cover;
+  border-radius: var(--radius); background: var(--ink);
+}
+.biotina-caption {
+  max-width: var(--maxw); margin: 16px auto 0; color: var(--muted);
+  font-family: var(--display); font-size: .9rem;
+}
+.biotina-influencer {
+  max-width: var(--maxw); margin: 0 auto;
+  display: grid; grid-template-columns: 1.6fr 1fr; gap: clamp(16px, 2.5vw, 30px); align-items: start;
+}
+.biotina-influencer figure { margin: 0; }
+.biotina-sheet img { width: 100%; border-radius: var(--radius); }
+.biotina-infvideo video {
+  width: 100%; aspect-ratio: 9/16; object-fit: cover;
+  border-radius: var(--radius); background: var(--ink);
+}
+.biotina-influencer figcaption {
+  font-family: var(--display); font-size: .85rem; color: var(--muted); margin-top: 12px;
+}
+@media (max-width: 760px) {
+  .biotina-grid { grid-template-columns: 1fr 1fr; }
+  .biotina-influencer { grid-template-columns: 1fr; }
+  .biotina-infvideo { max-width: 320px; }
+}
+
+@keyframes overlayFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes overlayPanel { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .case-overlay-backdrop, .case-overlay-panel { animation: none; }
+}
+
+/* =========================================================
    2. CASE — passos
    ========================================================= */
 .case { padding-bottom: clamp(40px, 7vw, 90px); }

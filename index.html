@@ -25,8 +25,9 @@
       <img src="assets/logo-header.png" alt="Criando com IA" class="brand-logo" />
     </a>
     <nav class="topnav" aria-label="Navegação">
-      <a href="#case">O case</a>
-      <a href="#servicos">Pacotes</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#cases">Cases</a>
+      <a href="#pacotes">Pacotes</a>
       <a href="#contato" class="btn btn-mini" data-cta="whatsapp">Falar comigo</a>
     </nav>
   </header>
@@ -48,7 +49,7 @@
           </p>
           <div class="hero-actions">
             <a href="#contato" class="btn btn-primary" data-cta="whatsapp">Quero o meu diagnóstico grátis</a>
-            <a href="#case" class="btn btn-ghost">Ver o case ↓</a>
+            <a href="#cases" class="btn btn-ghost">Ver os cases ↓</a>
           </div>
         </div>
 
@@ -71,9 +72,304 @@
       </div>
     </section>
 
-    <!-- ====================== 2. O CASE ====================== -->
-    <section class="case" id="case" aria-label="O case da rosa mosqueta">
+    <!-- ====================== SERVIÇOS (capacidades) ====================== -->
+    <section class="services-cap" id="servicos" aria-label="Serviços">
+      <div class="case-intro">
+        <p class="section-label"><span class="num">01</span> Serviços</p>
+        <h2 class="section-title">Tudo que seu produto precisa pra vender.</h2>
+        <p class="section-lead">Cada peça da campanha, criada com IA e direção criativa — da foto ao site. Veja onde cada uma aparece nos cases.</p>
+      </div>
 
+      <div class="svc-grid">
+        <article class="svc-item" data-open-gallery="fotos" role="button" tabindex="0"
+                 aria-label="Ver exemplos de fotos transformadas">
+          <div class="svc-media svc-media-2">
+            <img src="assets/after-produt.jpg" alt="Foto de produto profissional feita com IA" loading="lazy" />
+            <img src="assets/cena-1.jpg" alt="Cena de produto que cria desejo" loading="lazy" />
+          </div>
+          <h3 class="svc-title">Fotos transformadas</h3>
+          <p class="svc-desc">Produto cru vira foto de e-commerce e cenas que vendem.</p>
+          <span class="svc-link" aria-hidden="true">ver exemplos →</span>
+        </article>
+
+        <article class="svc-item" data-open-gallery="influencers" role="button" tabindex="0"
+                 aria-label="Ver exemplos de influencers com IA">
+          <div class="svc-media svc-media-2">
+            <img src="assets/influencer-sheet.png" alt="Character sheet de uma influenciadora criada com IA" loading="lazy" />
+            <img src="assets/influencer-1.jpg" alt="Influenciadora de IA apresentando o produto" loading="lazy" />
+          </div>
+          <h3 class="svc-title">Criação de influencers com IA</h3>
+          <p class="svc-desc">Personas consistentes, sem cachê nem agenda.</p>
+          <span class="svc-link" aria-hidden="true">ver exemplos →</span>
+        </article>
+
+        <article class="svc-item" data-open-gallery="videos" role="button" tabindex="0"
+                 aria-label="Ver exemplos de vídeos e criativos">
+          <div class="svc-media svc-media-2">
+            <img src="assets/influencer-2.jpg" alt="Criativo de anúncio no estilo UGC" loading="lazy" />
+            <img src="assets/cena-3.jpg" alt="Criativo dramático para anúncio" loading="lazy" />
+          </div>
+          <h3 class="svc-title">Vídeos &amp; criativos</h3>
+          <p class="svc-desc">UGC e anúncios prontos pra Instagram e TikTok.</p>
+          <span class="svc-link" aria-hidden="true">ver exemplos →</span>
+        </article>
+
+        <article class="svc-item" data-open-gallery="landing" role="button" tabindex="0"
+                 aria-label="Ver exemplos de landing pages">
+          <div class="svc-media">
+            <img src="assets/landing-mockup.gif" alt="Mockup de landing page que converte" loading="lazy" />
+          </div>
+          <h3 class="svc-title">Landing pages</h3>
+          <p class="svc-desc">A página que transforma clique em venda.</p>
+          <span class="svc-link" aria-hidden="true">ver exemplos →</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- ====================== CASES (galeria) ====================== -->
+    <section class="cases" id="cases" aria-label="Cases">
+      <div class="case-intro">
+        <p class="section-label"><span class="num">02</span> Cases</p>
+        <h2 class="section-title">Do produto cru ao anúncio pronto.</h2>
+        <p class="section-lead">Clique num case pra ver a história completa — da primeira foto à campanha no ar.</p>
+      </div>
+
+      <!-- ===================================================================
+           COMO ADICIONAR UM CASE NOVO (3 passos, sem mexer no resto do site):
+           1) Duplique um <article class="case-card" ...> abaixo e troque a
+              imagem de capa, o selo, o nome e a linha. Use data-open-case="NOME".
+           2) Lá no fim do <body> (bloco "FONTES DE CONTEÚDO DOS CASES"), duplique
+              um <div class="case-content" id="case-NOME"> e escreva a história.
+           3) Coloque as imagens desse case em assets/NOME/ (ex.: assets/biotina/).
+           IMPORTANTE: o data-open-case do card tem que ser igual ao id do bloco,
+           trocando "case-" pelo prefixo. Ex.: data-open-case="biotina" → id="case-biotina".
+           =================================================================== -->
+      <div class="cases-grid">
+        <article class="case-card" data-open-case="rosa" tabindex="0" role="button"
+                 aria-label="Abrir o case Rosa Mosqueta">
+          <div class="case-card-cover">
+            <img src="assets/after-produt.jpg" alt="Foto de produto da Rosa Mosqueta" loading="lazy" />
+            <span class="case-card-tag">Skincare</span>
+          </div>
+          <div class="case-card-body">
+            <h3 class="case-card-name">Rosa Mosqueta</h3>
+            <p class="case-card-line">De uma foto na prateleira a uma campanha completa.</p>
+            <span class="case-card-open" aria-hidden="true">Ver case →</span>
+          </div>
+        </article>
+
+        <article class="case-card" data-open-case="biotina" tabindex="0" role="button"
+                 aria-label="Abrir o case Biotina">
+          <div class="case-card-cover">
+            <img src="assets/biotina/produto.png" alt="Foto de produto da Biotina" loading="lazy" />
+            <span class="case-card-tag">Beleza capilar</span>
+          </div>
+          <div class="case-card-body">
+            <h3 class="case-card-name">Biotina</h3>
+            <p class="case-card-line">Uma embalagem comum vira uma campanha que comunica valor.</p>
+            <span class="case-card-open" aria-hidden="true">Ver case →</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ====================== PACOTES ====================== -->
+    <section class="services" id="pacotes" aria-label="Pacotes">
+      <div class="case-intro">
+        <p class="section-label"><span class="num">03</span> Pacotes</p>
+        <p class="launch-badge"><span aria-hidden="true">✦</span> Preço de lançamento · 50% OFF</p>
+        <h2 class="section-title">Escolha por onde começar.</h2>
+        <p class="section-lead">Do criativo avulso ao pacote completo de criativos. Preços pensados pra quem está começando a escalar.</p>
+        <p class="launch-urgency">Condição para os primeiros clientes — em troca, autorização para usar o trabalho como case.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <p class="card-name">Vitrine</p>
+          <p class="card-price">
+            <span class="from">a partir de</span>
+            <span class="price-old">R$197</span>
+            <span class="price-new">R$98 <span class="off">-50%</span></span>
+          </p>
+          <p class="card-desc">8 imagens de produto profissionais (1 foto limpa + variações de cena). O essencial pra renovar o catálogo.</p>
+          <a href="#contato" class="card-cta" data-cta="whatsapp">Quero esse →</a>
+        </article>
+
+        <article class="card card-featured">
+          <span class="card-badge">Mais escolhido</span>
+          <p class="card-name">Kit de Anúncio</p>
+          <p class="card-price">
+            <span class="from">a partir de</span>
+            <span class="price-old">R$697</span>
+            <span class="price-new">R$348 <span class="off">-50%</span></span>
+          </p>
+          <p class="card-desc">8 imagens + 3 cenas + 1 influencer com IA + 1 vídeo UGC + copy dos criativos. O pacote pra começar a anunciar de verdade.</p>
+          <a href="#contato" class="card-cta" data-cta="whatsapp">Quero esse →</a>
+        </article>
+
+        <article class="card">
+          <p class="card-name">Pacote Completo</p>
+          <p class="card-price">
+            <span class="from">a partir de</span>
+            <span class="price-old">R$1.500</span>
+            <span class="price-new">R$750 <span class="off">-50%</span></span>
+          </p>
+          <p class="card-desc">Tudo do Kit de Anúncio + landing page pronta. Entrega dos criativos e da página — a gestão dos anúncios fica por conta do cliente.</p>
+          <a href="#contato" class="card-cta" data-cta="whatsapp">Quero esse →</a>
+        </article>
+
+        <article class="card">
+          <p class="card-name">Mensalidade de Criativos</p>
+          <p class="card-price">
+            <span class="from">a partir de</span>
+            <span class="price-old">R$600<span class="per">/mês</span></span>
+            <span class="price-new">R$300<span class="per">/mês</span> <span class="off">-50%</span></span>
+          </p>
+          <p class="card-desc">8 imagens + 2 vídeos novos por mês, pra nunca cansar o público.</p>
+          <a href="#contato" class="card-cta" data-cta="whatsapp">Quero esse →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ====================== 4. POR QUE COMIGO ====================== -->
+    <section class="why" aria-label="Por que comigo">
+      <div class="case-intro">
+        <p class="section-label"><span class="num">03</span> Por que comigo</p>
+        <h2 class="section-title">Não é só imagem bonita. É venda.</h2>
+      </div>
+      <div class="why-grid">
+        <article class="why-item">
+          <span class="why-num" aria-hidden="true">01</span>
+          <h3>Penso em venda</h3>
+          <p>Cada criativo é feito pra converter, não só pra ser bonito. Estética com objetivo.</p>
+        </article>
+        <article class="why-item">
+          <span class="why-num" aria-hidden="true">02</span>
+          <h3>Entrega rápida com IA</h3>
+          <p>O que levava semanas e custava caro, eu entrego em dias — sem set, sem ensaio.</p>
+        </article>
+        <article class="why-item">
+          <span class="why-num" aria-hidden="true">03</span>
+          <h3>Preço justo</h3>
+          <p>Pensado pra quem está começando. Você investe pouco e já vê o produto noutro nível.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ====================== 4B. SOBRE / QUEM ESTÁ POR TRÁS ====================== -->
+    <section class="about" aria-label="Quem está por trás">
+      <div class="about-grid">
+        <figure class="about-photo">
+          <!-- Quando tiver a foto, salve como assets/cesar.jpg que ela aparece aqui automaticamente. -->
+          <img src="assets/Cesar.png" alt="Cesar C. Oliveira" class="about-img"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="about-photo-placeholder" role="img" aria-label="Foto de Cesar C. Oliveira (a adicionar)">
+            <span class="ph-ico" aria-hidden="true">▣</span>
+            <span class="ph-text">Falta a foto<br /><code>assets/cesar.jpg</code></span>
+          </div>
+        </figure>
+
+        <div class="about-text">
+          <p class="section-label"><span class="num">04</span> Quem está por trás</p>
+          <h2 class="about-name">Cesar C. Oliveira <span class="about-role">· AI Builder</span></h2>
+          <p class="about-sub">Transformo seu produto em anúncio que vende.</p>
+
+          <p class="about-body">
+            Sou o Cesar. Vim de fora do mundo do marketing — e foi justamente na
+            inteligência artificial que encontrei uma forma de criar o que antes só
+            uma agência cara entregava: fotos, vídeos, influenciadores e páginas que vendem.
+          </p>
+          <p class="about-body">
+            Hoje é isso que eu faço: transformo produtos comuns em campanhas que param
+            o dedo e viram venda. Com método, foco em conversão e a agilidade que só a IA permite.
+          </p>
+          <p class="about-body">
+            E quando você me contrata, fala comigo — não com um atendente.
+            <strong class="about-hl">Atendimento direto, do briefing à entrega</strong>, sem
+            intermediário e sem ruído.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== SELO: TUDO FEITO COM IA ====================== -->
+    <section class="aiproof" aria-label="Tudo feito com IA">
+      <div class="aiproof-card">
+        <span class="aiproof-seal" aria-hidden="true">✦ IA</span>
+        <p class="aiproof-title">Não é “filtro de IA”.</p>
+        <p class="aiproof-text">
+          Cada imagem, vídeo e página aqui foi construído com engenharia de prompt
+          e direção criativa — o tipo de resultado que a ferramenta sozinha não entrega,
+          só quem sabe conduzi-la. <strong>É essa diferença que eu coloco no seu produto.</strong>
+        </p>
+      </div>
+    </section>
+
+    <!-- ====================== 5. CONTATO / CTA FINAL ====================== -->
+    <section class="cta" id="contato" aria-label="Contato">
+      <div class="cta-inner">
+        <p class="section-label section-label-light"><span class="num">05</span> Vamos conversar</p>
+        <h2 class="cta-title">Quer assim pro seu produto?</h2>
+        <p class="cta-sub">
+          Te mostro <strong>de graça</strong> o que dá pra fazer com o seu. Manda uma
+          foto do produto e eu te respondo com ideias.
+        </p>
+        <div class="cta-actions">
+          <a href="#" class="btn btn-wpp" data-cta="whatsapp">
+            <span class="btn-ico" aria-hidden="true">✆</span> Falar no WhatsApp
+          </a>
+          <!-- INSTAGRAM (desativado por enquanto — sem perfil ainda).
+               Para reativar: descomente o bloco abaixo e preencha o @ no script.js.
+          <a href="#" class="btn btn-insta" data-cta="instagram">
+            <span class="btn-ico" aria-hidden="true">◎</span> Ver no Instagram
+          </a>
+          -->
+        </div>
+        <p class="cta-note">Diagnóstico sem compromisso · resposta no mesmo dia</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====================== 6. RODAPÉ ====================== -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <img src="assets/logo-header.png" alt="Criando com IA" class="footer-logo" />
+        <p class="footer-tag">Criativos com IA que viram venda.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#" data-cta="whatsapp">WhatsApp</a>
+        <!-- INSTAGRAM desativado por enquanto. Para reativar: descomente a linha abaixo.
+        <a href="#" data-cta="instagram">Instagram</a>
+        -->
+        <a href="#cases">Cases</a>
+        <a href="#pacotes">Pacotes</a>
+      </div>
+    </div>
+    <p class="footer-copy">© <span id="ano">2026</span> Criando com IA. Feito com IA, pensado pra vender.</p>
+  </footer>
+
+  <!-- ====================== OVERLAY DE CASE (tela cheia) ====================== -->
+  <!-- Shell reutilizável: o conteúdo do case clicado é movido pra dentro daqui. -->
+  <div class="case-overlay" id="caseOverlay" aria-hidden="true">
+    <div class="case-overlay-backdrop" data-close-case></div>
+    <div class="case-overlay-panel" role="dialog" aria-modal="true" aria-label="Case" tabindex="-1" id="caseOverlayPanel">
+      <button class="case-overlay-close" type="button" data-close-case aria-label="Fechar case">
+        <span aria-hidden="true">✕</span>
+      </button>
+      <div class="case-overlay-scroll" id="caseOverlayScroll">
+        <!-- o conteúdo do case ativo entra aqui (movido pelo script.js) -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================== FONTES DE CONTEÚDO DOS CASES ======================
+       Cada case é um bloco escondido aqui. Ao clicar no card, o script move o
+       bloco correspondente pra dentro do overlay (e devolve ao fechar).
+       Para um case novo: duplique um <div class="case-content" id="case-NOME">.
+       =========================================================================== -->
+  <div class="case-sources" hidden aria-hidden="true">
+    <div class="case-content" id="case-rosa">
       <div class="case-intro">
         <p class="section-label"><span class="num">01</span> O case · Rosa mosqueta</p>
         <h2 class="section-title">Um cliente. Uma foto. Uma campanha completa.</h2>
@@ -274,183 +570,250 @@
           <li>Landing page</li>
         </ul>
       </article>
-    </section>
-
-    <!-- ====================== 3. SERVIÇOS / PACOTES ====================== -->
-    <section class="services" id="servicos" aria-label="Serviços e pacotes">
+    </div>
+    <div class="case-content" id="case-biotina">
       <div class="case-intro">
-        <p class="section-label"><span class="num">02</span> Pacotes</p>
-        <p class="launch-badge"><span aria-hidden="true">✦</span> Preço de lançamento · 50% OFF</p>
-        <h2 class="section-title">Escolha por onde começar.</h2>
-        <p class="section-lead">Do criativo avulso ao pacote completo de criativos. Preços pensados pra quem está começando a escalar.</p>
-        <p class="launch-urgency">Condição para os primeiros clientes — em troca, autorização para usar o trabalho como case.</p>
+        <p class="section-label"><span class="num">★</span> Case · Biotina</p>
+        <h2 class="section-title">Biotina — beleza capilar.</h2>
+        <p class="section-lead">
+          Um suplemento de beleza (cabelo, pele e unhas) cuja embalagem comum não
+          comunicava valor. Viramos isso numa campanha completa — foto de produto,
+          criativos, influencer e página — toda em linguagem de aparência e autocuidado.
+        </p>
+        <p class="biotina-compliance">Suplemento alimentar — não é medicamento.</p>
       </div>
 
-      <div class="cards">
-        <article class="card">
-          <p class="card-name">Vitrine</p>
-          <p class="card-price">
-            <span class="from">a partir de</span>
-            <span class="price-old">R$197</span>
-            <span class="price-new">R$98 <span class="off">-50%</span></span>
+      <!-- O PRODUTO -->
+      <article class="step step-challenge">
+        <div class="step-text">
+          <p class="step-tag">O produto</p>
+          <h3 class="step-title">Do pote comum à vitrine.</h3>
+          <p class="step-body">
+            A embalagem sozinha não criava desejo. Demos a ela uma foto de produto
+            profissional, limpa e premium — pronta pra e-commerce e anúncio.
           </p>
-          <p class="card-desc">8 imagens de produto profissionais (1 foto limpa + variações de cena). O essencial pra renovar o catálogo.</p>
-          <a href="#contato" class="card-cta" data-cta="whatsapp">Quero esse →</a>
-        </article>
+        </div>
+        <figure class="step-figure">
+          <img src="assets/biotina/produto.png" alt="Foto de produto profissional do pote de Biotina, da marca Nutralín." loading="lazy" />
+          <figcaption>O produto em foto profissional.</figcaption>
+        </figure>
+      </article>
 
-        <article class="card card-featured">
-          <span class="card-badge">Mais escolhido</span>
-          <p class="card-name">Kit de Anúncio</p>
-          <p class="card-price">
-            <span class="from">a partir de</span>
-            <span class="price-old">R$697</span>
-            <span class="price-new">R$348 <span class="off">-50%</span></span>
+      <!-- OS CRIATIVOS -->
+      <article class="step">
+        <div class="step-text step-text-wide">
+          <p class="step-tag">Os criativos</p>
+          <h3 class="step-title">Criativos prontos pra rodar.</h3>
+          <p class="step-body">
+            Peças no formato de anúncio, focadas em beleza e autocuidado — fios mais
+            fortes, unhas resistentes e pele com viço. Prontas pra Instagram e TikTok.
           </p>
-          <p class="card-desc">8 imagens + 3 cenas + 1 influencer com IA + 1 vídeo UGC + copy dos criativos. O pacote pra começar a anunciar de verdade.</p>
-          <a href="#contato" class="card-cta" data-cta="whatsapp">Quero esse →</a>
-        </article>
+        </div>
+        <div class="biotina-grid">
+          <figure><img src="assets/biotina/antes-depois.png" alt="Criativo de anúncio comparando a aparência dos cabelos antes e depois." loading="lazy" /></figure>
+          <figure><img src="assets/biotina/criativo-1.png" alt="Criativo de anúncio do suplemento de beleza Biotina, para cabelo, pele e unha." loading="lazy" /></figure>
+          <figure><img src="assets/biotina/ugc-1.png" alt="Criativo UGC com a influenciadora segurando o produto, com depoimento de beleza." loading="lazy" /></figure>
+          <figure>
+            <video controls playsinline preload="metadata">
+              <source src="assets/biotina/download.mp4" type="video/mp4" />
+              Seu navegador não suporta vídeo. <a href="assets/biotina/download.mp4">Baixe aqui.</a>
+            </video>
+          </figure>
+        </div>
+        <p class="biotina-caption">Criativos prontos pra rodar como anúncio.</p>
+      </article>
 
-        <article class="card">
-          <p class="card-name">Pacote Completo</p>
-          <p class="card-price">
-            <span class="from">a partir de</span>
-            <span class="price-old">R$1.500</span>
-            <span class="price-new">R$750 <span class="off">-50%</span></span>
+      <!-- A INFLUENCER -->
+      <article class="step">
+        <div class="influencer-head">
+          <p class="step-tag">A influencer</p>
+          <h3 class="step-title">Uma persona criada do zero.</h3>
+          <p class="step-body">
+            Rosto e corpo consistentes, feitos 100% com IA — a mesma pessoa em foto e
+            vídeo, sem cachê e sem agenda. A embaixadora da marca, sob medida.
           </p>
-          <p class="card-desc">Tudo do Kit de Anúncio + landing page pronta. Entrega dos criativos e da página — a gestão dos anúncios fica por conta do cliente.</p>
-          <a href="#contato" class="card-cta" data-cta="whatsapp">Quero esse →</a>
-        </article>
+        </div>
+        <div class="biotina-influencer">
+          <figure class="biotina-sheet">
+            <img src="assets/biotina/influencer-sheet.png" alt="Character sheet da influenciadora de IA: rosto e corpo em vários ângulos." loading="lazy" />
+            <figcaption>Character sheet — a base que mantém a persona idêntica.</figcaption>
+          </figure>
+          <figure class="biotina-infvideo">
+            <video controls playsinline preload="metadata">
+              <source src="assets/biotina/influencer.mp4" type="video/mp4" />
+              Seu navegador não suporta vídeo. <a href="assets/biotina/influencer.mp4">Baixe aqui.</a>
+            </video>
+            <figcaption>A influencer em vídeo, apresentando o produto.</figcaption>
+          </figure>
+        </div>
+      </article>
 
-        <article class="card">
-          <p class="card-name">Mensalidade de Criativos</p>
-          <p class="card-price">
-            <span class="from">a partir de</span>
-            <span class="price-old">R$600<span class="per">/mês</span></span>
-            <span class="price-new">R$300<span class="per">/mês</span> <span class="off">-50%</span></span>
+      <!-- A PÁGINA -->
+      <article class="step step-landing">
+        <div class="step-text">
+          <p class="step-tag">A página</p>
+          <h3 class="step-title">A página que converte.</h3>
+          <p class="step-body">
+            Todos os criativos reunidos numa landing page que conduz o visitante até a
+            compra. O criativo atrai; a página converte.
           </p>
-          <p class="card-desc">8 imagens + 2 vídeos novos por mês, pra nunca cansar o público.</p>
-          <a href="#contato" class="card-cta" data-cta="whatsapp">Quero esse →</a>
-        </article>
-      </div>
-    </section>
-
-    <!-- ====================== 4. POR QUE COMIGO ====================== -->
-    <section class="why" aria-label="Por que comigo">
-      <div class="case-intro">
-        <p class="section-label"><span class="num">03</span> Por que comigo</p>
-        <h2 class="section-title">Não é só imagem bonita. É venda.</h2>
-      </div>
-      <div class="why-grid">
-        <article class="why-item">
-          <span class="why-num" aria-hidden="true">01</span>
-          <h3>Penso em venda</h3>
-          <p>Cada criativo é feito pra converter, não só pra ser bonito. Estética com objetivo.</p>
-        </article>
-        <article class="why-item">
-          <span class="why-num" aria-hidden="true">02</span>
-          <h3>Entrega rápida com IA</h3>
-          <p>O que levava semanas e custava caro, eu entrego em dias — sem set, sem ensaio.</p>
-        </article>
-        <article class="why-item">
-          <span class="why-num" aria-hidden="true">03</span>
-          <h3>Preço justo</h3>
-          <p>Pensado pra quem está começando. Você investe pouco e já vê o produto noutro nível.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- ====================== 4B. SOBRE / QUEM ESTÁ POR TRÁS ====================== -->
-    <section class="about" aria-label="Quem está por trás">
-      <div class="about-grid">
-        <figure class="about-photo">
-          <!-- Quando tiver a foto, salve como assets/cesar.jpg que ela aparece aqui automaticamente. -->
-          <img src="assets/Cesar.png" alt="Cesar C. Oliveira" class="about-img"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-          <div class="about-photo-placeholder" role="img" aria-label="Foto de Cesar C. Oliveira (a adicionar)">
-            <span class="ph-ico" aria-hidden="true">▣</span>
-            <span class="ph-text">Falta a foto<br /><code>assets/cesar.jpg</code></span>
+        </div>
+        <figure class="landing-figure">
+          <div class="device">
+            <img src="assets/biotina/landing.gif" alt="Mockup animado da landing page da Biotina, montada com os criativos." loading="lazy" />
           </div>
         </figure>
+      </article>
 
-        <div class="about-text">
-          <p class="section-label"><span class="num">04</span> Quem está por trás</p>
-          <h2 class="about-name">Cesar C. Oliveira <span class="about-role">· AI Builder</span></h2>
-          <p class="about-sub">Transformo seu produto em anúncio que vende.</p>
+      <!-- DEPOIMENTOS DA BIOTINA: quando houver fotos/vídeos de clientes, copie aqui
+           o bloco <article class="step step-reviews"> do case da rosa (no #case-rosa)
+           e troque as imagens/vídeos por assets/biotina/depoimento-*. -->
 
-          <p class="about-body">
-            Sou o Cesar. Vim de fora do mundo do marketing — e foi justamente na
-            inteligência artificial que encontrei uma forma de criar o que antes só
-            uma agência cara entregava: fotos, vídeos, influenciadores e páginas que vendem.
-          </p>
-          <p class="about-body">
-            Hoje é isso que eu faço: transformo produtos comuns em campanhas que param
-            o dedo e viram venda. Com método, foco em conversão e a agilidade que só a IA permite.
-          </p>
-          <p class="about-body">
-            E quando você me contrata, fala comigo — não com um atendente.
-            <strong class="about-hl">Atendimento direto, do briefing à entrega</strong>, sem
-            intermediário e sem ruído.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ====================== SELO: TUDO FEITO COM IA ====================== -->
-    <section class="aiproof" aria-label="Tudo feito com IA">
-      <div class="aiproof-card">
-        <span class="aiproof-seal" aria-hidden="true">✦ IA</span>
-        <p class="aiproof-title">Não é “filtro de IA”.</p>
-        <p class="aiproof-text">
-          Cada imagem, vídeo e página aqui foi construído com engenharia de prompt
-          e direção criativa — o tipo de resultado que a ferramenta sozinha não entrega,
-          só quem sabe conduzi-la. <strong>É essa diferença que eu coloco no seu produto.</strong>
-        </p>
-      </div>
-    </section>
-
-    <!-- ====================== 5. CONTATO / CTA FINAL ====================== -->
-    <section class="cta" id="contato" aria-label="Contato">
-      <div class="cta-inner">
-        <p class="section-label section-label-light"><span class="num">05</span> Vamos conversar</p>
-        <h2 class="cta-title">Quer assim pro seu produto?</h2>
-        <p class="cta-sub">
-          Te mostro <strong>de graça</strong> o que dá pra fazer com o seu. Manda uma
-          foto do produto e eu te respondo com ideias.
-        </p>
-        <div class="cta-actions">
-          <a href="#" class="btn btn-wpp" data-cta="whatsapp">
-            <span class="btn-ico" aria-hidden="true">✆</span> Falar no WhatsApp
-          </a>
-          <!-- INSTAGRAM (desativado por enquanto — sem perfil ainda).
-               Para reativar: descomente o bloco abaixo e preencha o @ no script.js.
-          <a href="#" class="btn btn-insta" data-cta="instagram">
-            <span class="btn-ico" aria-hidden="true">◎</span> Ver no Instagram
-          </a>
-          -->
-        </div>
-        <p class="cta-note">Diagnóstico sem compromisso · resposta no mesmo dia</p>
-      </div>
-    </section>
-  </main>
-
-  <!-- ====================== 6. RODAPÉ ====================== -->
-  <footer class="footer">
-    <div class="footer-grid">
-      <div>
-        <img src="assets/logo-header.png" alt="Criando com IA" class="footer-logo" />
-        <p class="footer-tag">Criativos com IA que viram venda.</p>
-      </div>
-      <div class="footer-links">
-        <a href="#" data-cta="whatsapp">WhatsApp</a>
-        <!-- INSTAGRAM desativado por enquanto. Para reativar: descomente a linha abaixo.
-        <a href="#" data-cta="instagram">Instagram</a>
-        -->
-        <a href="#case">O case</a>
-        <a href="#servicos">Pacotes</a>
-      </div>
+      <!-- RECAP -->
+      <article class="recap" aria-label="Resumo dos entregáveis">
+        <h3 class="recap-title">De um produto comum, <span class="hl">uma campanha completa.</span></h3>
+        <ul class="recap-list">
+          <li>Foto de produto</li>
+          <li class="rsep" aria-hidden="true">→</li>
+          <li>Criativos de anúncio</li>
+          <li class="rsep" aria-hidden="true">→</li>
+          <li>Influencer com IA</li>
+          <li class="rsep" aria-hidden="true">→</li>
+          <li>Landing page</li>
+        </ul>
+      </article>
     </div>
-    <p class="footer-copy">© <span id="ano">2026</span> Criando com IA. Feito com IA, pensado pra vender.</p>
-  </footer>
+
+    <!-- ============ GALERIAS POR SERVIÇO (abertas pelos cards de Serviços) ============
+         Cada galeria mostra UM tipo de entrega, agrupado por projeto.
+         Para incluir um projeto novo numa galeria: copie um <section class="gallery-project">
+         e troque o título e as imagens/vídeos (de assets/NOME/). =========================== -->
+
+    <!-- FOTOS TRANSFORMADAS -->
+    <div class="case-content gallery-content" id="gallery-fotos">
+      <div class="case-intro">
+        <p class="section-label"><span class="num">✦</span> Serviço</p>
+        <h2 class="section-title">Fotos transformadas</h2>
+        <p class="section-lead">Produto cru vira foto de e-commerce e cenas que vendem — em cada projeto.</p>
+      </div>
+      <section class="gallery-project">
+        <h3 class="gallery-project-title">Rosa Mosqueta</h3>
+        <div class="gallery-grid">
+          <figure><img src="assets/after-produt.jpg" alt="Foto de produto da Rosa Mosqueta, fundo limpo." loading="lazy" /></figure>
+          <figure><img src="assets/cena-1.jpg" alt="Cena botânica da Rosa Mosqueta." loading="lazy" /></figure>
+          <figure><img src="assets/cena-2.jpg" alt="Cena de ritual de cuidado da Rosa Mosqueta." loading="lazy" /></figure>
+          <figure><img src="assets/cena-3.jpg" alt="Cena dramática da Rosa Mosqueta." loading="lazy" /></figure>
+        </div>
+      </section>
+      <section class="gallery-project">
+        <h3 class="gallery-project-title">Biotina</h3>
+        <div class="gallery-grid">
+          <figure><img src="assets/biotina/produto.png" alt="Foto de produto profissional do pote de Biotina." loading="lazy" /></figure>
+        </div>
+      </section>
+    </div>
+
+    <!-- INFLUENCERS COM IA -->
+    <div class="case-content gallery-content" id="gallery-influencers">
+      <div class="case-intro">
+        <p class="section-label"><span class="num">✦</span> Serviço</p>
+        <h2 class="section-title">Criação de influencers com IA</h2>
+        <p class="section-lead">Personas consistentes — mesmo rosto e corpo em foto e vídeo, sem cachê nem agenda.</p>
+      </div>
+      <section class="gallery-project">
+        <h3 class="gallery-project-title">Rosa Mosqueta · Patricia</h3>
+        <div class="gallery-grid">
+          <figure><img src="assets/influencer-sheet.png" alt="Character sheet da Patricia, influenciadora de IA." loading="lazy" /></figure>
+          <figure><img src="assets/influencer-1.jpg" alt="Patricia apresentando o produto." loading="lazy" /></figure>
+          <figure><img src="assets/influencer-2.jpg" alt="Patricia usando o produto." loading="lazy" /></figure>
+          <figure><img src="assets/influencer-3.jpg" alt="Patricia recomendando o produto." loading="lazy" /></figure>
+          <figure>
+            <video controls playsinline preload="metadata">
+              <source src="assets/depoimento-video-1.mp4" type="video/mp4" />
+              Seu navegador não suporta vídeo.
+            </video>
+          </figure>
+          <figure>
+            <video controls playsinline preload="metadata">
+              <source src="assets/depoimento-video-2.mp4" type="video/mp4" />
+              Seu navegador não suporta vídeo.
+            </video>
+          </figure>
+          <figure><img src="assets/depoimento-1.png" alt="Depoimento de cliente com o produto, 1." loading="lazy" /></figure>
+          <figure><img src="assets/depoimento-2.png" alt="Depoimento de cliente com o produto, 2." loading="lazy" /></figure>
+          <figure><img src="assets/depoimento-3.png" alt="Depoimento de cliente com o produto, 3." loading="lazy" /></figure>
+          <figure><img src="assets/depoimento-4.png" alt="Depoimento de cliente com o produto, 4." loading="lazy" /></figure>
+        </div>
+      </section>
+      <section class="gallery-project">
+        <h3 class="gallery-project-title">Biotina</h3>
+        <div class="gallery-grid">
+          <figure><img src="assets/biotina/influencer-sheet.png" alt="Character sheet da influenciadora de IA da Biotina." loading="lazy" /></figure>
+          <figure><img src="assets/biotina/ugc-1.png" alt="Influenciadora da Biotina segurando o produto." loading="lazy" /></figure>
+          <figure>
+            <video controls playsinline preload="metadata">
+              <source src="assets/biotina/influencer.mp4" type="video/mp4" />
+              Seu navegador não suporta vídeo.
+            </video>
+          </figure>
+        </div>
+      </section>
+    </div>
+
+    <!-- VÍDEOS & CRIATIVOS -->
+    <div class="case-content gallery-content" id="gallery-videos">
+      <div class="case-intro">
+        <p class="section-label"><span class="num">✦</span> Serviço</p>
+        <h2 class="section-title">Vídeos &amp; criativos</h2>
+        <p class="section-lead">UGC e anúncios prontos pra rodar no Instagram e no TikTok.</p>
+      </div>
+      <section class="gallery-project">
+        <h3 class="gallery-project-title">Rosa Mosqueta</h3>
+        <div class="gallery-grid">
+          <figure>
+            <video controls playsinline preload="metadata" poster="assets/influencer-1.jpg">
+              <source src="assets/video-ugc.mp4" type="video/mp4" />
+              Seu navegador não suporta vídeo.
+            </video>
+          </figure>
+        </div>
+      </section>
+      <section class="gallery-project">
+        <h3 class="gallery-project-title">Biotina</h3>
+        <div class="gallery-grid">
+          <figure>
+            <video controls playsinline preload="metadata">
+              <source src="assets/biotina/download.mp4" type="video/mp4" />
+              Seu navegador não suporta vídeo.
+            </video>
+          </figure>
+          <figure><img src="assets/biotina/antes-depois.png" alt="Criativo de anúncio da Biotina, comparando a aparência dos cabelos." loading="lazy" /></figure>
+          <figure><img src="assets/biotina/criativo-1.png" alt="Criativo de anúncio do suplemento de beleza Biotina." loading="lazy" /></figure>
+        </div>
+      </section>
+    </div>
+
+    <!-- LANDING PAGES -->
+    <div class="case-content gallery-content" id="gallery-landing">
+      <div class="case-intro">
+        <p class="section-label"><span class="num">✦</span> Serviço</p>
+        <h2 class="section-title">Landing pages</h2>
+        <p class="section-lead">A página que reúne os criativos e transforma o clique em venda.</p>
+      </div>
+      <section class="gallery-project">
+        <h3 class="gallery-project-title">Rosa Mosqueta</h3>
+        <div class="gallery-grid">
+          <figure><img src="assets/landing-mockup.gif" alt="Mockup animado da landing page da Rosa Mosqueta." loading="lazy" /></figure>
+        </div>
+      </section>
+      <section class="gallery-project">
+        <h3 class="gallery-project-title">Biotina</h3>
+        <div class="gallery-grid">
+          <figure><img src="assets/biotina/landing.gif" alt="Mockup animado da landing page da Biotina." loading="lazy" /></figure>
+        </div>
+      </section>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
