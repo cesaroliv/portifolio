@@ -494,7 +494,7 @@ body.overlay-open { overflow: hidden; }
   border-radius: var(--radius); overflow: hidden; background: var(--card);
   padding: 10px; box-shadow: 0 22px 60px rgba(27,26,32,.16);
 }
-.device img { width: 100%; border-radius: 10px; }
+.device img, .device video { width: 100%; border-radius: 10px; display: block; }
 
 /* ---- Recap ---- */
 .recap {
