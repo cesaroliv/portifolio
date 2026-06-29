@@ -216,7 +216,53 @@ p { margin: 0; }
 .case-card-line { color: var(--muted); }
 .case-card-open { font-family: var(--display); font-weight: 600; color: var(--roxo); margin-top: 4px; }
 
-@media (max-width: 760px) { .cases-grid { grid-template-columns: 1fr; } }
+/* --- Card de DESTAQUE (marca + loja completa): patamar acima dos demais --- */
+.case-card-featured {
+  grid-column: 1 / -1;          /* ocupa a largura toda da galeria */
+  flex-direction: row;          /* capa e texto lado a lado no desktop */
+  align-items: stretch;
+  border-color: color-mix(in srgb, var(--roxo) 38%, transparent);
+  box-shadow: 0 14px 40px rgba(90,63,224,.14);
+}
+.case-card-featured .case-card-cover {
+  aspect-ratio: auto;
+  flex: 0 0 46%;
+  background: var(--roxo-soft);
+}
+.case-card-featured .case-card-cover img { object-position: center top; }
+.case-card-featured .case-card-body { flex: 1; justify-content: center; gap: 10px; padding: clamp(24px, 3vw, 40px); }
+.case-card-eyebrow {
+  font-family: var(--display); font-weight: 600; font-size: .78rem;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--roxo);
+}
+.case-card-featured .case-card-name { font-size: clamp(1.8rem, 3.6vw, 2.8rem); }
+.case-card-tag-featured { background: var(--roxo); color: #fff; }
+
+@media (max-width: 760px) {
+  .cases-grid { grid-template-columns: 1fr; }
+  .case-card-featured { flex-direction: column; }
+  .case-card-featured .case-card-cover { flex: none; aspect-ratio: 16/11; }
+}
+
+/* --- Bloco "Prova ao vivo" + botão de visitar a loja (dentro do overlay) --- */
+.step-live { margin-top: clamp(28px, 4vw, 44px); }
+.live-card {
+  background: linear-gradient(135deg, var(--roxo), var(--roxo-deep));
+  color: #fff; border-radius: var(--radius);
+  padding: clamp(28px, 4vw, 48px); text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 14px;
+}
+.live-card .step-tag { color: color-mix(in srgb, #fff 82%, transparent); }
+.live-card .step-title { color: #fff; }
+.live-card .step-body { color: color-mix(in srgb, #fff 88%, transparent); max-width: 46ch; }
+.btn-live {
+  margin-top: 8px; background: #fff; color: var(--roxo-deep);
+  font-size: 1.08rem; padding: 16px 30px; border-radius: 100px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.22);
+}
+.btn-live:hover { transform: translateY(-2px); background: #fff; }
+.brandboard { max-width: 640px; margin-inline: auto; }
+.brandboard img { aspect-ratio: auto; height: auto; object-fit: contain; background: var(--roxo-soft); }
 
 /* =========================================================
    OVERLAY DE CASE (tela cheia)

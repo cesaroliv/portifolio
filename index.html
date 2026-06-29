@@ -145,6 +145,21 @@
            trocando "case-" pelo prefixo. Ex.: data-open-case="biotina" → id="case-biotina".
            =================================================================== -->
       <div class="cases-grid">
+        <!-- CASE DE DESTAQUE: marca + loja completa (patamar acima dos demais) -->
+        <article class="case-card case-card-featured" data-open-case="gota-nativa" tabindex="0" role="button"
+                 aria-label="Abrir o case de destaque Gota Nativa">
+          <div class="case-card-cover">
+            <img src="assets/gota-nativa/kit-marca.png" alt="Identidade visual da marca Gota Nativa: logo, paleta e aplicações." loading="lazy" />
+            <span class="case-card-tag case-card-tag-featured">★ Marca completa · Loja no ar</span>
+          </div>
+          <div class="case-card-body">
+            <p class="case-card-eyebrow">Case de destaque</p>
+            <h3 class="case-card-name">Gota Nativa</h3>
+            <p class="case-card-line">Não foi só uma foto. Foi uma marca e uma loja inteira, criadas do zero — e no ar de verdade.</p>
+            <span class="case-card-open" aria-hidden="true">Ver case &amp; visitar a loja →</span>
+          </div>
+        </article>
+
         <article class="case-card" data-open-case="rosa" tabindex="0" role="button"
                  aria-label="Abrir o case Rosa Mosqueta">
           <div class="case-card-cover">
@@ -369,6 +384,132 @@
        Para um case novo: duplique um <div class="case-content" id="case-NOME">.
        =========================================================================== -->
   <div class="case-sources" hidden aria-hidden="true">
+    <!-- ===================== CASE DE DESTAQUE · GOTA NATIVA =====================
+         Narrativa de MARCA (não antes/depois): de um produto a uma marca + loja.
+         Blocos opcionais (catálogo, criativos, influencer) ficam comentados abaixo:
+         basta colocar a imagem em assets/gota-nativa/ e descomentar o bloco. ===== -->
+    <div class="case-content" id="case-gota-nativa">
+      <div class="case-intro">
+        <p class="section-label"><span class="num">★</span> Case de destaque · Gota Nativa</p>
+        <h2 class="section-title">De um produto a uma <span class="hl">marca completa</span>, pronta pra vender.</h2>
+        <p class="section-lead">
+          A Gota Nativa não foi “transformei uma foto”. Foi criar do zero uma marca de
+          óleos naturais — nome, logo, identidade, catálogo, criativos e uma loja de
+          e-commerce no ar de verdade. Tudo com IA e direção criativa.
+        </p>
+        <p class="biotina-compliance">Cosméticos de cuidado e aparência — sem promessas médicas.</p>
+      </div>
+
+      <!-- O DESAFIO -->
+      <article class="step step-challenge">
+        <div class="step-text step-text-wide">
+          <p class="step-tag">O desafio</p>
+          <h3 class="step-title">Vender óleo natural sem ter uma marca.</h3>
+          <p class="step-body">
+            Um bom produto, mas sem identidade própria: sem nome forte, sem logo, sem
+            loja. Difícil gerar confiança e vender. A solução foi construir uma marca
+            inteira — do conceito à loja no ar.
+          </p>
+        </div>
+      </article>
+
+      <!-- A MARCA -->
+      <article class="step step-scenes">
+        <div class="step-text step-text-wide">
+          <p class="step-tag">A marca</p>
+          <h3 class="step-title">Nome, logo e identidade criados do zero.</h3>
+          <p class="step-body">
+            “Gota Nativa — natural por essência.” Logo, paleta, tipografia e aplicações,
+            num kit de marca coerente, pronto pra usar em produto, embalagem e redes.
+          </p>
+        </div>
+        <figure class="step-figure brandboard">
+          <img src="assets/gota-nativa/kit-marca.png" alt="Kit da marca Gota Nativa: logo principal e secundária, paleta de cores, tipografia, essência e aplicações." loading="lazy" />
+          <figcaption>Kit de marca completo — logo, cores, tipografia e aplicações.</figcaption>
+        </figure>
+      </article>
+
+      <!-- O CATÁLOGO (opcional) — quando tiver o print, salve como
+           assets/gota-nativa/catalogo.jpg e descomente este bloco:
+      <article class="step step-scenes">
+        <div class="step-text step-text-wide">
+          <p class="step-tag">O catálogo</p>
+          <h3 class="step-title">Uma linha de produtos organizada.</h3>
+          <p class="step-body">Óleos para Rosto, Cabelo e Corpo, fotografados e organizados por uso.</p>
+        </div>
+        <figure class="step-figure">
+          <img src="assets/gota-nativa/catalogo.jpg" alt="Catálogo de óleos da Gota Nativa com filtros por Rosto, Cabelo e Corpo." loading="lazy" />
+          <figcaption>Linha de produtos organizada e fotografada.</figcaption>
+        </figure>
+      </article>
+      -->
+
+      <!-- OS CRIATIVOS / INFLUENCER (opcional) — quando tiver, salve como
+           assets/gota-nativa/criativo-1.jpg, criativo-2.jpg, influencer.jpg
+           e descomente este bloco:
+      <article class="step step-scenes">
+        <div class="step-text step-text-wide">
+          <p class="step-tag">Os criativos</p>
+          <h3 class="step-title">Peças prontas pra anunciar.</h3>
+          <p class="step-body">Criativos e influencer com IA, no tom natural da marca.</p>
+        </div>
+        <div class="gallery-grid">
+          <figure><img src="assets/gota-nativa/criativo-1.jpg" alt="Criativo de anúncio da Gota Nativa." loading="lazy" /></figure>
+          <figure><img src="assets/gota-nativa/criativo-2.jpg" alt="Criativo de anúncio da Gota Nativa." loading="lazy" /></figure>
+          <figure><img src="assets/gota-nativa/influencer.jpg" alt="Influencer com IA da Gota Nativa." loading="lazy" /></figure>
+        </div>
+      </article>
+      -->
+
+      <!-- A LOJA COMPLETA -->
+      <article class="step step-landing">
+        <div class="step-text step-text-wide">
+          <p class="step-tag">A loja completa</p>
+          <h3 class="step-title">Um e-commerce de verdade, no ar.</h3>
+          <p class="step-body">
+            Não parou no criativo: virou loja completa, com catálogo, carrinho,
+            pagamento e garantia. Da identidade à página de compra, tudo conectado.
+          </p>
+        </div>
+        <figure class="landing-figure">
+          <div class="device">
+            <img src="assets/gota-nativa/home.gif" alt="Navegação animada pela loja da Gota Nativa: home, produtos e checkout." loading="lazy" />
+          </div>
+        </figure>
+      </article>
+
+      <!-- PROVA AO VIVO (destaque) -->
+      <article class="step step-live">
+        <div class="live-card">
+          <p class="step-tag step-tag-strong">Prova ao vivo</p>
+          <h3 class="step-title">Não é mockup. É uma loja de verdade, no ar.</h3>
+          <p class="step-body">
+            Criada do início ao fim — marca, identidade e e-commerce. Veja você mesmo,
+            funcionando agora.
+          </p>
+          <a class="btn btn-live" href="https://gotanativa.com.br" target="_blank" rel="noopener">
+            Visitar a loja ao vivo <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- RECAP -->
+      <article class="recap" aria-label="Resumo do que foi criado">
+        <h3 class="recap-title">De um produto, <span class="hl">uma marca completa.</span></h3>
+        <ul class="recap-list">
+          <li>Nome &amp; conceito</li>
+          <li class="rsep" aria-hidden="true">→</li>
+          <li>Logo &amp; identidade</li>
+          <li class="rsep" aria-hidden="true">→</li>
+          <li>Catálogo</li>
+          <li class="rsep" aria-hidden="true">→</li>
+          <li>Criativos</li>
+          <li class="rsep" aria-hidden="true">→</li>
+          <li>Loja no ar</li>
+        </ul>
+      </article>
+    </div>
+
     <div class="case-content" id="case-rosa">
       <div class="case-intro">
         <p class="section-label"><span class="num">01</span> O case · Rosa mosqueta</p>
