@@ -41,12 +41,13 @@
         <div class="hero-copy">
           <p class="eyebrow">Estúdio de criativos com IA</p>
           <h1 class="hero-title">
-            <span class="hl">Fotos</span> que vendem.<br />
-            <span class="hl">Influencers</span> exclusivos da sua marca.
+            A <span class="hl">foto</span> que vende.<br />
+            O <span class="hl">rosto</span> que convence.
           </h1>
           <p class="hero-sub">
-            Transformo a foto ruim do seu produto em criativo profissional — e crio
-            influencers virtuais que apresentam, recomendam e vendem. Tudo com IA, em dias.
+            Transformo a foto ruim do seu produto em criativo profissional — e coloco
+            ele nas mãos de influencers virtuais realistas, criados sob medida.
+            Tudo com IA, em dias.
           </p>
           <div class="hero-actions">
             <a href="#contato" class="btn btn-primary" data-cta="whatsapp">Quero o meu diagnóstico grátis</a>
@@ -54,18 +55,32 @@
           </div>
         </div>
 
-        <!-- Teaser visual antes → depois -->
-        <figure class="hero-teaser" aria-label="Prévia: antes e depois">
-          <div class="teaser-card teaser-before">
-            <img src="assets/before-produto.jpg" alt="Foto crua do produto enviada pelo cliente, em uma prateleira." />
-            <span class="teaser-tag">ANTES</span>
-          </div>
-          <div class="teaser-arrow" aria-hidden="true">→</div>
-          <div class="teaser-card teaser-after">
-            <img src="assets/after-produt.jpg" alt="Mesmo produto após tratamento, com fundo limpo e visual de campanha." />
-            <span class="teaser-tag teaser-tag-after">DEPOIS</span>
-          </div>
-        </figure>
+        <!-- Visual do hero: antes → depois + rostos do casting -->
+        <div class="hero-visual">
+          <figure class="hero-teaser" aria-label="Prévia: antes e depois">
+            <div class="teaser-card teaser-before">
+              <img src="assets/before-produto.jpg" alt="Foto crua do produto enviada pelo cliente, em uma prateleira." />
+              <span class="teaser-tag">ANTES</span>
+            </div>
+            <div class="teaser-arrow" aria-hidden="true">→</div>
+            <div class="teaser-card teaser-after">
+              <img src="assets/after-produt.jpg" alt="Mesmo produto após tratamento, com fundo limpo e visual de campanha." />
+              <span class="teaser-tag teaser-tag-after">DEPOIS</span>
+            </div>
+          </figure>
+
+          <a class="hero-cast" href="#casting" aria-label="Conhecer o casting de 20 influencers virtuais">
+            <span class="hero-cast-avatars" aria-hidden="true">
+              <img src="assets/casting/thumbs/06-jessica-thumb.jpg" alt="" loading="lazy" />
+              <img src="assets/casting/thumbs/02-luana-thumb.jpg" alt="" loading="lazy" />
+              <img src="assets/casting/thumbs/01-patricia-thumb.jpg" alt="" loading="lazy" />
+              <img src="assets/casting/thumbs/05-ricardo-thumb.jpg" alt="" loading="lazy" />
+              <img src="assets/casting/thumbs/07-dona-cida-thumb.jpg" alt="" loading="lazy" />
+              <span class="hero-cast-more">+15</span>
+            </span>
+            <span class="hero-cast-label">Casting com 20 influencers virtuais →</span>
+          </a>
+        </div>
       </div>
       <div class="hero-ticker" aria-hidden="true">
         <span>FOTO DE PRODUTO → CENAS → VÍDEO 360° → INFLUENCER VIRTUAL → UGC → CRIATIVOS DE ANÚNCIO →&nbsp;</span>
@@ -156,17 +171,17 @@
       </article>
     </section>
 
-    <!-- ====================== O CASTING (influencers reais) ====================== -->
+    <!-- ====================== O CASTING (influencers virtuais) ====================== -->
     <section class="casting" id="casting" aria-label="O casting de influencers">
       <div class="case-intro">
         <p class="section-label"><span class="num">02</span> O Casting</p>
-        <h2 class="section-title">Influencers reais. Não modelos perfeitas.</h2>
+        <h2 class="section-title">Influencers virtuais. Realistas de verdade.</h2>
         <p class="section-lead">
-          O mercado está cheio de influencer de IA com cara de boneca: 25 anos, pele
-          plastificada, corpo irreal. O público percebe — e não se conecta. Meu casting
-          é diferente: mulheres e homens de verdade, de 22 a 68 anos, todos os tons de
-          pele, corpos reais, estilos do Brasil real. Porque quem compra confia em quem
-          se parece com ela.
+          O mercado está cheio de influencer de IA com cara de boneca: pele plastificada,
+          corpo irreal, sempre 25 anos. O público percebe — e não se conecta. Meu casting
+          é 100% criado com IA, mas parece o Brasil real: de 22 a 68 anos, todos os tons
+          de pele, corpos verdadeiros, estilos de gente que existe. Porque quem compra
+          confia em quem se parece com ela.
         </p>
       </div>
 
@@ -184,7 +199,7 @@
           </div>
           <div class="casting-info">
             <h3 class="casting-name">Patricia <span class="casting-age">· 42</span></h3>
-            <p class="casting-vibe">Mãe real, acolhedora, interior de SP.</p>
+            <p class="casting-vibe">Mãe acolhedora, interior de SP.</p>
             <p class="casting-niches">Skincare 40+ · casa · bem-estar</p>
           </div>
         </article>
@@ -408,9 +423,10 @@
       </div>
 
       <p class="casting-note">
-        <strong>Transparência:</strong> as influencers do casting trabalham como influencers
-        reais — podem aparecer com produtos de outras marcas (nunca concorrentes diretos).
-        Quer uma só sua? Veja a opção <a href="#pacotes">Influencer Exclusiva</a>.
+        <strong>Transparência:</strong> as influencers do casting funcionam como um elenco
+        compartilhado — podem aparecer com produtos de outras marcas (nunca concorrentes
+        diretos). Quer uma só sua? Veja a opção <a href="#pacotes">Influencer Exclusiva</a>.
+        Todas as influencers do casting são personagens virtuais criados com IA.
       </p>
     </section>
 
@@ -433,18 +449,16 @@
            trocando "case-" pelo prefixo. Ex.: data-open-case="biotina" → id="case-biotina".
            =================================================================== -->
       <div class="cases-grid">
-        <!-- CASE DE DESTAQUE: marca + loja completa (patamar acima dos demais) -->
-        <article class="case-card case-card-featured" data-open-case="gota-nativa" tabindex="0" role="button"
-                 aria-label="Abrir o case de destaque Gota Nativa">
+        <article class="case-card" data-open-case="gota-nativa" tabindex="0" role="button"
+                 aria-label="Abrir o case Gota Nativa">
           <div class="case-card-cover">
-            <img src="assets/gota-nativa/kit-marca.png" alt="Identidade visual da marca Gota Nativa: logo, paleta e aplicações." loading="lazy" />
-            <span class="case-card-tag case-card-tag-featured">★ Marca completa · Loja no ar</span>
+            <img src="assets/gota-nativa/kit-marca.png" alt="Identidade visual da Gota Nativa: logo, paleta e aplicações." loading="lazy" />
+            <span class="case-card-tag">Óleos naturais</span>
           </div>
           <div class="case-card-body">
-            <p class="case-card-eyebrow">Case de destaque</p>
             <h3 class="case-card-name">Gota Nativa</h3>
-            <p class="case-card-line">Até onde isso vai: uma marca e uma loja inteiras, construídas a partir dos criativos — e no ar de verdade.</p>
-            <span class="case-card-open" aria-hidden="true">Ver case &amp; visitar a loja →</span>
+            <p class="case-card-line">Fotos de produto e criativos que sustentam uma marca inteira.</p>
+            <span class="case-card-open" aria-hidden="true">Ver case →</span>
           </div>
         </article>
 

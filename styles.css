@@ -103,10 +103,28 @@ p { margin: 0; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
 
 /* Teaser antes → depois */
+.hero-visual { display: flex; flex-direction: column; gap: clamp(16px, 2.2vw, 24px); }
 .hero-teaser {
   margin: 0; display: grid; grid-template-columns: 1fr auto 1fr;
   align-items: center; gap: clamp(6px, 1.4vw, 16px);
 }
+/* Tira de rostos do casting (avatares sobrepostos + "+15") */
+.hero-cast { display: inline-flex; align-items: center; gap: 14px; align-self: center; }
+.hero-cast-avatars { display: flex; align-items: center; }
+.hero-cast-avatars img, .hero-cast-more {
+  width: 52px; height: 52px; border-radius: 50%; object-fit: cover;
+  border: 2.5px solid var(--bg); box-shadow: 0 4px 14px rgba(27,26,32,.14);
+}
+.hero-cast-avatars img:not(:first-child), .hero-cast-more { margin-left: -14px; }
+.hero-cast-more {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--roxo); color: #fff;
+  font-family: var(--display); font-weight: 700; font-size: .82rem;
+}
+.hero-cast-label { font-family: var(--display); font-weight: 600; font-size: .92rem; color: var(--roxo); }
+.hero-cast:hover .hero-cast-label { text-decoration: underline; }
+.hero-cast:focus-visible { outline: 3px solid var(--roxo); outline-offset: 4px; border-radius: 8px; }
+@media (max-width: 480px) { .hero-cast { flex-direction: column; gap: 8px; } }
 .teaser-card {
   position: relative; border-radius: var(--radius); overflow: hidden;
   background: var(--card); aspect-ratio: 3/4;
