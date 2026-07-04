@@ -188,6 +188,48 @@ p { margin: 0; }
   .svc-item { border-top: none; border-bottom: 1.5px solid color-mix(in srgb, var(--ink) 12%, transparent); padding: 26px 0; }
 }
 
+/* ---- Blocos de ESPECIALIDADE (2 blocos grandes no lugar dos 4 cards) ---- */
+.spec-block {
+  max-width: var(--maxw); margin: clamp(38px, 6vw, 64px) auto 0;
+  border-top: 2px solid var(--ink); padding-top: clamp(22px, 3vw, 34px);
+}
+.spec-head { max-width: 62ch; }
+.spec-head .step-tag { color: var(--roxo); }
+.spec-title { font-size: clamp(1.5rem, 3vw, 2.2rem); margin-bottom: 12px; }
+.spec-desc { color: var(--muted); font-size: clamp(1rem, 1.4vw, 1.12rem); }
+.spec-media {
+  display: grid; grid-template-columns: 1.5fr 1fr; align-items: center;
+  gap: clamp(18px, 3vw, 36px); margin-top: clamp(22px, 3.5vw, 38px);
+}
+.spec-media .ba-teaser { margin-bottom: 0; }
+.spec-media figure { margin: 0; }
+.spec-side img { width: 100%; border-radius: var(--radius); box-shadow: 0 16px 40px rgba(27,26,32,.12); }
+.spec-media-3 { grid-template-columns: 1.3fr 1fr 1fr; align-items: stretch; }
+.spec-media-3 img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius); box-shadow: 0 16px 40px rgba(27,26,32,.12); }
+.spec-link {
+  margin-top: clamp(18px, 3vw, 28px); background: none; border: none; cursor: pointer;
+  padding: 0; font-size: 1rem;
+}
+.spec-link:hover { text-decoration: underline; }
+.spec-link:focus-visible { outline: 3px solid var(--roxo); outline-offset: 4px; border-radius: 6px; }
+
+/* ---- Demonstração FOTO → VÍDEO 360° (dentro do Bloco A) ---- */
+.demo-360 { margin-top: clamp(26px, 4vw, 44px); }
+.demo-360 .ba-teaser { max-width: 640px; margin: 0 auto; }
+.demo-360-video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.demo-360-caption {
+  text-align: center; color: var(--muted); font-size: .95rem;
+  max-width: 52ch; margin: 14px auto 0;
+}
+
+@media (max-width: 760px) {
+  .spec-media, .spec-media-3 { grid-template-columns: 1fr; }
+  /* demo 360 empilha: foto em cima, vídeo embaixo (etiquetas mantidas) */
+  .demo-360 .ba-teaser { grid-template-columns: 1fr; justify-items: center; }
+  .demo-360 .ba-teaser .teaser-card { width: 100%; }
+  .demo-360 .ba-teaser .teaser-arrow { transform: rotate(90deg); }
+}
+
 /* =========================================================
    CASES — galeria de cards
    ========================================================= */
@@ -559,6 +601,12 @@ body.overlay-open { overflow: hidden; }
   margin-top: 16px; max-width: 52ch; color: var(--muted); font-size: .95rem;
   border-left: 3px solid var(--roxo); padding-left: 14px;
 }
+/* Linha discreta ao fim dos pacotes ("precisa de algo maior") */
+.packages-note {
+  max-width: var(--maxw); margin: clamp(20px, 3vw, 30px) auto 0;
+  text-align: center; color: var(--muted); font-size: .95rem;
+}
+.packages-note a { color: var(--roxo); font-weight: 600; text-decoration: underline; }
 .card-desc { color: var(--muted); font-size: .96rem; margin: 12px 0 22px; flex: 1; }
 .card-cta { font-family: var(--display); font-weight: 600; color: var(--roxo); align-self: flex-start; }
 .card-featured .card-cta { color: #fff; }

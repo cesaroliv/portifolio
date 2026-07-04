@@ -98,6 +98,35 @@ if (anoEl) anoEl.textContent = new Date().getFullYear();
 
 
 /* =========================================================================
+   Demo FOTO → VÍDEO 360°: dá play só quando o vídeo aparece na tela
+   (e pausa quando sai), pra não gastar dados nem bateria à toa.
+   ========================================================================= */
+(function () {
+  const videos = document.querySelectorAll(".demo-360-video");
+  if (!videos.length) return;
+
+  // Se o navegador não tiver IntersectionObserver (muito raro), só dá play direto.
+  if (!("IntersectionObserver" in window)) {
+    videos.forEach(function (v) { v.play().catch(function () {}); });
+    return;
+  }
+
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      const video = entry.target;
+      if (entry.isIntersecting) {
+        video.play().catch(function () {}); // autoplay pode ser bloqueado; ignora sem erro
+      } else {
+        video.pause();
+      }
+    });
+  }, { threshold: 0.35 }); // começa quando ~1/3 do vídeo está visível
+
+  videos.forEach(function (v) { observer.observe(v); });
+})();
+
+
+/* =========================================================================
    Overlay de Cases — abre o case em tela cheia (X, ESC, clique fora)
    ========================================================================= */
 (function () {
