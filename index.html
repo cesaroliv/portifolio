@@ -26,8 +26,9 @@
     </a>
     <nav class="topnav" aria-label="Navegação">
       <a href="#servicos">Serviços</a>
+      <a href="#casting">Casting</a>
       <a href="#cases">Cases</a>
-      <a href="#pacotes">Pacotes</a>
+      <a href="#pacotes">Preços</a>
       <a href="#contato" class="btn btn-mini" data-cta="whatsapp">Falar comigo</a>
     </nav>
   </header>
@@ -141,9 +142,9 @@
           <p class="step-tag">Especialidade 02</p>
           <h3 class="spec-title">Influencers virtuais</h3>
           <p class="spec-desc">
-            Uma influenciadora exclusiva pra sua marca — que não cobra cachê, não tem
-            agenda e nunca sai do personagem. Persona consistente em fotos e vídeos,
-            criada 100% com IA.
+            Influencers que não cobram cachê, não têm agenda e nunca saem do personagem.
+            Persona consistente em fotos e vídeos, criada 100% com IA — <a href="#casting">do
+            casting pronto</a> à exclusiva da sua marca.
           </p>
         </div>
         <div class="spec-media spec-media-3">
@@ -155,10 +156,59 @@
       </article>
     </section>
 
+    <!-- ====================== O CASTING (influencers reais) ====================== -->
+    <section class="casting" id="casting" aria-label="O casting de influencers">
+      <div class="case-intro">
+        <p class="section-label"><span class="num">02</span> O Casting</p>
+        <h2 class="section-title">Influencers reais. Não modelos perfeitas.</h2>
+        <p class="section-lead">
+          O mercado está cheio de influencer de IA com cara de boneca: 25 anos, pele
+          plastificada, corpo irreal. O público percebe — e não se conecta. Meu casting
+          é diferente: mulheres e homens de verdade, de 22 a 68 anos, todos os tons de
+          pele, corpos reais, estilos do Brasil real. Porque quem compra confia em quem
+          se parece com ela.
+        </p>
+      </div>
+
+      <!-- ===================================================================
+           COMO ADICIONAR UMA INFLUENCER AO CASTING (2 passos):
+           1) Salve a foto de perfil como assets/casting/[numero]-[nome]-perfil.jpg
+              (ex.: assets/casting/2-luana-perfil.jpg — sem espaços/acentos).
+           2) Duplique um <article class="casting-card"> abaixo (antes do card
+              "em breve") e troque a foto, o nome, a idade e a vibe/nichos.
+           =================================================================== -->
+      <div class="casting-grid">
+        <article class="casting-card">
+          <div class="casting-photo">
+            <img src="assets/casting/1-patricia-perfil.jpg" alt="Patricia, influencer virtual de 42 anos, pele com textura real." loading="lazy" />
+          </div>
+          <div class="casting-info">
+            <h3 class="casting-name">Patricia <span class="casting-age">· 42</span></h3>
+            <p class="casting-vibe">Mãe real, acolhedora, interior de SP.</p>
+            <p class="casting-niches">Skincare 40+ · casa · bem-estar</p>
+          </div>
+        </article>
+
+        <article class="casting-card casting-card-soon" aria-label="Novas influencers em breve">
+          <div class="casting-soon-inner">
+            <span class="casting-soon-plus" aria-hidden="true">+</span>
+            <p class="casting-soon-text">Novas influencers<br />em breve</p>
+            <p class="casting-soon-sub">Casting em expansão: idades, corpos e estilos do Brasil real.</p>
+          </div>
+        </article>
+      </div>
+
+      <p class="casting-note">
+        <strong>Transparência:</strong> as influencers do casting trabalham como influencers
+        reais — podem aparecer com produtos de outras marcas (nunca concorrentes diretos).
+        Quer uma só sua? Veja a opção <a href="#pacotes">Influencer Exclusiva</a>.
+      </p>
+    </section>
+
     <!-- ====================== CASES (galeria) ====================== -->
     <section class="cases" id="cases" aria-label="Cases">
       <div class="case-intro">
-        <p class="section-label"><span class="num">02</span> Cases</p>
+        <p class="section-label"><span class="num">03</span> Cases</p>
         <h2 class="section-title">Do produto cru ao anúncio pronto.</h2>
         <p class="section-lead">Clique num case pra ver a história completa — da primeira foto à campanha no ar.</p>
       </div>
@@ -220,45 +270,69 @@
     <!-- ====================== PACOTES ====================== -->
     <section class="services" id="pacotes" aria-label="Pacotes">
       <div class="case-intro">
-        <p class="section-label"><span class="num">03</span> Pacotes</p>
-        <p class="launch-badge"><span aria-hidden="true">✦</span> Preço de lançamento · 50% OFF</p>
-        <h2 class="section-title">Escolha por onde começar.</h2>
-        <p class="section-lead">Do criativo avulso ao pacote completo de criativos. Preços pensados pra quem está começando a escalar.</p>
-        <p class="launch-urgency">Condição para os primeiros clientes — em troca, autorização para usar o trabalho como case.</p>
+        <p class="section-label"><span class="num">04</span> Preços</p>
+        <p class="launch-badge"><span aria-hidden="true">✦</span> Preço de lançamento · primeiros clientes · vira case</p>
+        <h2 class="section-title">Preços claros, a conta aberta.</h2>
+        <p class="section-lead">Sem pacote obrigatório: você vê o preço de cada peça e monta o que precisar — ou escolhe um dos caminhos prontos abaixo.</p>
       </div>
 
-      <div class="cards">
+      <!-- BLOCO A — Avulsos (a conta aberta) -->
+      <div class="price-table-wrap">
+        <h3 class="price-block-title">Avulsos</h3>
+        <table class="price-table">
+          <caption class="sr-only">Preços unitários, com valor cheio e valor de lançamento</caption>
+          <tbody>
+            <tr>
+              <th scope="row">Foto transformada <span class="price-detail">celular → estúdio · mínimo 3</span></th>
+              <td><s class="price-old">R$70</s> <strong class="price-now">R$53</strong><span class="price-unit">/foto</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Cena lifestyle adicional <span class="price-detail">mesmo produto</span></th>
+              <td><s class="price-old">R$45</s> <strong class="price-now">R$34</strong><span class="price-unit">/foto</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Vídeo 360° do produto</th>
+              <td><s class="price-old">R$130</s> <strong class="price-now">R$98</strong></td>
+            </tr>
+            <tr>
+              <th scope="row">Foto de influencer do casting com seu produto <span class="price-detail">mínimo 3</span></th>
+              <td><s class="price-old">R$65</s> <strong class="price-now">R$49</strong><span class="price-unit">/foto</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Vídeo UGC com influencer do casting <span class="price-detail">até 30s</span></th>
+              <td><s class="price-old">R$220</s> <strong class="price-now">R$165</strong><span class="price-unit">/vídeo</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- BLOCO B — Influencer: dois caminhos + mensalidade -->
+      <h3 class="price-block-title">Influencer: escolha seu caminho</h3>
+
+      <div class="cards cards-3">
         <article class="card">
-          <p class="card-name">Fotos que Vendem</p>
+          <span class="card-badge">Entrada acessível</span>
+          <p class="card-name">Influencer do Casting</p>
           <p class="card-price">
             <span class="from">a partir de</span>
-            <span class="price-old">R$197</span>
-            <span class="price-new">R$98 <span class="off">-50%</span></span>
+            <span class="price-old">R$195</span>
+            <span class="price-new">R$147 <span class="off">-25%</span></span>
           </p>
-          <p class="card-desc">8 imagens profissionais do seu produto: foto limpa + cenas + variações prontas pra anúncio.</p>
+          <p class="card-desc">Escolha uma influencer do casting e coloque seu produto nas mãos dela. Sem custo de criação — você paga só as peças: 3 fotos com seu produto. Vídeo UGC de até 30s: +R$165.</p>
+          <p class="card-fineprint">Ela pode aparecer com outros produtos (nunca concorrentes diretos).</p>
           <a href="#contato" class="card-cta" data-cta="whatsapp">Quero esse →</a>
         </article>
 
         <article class="card card-featured">
-          <span class="card-badge">Mais escolhido</span>
-          <p class="card-name">Influencer Virtual</p>
+          <span class="card-badge">Mais completo</span>
+          <p class="card-name">Influencer Exclusiva</p>
           <p class="card-price">
-            <span class="from">a partir de</span>
-            <span class="price-old">R$697</span>
-            <span class="price-new">R$348 <span class="off">-50%</span></span>
+            <span class="from">pacote de estreia</span>
+            <span class="price-old">R$1.060</span>
+            <span class="price-new">R$795 <span class="off">-25%</span></span>
           </p>
-          <p class="card-desc">Criação da persona exclusiva (character sheet) + 6 fotos com seu produto + 1 vídeo UGC de até 30s.</p>
-          <a href="#contato" class="card-cta" data-cta="whatsapp">Quero esse →</a>
-        </article>
-
-        <article class="card">
-          <p class="card-name">Combo Especialista</p>
-          <p class="card-price">
-            <span class="from">a partir de</span>
-            <span class="price-old">R$897</span>
-            <span class="price-new">R$448 <span class="off">-50%</span></span>
-          </p>
-          <p class="card-desc">Os dois pacotes juntos: 8 imagens profissionais + influencer completa + vídeo UGC de até 30s.</p>
+          <p class="card-desc">Uma influencer criada do zero, só da sua marca — ninguém mais usa. Estreia completa: criação da persona (character sheet) + 6 fotos + 1 vídeo UGC de até 30s.</p>
+          <p class="card-fineprint">Só a criação: de R$450 por R$340. Depois, fotos a R$49 e vídeos a R$165.</p>
           <a href="#contato" class="card-cta" data-cta="whatsapp">Quero esse →</a>
         </article>
 
@@ -267,17 +341,18 @@
           <p class="card-name">Mensalidade de Criativos</p>
           <p class="card-price">
             <span class="from">a partir de</span>
-            <span class="price-old">R$600<span class="per">/mês</span></span>
-            <span class="price-new">R$300<span class="per">/mês</span> <span class="off">-50%</span></span>
+            <span class="price-old">R$970<span class="per">/mês</span></span>
+            <span class="price-new">R$730<span class="per">/mês</span> <span class="off">-25%</span></span>
           </p>
-          <p class="card-desc">8 imagens + 2 vídeos novos <strong>todo mês</strong> com a sua influencer. Dá R$10 por dia pra sua marca nunca sumir do feed — quem anuncia sabe: criativo repetido cansa e para de vender.</p>
+          <p class="card-desc">8 fotos + 2 vídeos novos <strong>todo mês</strong> com a sua influencer — do casting ou exclusiva. Quem anuncia sabe: criativo repetido cansa e para de vender.</p>
+          <p class="card-fineprint">Menos de R$25 por dia pra sua marca nunca sumir do feed.</p>
           <a href="#contato" class="card-cta" data-cta="whatsapp">Quero esse →</a>
         </article>
       </div>
       <p class="packages-path">
-        <strong>O caminho esperto:</strong> começa com o Combo Especialista pra montar a base
-        e segue na Mensalidade — por menos que o pacote Influencer Virtual avulso, você recebe
-        8 imagens + 2 vídeos <em>todo mês</em>, e sua influencer nunca para de produzir.
+        <strong>O caminho esperto:</strong> testa com uma influencer do casting por R$147,
+        e quando a persona der resultado, cria a sua exclusiva e mantém a Mensalidade —
+        criativo novo todo mês, sem sua marca depender de ninguém.
       </p>
       <p class="packages-note">Precisa de algo maior (landing page, marca completa)? <a href="#contato" data-cta="whatsapp">Me chama que a gente conversa.</a></p>
     </section>
@@ -285,7 +360,7 @@
     <!-- ====================== 4. POR QUE COMIGO ====================== -->
     <section class="why" aria-label="Por que comigo">
       <div class="case-intro">
-        <p class="section-label"><span class="num">04</span> Por que comigo</p>
+        <p class="section-label"><span class="num">05</span> Por que comigo</p>
         <h2 class="section-title">Não é só imagem bonita. É venda.</h2>
       </div>
       <div class="why-grid">
@@ -321,7 +396,7 @@
         </figure>
 
         <div class="about-text">
-          <p class="section-label"><span class="num">05</span> Quem está por trás</p>
+          <p class="section-label"><span class="num">06</span> Quem está por trás</p>
           <h2 class="about-name">Cesar C. Oliveira <span class="about-role">· AI Builder</span></h2>
           <p class="about-sub">Especialista em criativos com IA e influencers virtuais.</p>
 
@@ -359,7 +434,7 @@
     <!-- ====================== 5. CONTATO / CTA FINAL ====================== -->
     <section class="cta" id="contato" aria-label="Contato">
       <div class="cta-inner">
-        <p class="section-label section-label-light"><span class="num">06</span> Vamos conversar</p>
+        <p class="section-label section-label-light"><span class="num">07</span> Vamos conversar</p>
         <h2 class="cta-title">Quer assim pro seu produto?</h2>
         <p class="cta-sub">
           Te mostro <strong>de graça</strong> o que dá pra fazer com o seu. Manda uma
@@ -394,7 +469,7 @@
         <a href="#" data-cta="instagram">Instagram</a>
         -->
         <a href="#cases">Cases</a>
-        <a href="#pacotes">Pacotes</a>
+        <a href="#pacotes">Preços</a>
       </div>
     </div>
     <p class="footer-copy">© <span id="ano">2026</span> Criando com IA. Feito com IA, pensado pra vender.</p>
