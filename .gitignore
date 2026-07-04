@@ -1,0 +1,3 @@
+# Originais pesados do casting (PNGs de ~2MB cada) ficam só no seu computador.
+# O site usa as versões otimizadas em .jpg, que são bem mais leves.
+assets/casting/*.png
