@@ -56,8 +56,8 @@
 ## Conteúdo e conversão
 
 - Nova ordem: hero, capacidades, serviços, cases, processo, preços, prévia do casting, diferenciais, Cesar, FAQ e CTA.
-- Preços avulsos e pacotes preservados.
-- Plano Mensal mantido em R$730, sem desconto artificial e com seis benefícios operacionais.
+- Preços avulsos preservados e apresentados sem valores antigos riscados.
+- Plano Mensal atualizado para R$630, sem desconto artificial e com seis benefícios operacionais; Influencer Exclusiva atualizada para R$595 com as entregas preservadas.
 - CTAs abrem WhatsApp com mensagem específica e origem de evento.
 - Home mostra Patricia, Luana, Márcia, Camila, Ricardo e Aline; as 20 pessoas estão em `/casting/`.
 - Cases ganharam resumo de entregas e páginas próprias.

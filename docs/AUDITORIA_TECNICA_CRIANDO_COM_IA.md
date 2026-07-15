@@ -66,6 +66,6 @@
 - Identidade visual branca, preta e roxa; Mulish e Space Grotesk.
 - Foto e conteúdo da seção de Cesar C. Oliveira.
 - Todos os vídeos e cases existentes.
-- Preços existentes, incluindo Plano Mensal de R$730.
+- Valores comerciais atuais, incluindo Plano Mensal de R$630 e Influencer Exclusiva de R$595.
 - Link público da Gota Nativa.
 - Arquivos não rastreados preexistentes não serão removidos nem sobrescritos sem necessidade.

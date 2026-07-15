@@ -355,6 +355,16 @@ ol {
   font-size: clamp(1.02rem, 1.5vw, 1.18rem);
 }
 
+.hero-audience {
+  max-width: 59ch;
+  margin-top: 14px;
+  padding-left: 14px;
+  border-left: 3px solid var(--purple);
+  color: var(--purple-deep);
+  font-size: 0.94rem;
+  font-weight: 600;
+}
+
 .hero-actions,
 .inline-actions {
   display: flex;
@@ -753,16 +763,20 @@ ol {
   flex-direction: column;
 }
 
-.single-prices s,
-.price s {
-  color: var(--muted);
-  font-size: 0.86rem;
-}
-
 .single-prices strong {
   color: var(--purple-deep);
   font-family: var(--display);
   font-size: 1.1rem;
+}
+
+.single-price-note {
+  max-width: 860px;
+  margin: 18px 0 0;
+  color: var(--muted);
+}
+
+.single-price-note strong {
+  color: var(--ink);
 }
 
 .pricing-cards {
@@ -814,10 +828,6 @@ ol {
 .price-card.featured > p:not(.price),
 .price-card.featured .fineprint {
   color: rgba(255, 255, 255, 0.78);
-}
-
-.price-card.featured .price s {
-  color: #fff;
 }
 
 .price {
@@ -931,7 +941,7 @@ ol {
 
 .casting-info {
   display: flex;
-  min-height: 205px;
+  min-height: 235px;
   flex-direction: column;
   padding: 17px;
 }
@@ -960,6 +970,16 @@ ol {
   font-family: var(--display);
   font-size: 0.78rem !important;
   font-weight: 600;
+}
+
+.casting-tone {
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+  font-size: 0.8rem !important;
+}
+
+.casting-tone strong {
+  color: var(--ink);
 }
 
 .casting-info .card-cta {
@@ -1400,6 +1420,10 @@ ol {
   max-width: 68ch;
   margin-top: 26px;
   color: var(--muted);
+}
+
+.service-summary {
+  margin-top: clamp(28px, 5vw, 52px);
 }
 
 .related-links {
