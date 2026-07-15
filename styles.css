@@ -1255,6 +1255,29 @@ ol {
   font-size: clamp(2.6rem, 6vw, 5.2rem);
 }
 
+body[data-page-type="service"] .internal-hero {
+  min-height: 0;
+  padding: clamp(48px, 5vw, 68px) 0 clamp(36px, 3.5vw, 52px);
+}
+
+body[data-page-type="service"] .internal-hero h1 {
+  max-width: 14ch;
+  font-size: clamp(2.75rem, 5vw, 4.6rem);
+  line-height: 1.01;
+}
+
+body[data-page-type="service"] .internal-hero .video-pair video {
+  max-height: 540px;
+}
+
+body[data-page-type="service"] main > .section {
+  padding-block: clamp(52px, 4.5vw, 64px);
+}
+
+body[data-page-type="service"] .service-detail .section-heading {
+  margin-bottom: clamp(34px, 4vw, 52px);
+}
+
 .internal-hero > div:first-child > p:not(.eyebrow),
 .case-hero-copy > p:not(.eyebrow, .author-badge, .compliance),
 .legal-page header > p:not(.eyebrow, .updated) {
@@ -1526,7 +1549,7 @@ ol {
 }
 
 .case-intro {
-  padding: clamp(34px, 5vw, 70px) var(--gutter) clamp(58px, 8vw, 98px);
+  padding: clamp(34px, 5vw, 70px) var(--gutter) clamp(36px, 3vw, 48px);
   background: linear-gradient(150deg, var(--purple-soft), var(--bg) 68%);
 }
 
@@ -1561,6 +1584,12 @@ ol {
 
 .case-hero h1 {
   max-width: 18ch;
+}
+
+body[data-page-type="case"] .case-hero h1 {
+  max-width: 16ch;
+  font-size: clamp(2.5rem, 4.8vw, 4.5rem);
+  line-height: 1.01;
 }
 
 .case-hero-media,
@@ -1633,7 +1662,7 @@ ol {
 }
 
 .case-section.section {
-  padding-block: clamp(62px, 8vw, 98px);
+  padding-block: clamp(52px, 5vw, 78px);
 }
 
 .case-section .section-heading {
@@ -2092,6 +2121,12 @@ ol {
   .case-hero h1,
   .legal-page header h1 {
     font-size: clamp(2.25rem, 11vw, 3.3rem);
+  }
+
+  body[data-page-type="service"] .internal-hero h1,
+  body[data-page-type="case"] .case-hero h1 {
+    font-size: clamp(2.25rem, 10vw, 2.9rem);
+    line-height: 1.02;
   }
 
   .hero-actions .btn,
