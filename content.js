@@ -9,12 +9,23 @@
     name: "Criando com IA",
     domain: "https://criandocomia.com",
     whatsapp: "5511978230487",
+    whatsappEndpoint: "https://api.whatsapp.com/send",
     owner: "Cesar C. Oliveira",
     role: "AI Builder",
     ownerSubtitle: "Especialista em criativos com IA e influencers virtuais.",
     logo: "/assets/logo-header.png",
     socialImage: "/assets/after-produt.jpg",
   };
+
+  function normalizeWhatsAppNumber(value) {
+    return String(value || "").replace(/\D/g, "");
+  }
+
+  function createWhatsAppUrl(message) {
+    const phone = normalizeWhatsAppNumber(site.whatsapp);
+    if (!phone) throw new Error("Número de WhatsApp ausente.");
+    return `${site.whatsappEndpoint}?phone=${phone}&text=${encodeURIComponent(String(message || ""))}`;
+  }
 
   const routes = {
     home: "/",
@@ -53,6 +64,29 @@
     caseRosaMosqueta: "Olá, César! Vi o case Rosa Mosqueta e quero avaliar uma transformação parecida para o meu produto.",
     caseBiotina: "Olá, César! Vi o case Biotina e quero conversar sobre criativos e vídeo para o meu produto.",
     caseGotaNativa: "Olá, César! Vi o projeto autoral Gota Nativa e quero conversar sobre um projeto completo para minha marca.",
+  };
+
+  const about = {
+    paragraphs: [
+      "Sou César C. Oliveira, fundador da Criando com IA. Especializo-me em transformar fotos simples de produtos em criativos profissionais, campanhas visuais e influencers virtuais consistentes para marcas que precisam apresentar e vender melhor sem depender de uma produção tradicional cara.",
+      "Meu trabalho combina direção criativa, engenharia de prompt e produção com inteligência artificial para criar fotos, vídeos, personagens e páginas com aplicação comercial real. Cada projeto é desenvolvido com atenção à identidade da marca, à consistência visual e ao uso prático do conteúdo em anúncios, redes sociais e páginas de venda.",
+      "Quando você me contrata, o projeto é conduzido diretamente por mim, do briefing à entrega.",
+    ],
+    highlight: "Atendimento direto, sem intermediários e com uma comunicação clara durante toda a produção.",
+  };
+
+  const influencerExplainer = {
+    eyebrow: "COMO FUNCIONA",
+    title: "Veja como uma influencer virtual é criada para sua marca",
+    text: "Neste vídeo, eu explico como transformo uma ideia em uma personagem virtual consistente, preparada para aparecer em fotos, vídeos e campanhas da sua marca.",
+    cta: "Quero criar minha influencer",
+    messageKey: "exclusiveInfluencer",
+    src: "/assets/optimized/video-influencer-explicativo.mp4",
+    poster: "/assets/optimized/video-influencer-explicativo-poster.webp",
+    width: 720,
+    height: 1280,
+    duration: "36 segundos",
+    videoName: "influencer_explicativo",
   };
 
   const pricing = {
@@ -207,5 +241,19 @@
     "/termos-de-uso/": { title: "Termos de Uso | Criando com IA", description: "Condições de uso do site e dos conteúdos publicados pela Criando com IA." },
   };
 
-  return Object.freeze({ site, routes, navigation, whatsappMessages, pricing, casting, cases, faq, metadata });
+  return Object.freeze({
+    site,
+    routes,
+    navigation,
+    whatsappMessages,
+    about,
+    influencerExplainer,
+    pricing,
+    casting,
+    cases,
+    faq,
+    metadata,
+    normalizeWhatsAppNumber,
+    createWhatsAppUrl,
+  });
 });

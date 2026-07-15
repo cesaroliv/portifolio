@@ -11,6 +11,8 @@
     "casting_profile_click",
     "pricing_cta_click",
     "video_play",
+    "video_complete",
+    "video_cta_click",
     "before_after_interaction",
     "service_page_view",
     "faq_open",
@@ -73,7 +75,7 @@
     const key = link.dataset.messageKey;
     const message = data.whatsappMessages[key];
     if (!message) return;
-    link.href = `https://wa.me/${data.site.whatsapp}?text=${encodeURIComponent(message)}`;
+    link.href = data.createWhatsAppUrl(message);
     link.target = "_blank";
     link.rel = "noopener noreferrer";
   });
@@ -101,6 +103,7 @@
         plan: element.dataset.plan,
         case_name: element.dataset.caseName,
         character_name: element.dataset.characterName,
+        video_name: element.dataset.videoName,
         cta_text: element.textContent.trim(),
       });
     });
@@ -201,6 +204,11 @@
       if (video.dataset.playTracked === "true") return;
       video.dataset.playTracked = "true";
       trackEvent("video_play", { location: document.body.dataset.pageType, video_name: video.dataset.videoName });
+    });
+    video.addEventListener("ended", function () {
+      if (video.dataset.completeTracked === "true") return;
+      video.dataset.completeTracked = "true";
+      trackEvent("video_complete", { location: document.body.dataset.pageType, video_name: video.dataset.videoName });
     });
   });
 

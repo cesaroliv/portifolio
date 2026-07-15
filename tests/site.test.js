@@ -7,7 +7,20 @@ const path = require("node:path");
 const data = require("../content.js");
 
 const root = path.resolve(__dirname, "..");
-const { site, routes, whatsappMessages, pricing, casting, cases, faq, metadata } = data;
+const {
+  site,
+  routes,
+  whatsappMessages,
+  about,
+  influencerExplainer,
+  pricing,
+  casting,
+  cases,
+  faq,
+  metadata,
+  normalizeWhatsAppNumber,
+  createWhatsAppUrl,
+} = data;
 const publicRoutes = Object.values(routes);
 
 function routeFile(route) {
@@ -16,10 +29,6 @@ function routeFile(route) {
 
 function readRoute(route) {
   return fs.readFileSync(routeFile(route), "utf8");
-}
-
-function whatsappUrl(message) {
-  return `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(message)}`;
 }
 
 test("todas as rotas possuem HTML estático e metadados", () => {
@@ -36,15 +45,39 @@ test("todas as rotas possuem HTML estático e metadados", () => {
   }
 });
 
-test("links de WhatsApp usam o número central e codificação correta", () => {
+test("links de WhatsApp usam função central, endpoint robusto e codificação única", () => {
+  assert.equal(normalizeWhatsAppNumber(`+${site.whatsapp.slice(0, 2)} (${site.whatsapp.slice(2, 4)}) ${site.whatsapp.slice(4, 9)}-${site.whatsapp.slice(9)}`), site.whatsapp);
+  assert.equal(site.whatsappEndpoint, "https://api.whatsapp.com/send");
+  const generatedPages = publicRoutes.map(readRoute).join("\n");
+
   for (const [key, message] of Object.entries(whatsappMessages)) {
-    const expected = whatsappUrl(message);
-    const generatedPages = publicRoutes.map(readRoute).join("\n");
+    const expected = createWhatsAppUrl(message);
     if (["header", "hero", "castingStarter", "exclusiveInfluencer", "monthlyPlan", "largeProject", "finalCta", "productPhotos", "virtualInfluencers", "virtualUgc", "product360", "caseRosaMosqueta", "caseBiotina", "caseGotaNativa"].includes(key)) {
       assert.ok(generatedPages.includes(expected), `Link não gerado para ${key}`);
     }
-    assert.equal(decodeURIComponent(new URL(expected).searchParams.get("text")), message);
+    const parsed = new URL(expected);
+    assert.equal(parsed.hostname, "api.whatsapp.com");
+    assert.equal(parsed.pathname, "/send");
+    assert.equal(parsed.searchParams.get("phone"), site.whatsapp);
+    assert.equal(parsed.searchParams.get("text"), message);
+    assert.ok(!expected.includes("%25C3"), `Texto duplamente codificado em ${key}`);
   }
+
+  for (const person of casting) assert.ok(generatedPages.includes(createWhatsAppUrl(person.whatsappMessage)));
+  for (const anchor of generatedPages.match(/<a\b[^>]*data-whatsapp[^>]*>/g) || []) {
+    const href = anchor.match(/href="([^"]+)"/)?.[1] || "";
+    assert.ok(href.startsWith(`${site.whatsappEndpoint}?phone=${site.whatsapp}&text=`), href);
+    assert.ok(!/H:\\|localhost|wa\.me/i.test(href), href);
+    assert.match(anchor, /target="_blank"/);
+    assert.match(anchor, /rel="noopener noreferrer"/);
+  }
+
+  const buildSource = fs.readFileSync(path.join(root, "scripts", "build.js"), "utf8");
+  const browserSource = fs.readFileSync(path.join(root, "script.js"), "utf8");
+  assert.ok(buildSource.includes("createWhatsAppUrl(message)"));
+  assert.ok(browserSource.includes("data.createWhatsAppUrl(message)"));
+  assert.ok(!/wa\.me|api\.whatsapp\.com/.test(buildSource));
+  assert.ok(!/wa\.me|api\.whatsapp\.com/.test(browserSource));
 });
 
 test("mensagens específicas dos principais CTAs permanecem exatas", () => {
@@ -92,6 +125,7 @@ test("home segue a ordem comercial e mostra seis pessoas", () => {
     'class="hero"',
     'class="capabilities"',
     'id="servicos"',
+    'class="influencer-explainer section"',
     'id="cases"',
     'id="como-funciona"',
     'id="precos"',
@@ -113,6 +147,59 @@ test("home segue a ordem comercial e mostra seis pessoas", () => {
   for (const name of ["Patricia", "Luana", "Márcia", "Camila", "Ricardo", "Aline"]) assert.ok(preview.includes(name));
 });
 
+test("apresentação de César preserva posicionamento e aplica o texto aprovado", () => {
+  const home = readRoute("/");
+  assert.ok(home.includes("Cesar C. Oliveira <span>· AI Builder</span>"));
+  assert.ok(home.includes("Especialista em criativos com IA e influencers virtuais."));
+  for (const paragraph of about.paragraphs) assert.ok(home.includes(paragraph));
+  assert.ok(home.includes(`<strong>${about.highlight}</strong>`));
+  assert.ok(!home.includes("Vim de fora do mundo do marketing"));
+});
+
+test("vídeo explicativo aparece uma vez na home e no serviço de influencers", () => {
+  const original = path.join(root, "assets", "videos ADS.mp4");
+  const optimized = path.join(root, influencerExplainer.src.replace(/^\//, ""));
+  const poster = path.join(root, influencerExplainer.poster.replace(/^\//, ""));
+  assert.ok(fs.existsSync(optimized), "Versão otimizada do vídeo ausente");
+  assert.ok(fs.existsSync(poster), "Poster otimizado do vídeo ausente");
+  if (fs.existsSync(original)) assert.ok(fs.statSync(optimized).size < fs.statSync(original).size);
+
+  for (const route of [routes.home, routes.virtualInfluencers]) {
+    const html = readRoute(route);
+    const videos = html.match(new RegExp(`<video[^>]+data-video-name="${influencerExplainer.videoName}"[^>]*>`, "g")) || [];
+    assert.equal(videos.length, 1, `Quantidade incorreta do vídeo em ${route}`);
+    const video = videos[0];
+    assert.match(video, /\scontrols(?:\s|>)/);
+    assert.match(video, /\splaysinline(?:\s|>)/);
+    assert.match(video, /\spreload="metadata"/);
+    assert.match(video, /\sposter="\/assets\/optimized\/video-influencer-explicativo-poster\.webp"/);
+    assert.doesNotMatch(video, /\s(?:autoplay|loop|muted)(?:\s|>)/);
+    assert.ok(html.includes(`<source src="${influencerExplainer.src}" type="video/mp4">`));
+    assert.ok(html.includes(influencerExplainer.title));
+    assert.ok(html.includes(influencerExplainer.text));
+    assert.ok(html.includes('data-event="video_cta_click"'));
+  }
+});
+
+test("cases compartilham navegação, hero visual, resumo, CTA e continuidade", () => {
+  cases.forEach((item, index) => {
+    const html = readRoute(item.route);
+    const previous = cases[(index - 1 + cases.length) % cases.length];
+    const next = cases[(index + 1) % cases.length];
+    assert.ok(html.includes('class="nav-current" aria-current="location">Cases</a>'));
+    assert.ok(html.includes('class="case-back" href="/#cases"'));
+    assert.ok(html.includes("Voltar para todos os cases"));
+    assert.ok(html.includes('class="case-hero-media"'));
+    assert.ok(html.includes('id="deliverables-title">O que foi entregue</h2>'));
+    assert.ok(html.includes("Quero criar meu projeto"));
+    assert.ok(html.includes(`href="${previous.route}"`));
+    assert.ok(html.includes(`href="${next.route}"`));
+    assert.equal((html.match(/<nav class="case-navigation"/g) || []).length, 1);
+    assert.ok(html.includes('<footer class="footer">'));
+  });
+  assert.ok(readRoute(routes.caseGotaNativa).includes("Projeto autoral da Criando com IA"));
+});
+
 test("casting completo possui filtros e vinte cards", () => {
   const html = readRoute(routes.casting);
   assert.equal((html.match(/data-casting-card/g) || []).length, 20);
@@ -129,7 +216,7 @@ test("FAQ e analytics incluem todos os comportamentos obrigatórios", () => {
     assert.ok(home.includes(item.answer));
   }
   const script = fs.readFileSync(path.join(root, "script.js"), "utf8");
-  for (const event of ["whatsapp_click", "case_open", "casting_open", "casting_profile_click", "pricing_cta_click", "video_play", "before_after_interaction", "service_page_view", "faq_open"]) {
+  for (const event of ["whatsapp_click", "case_open", "casting_open", "casting_profile_click", "pricing_cta_click", "video_play", "video_complete", "video_cta_click", "before_after_interaction", "service_page_view", "faq_open"]) {
     assert.ok(script.includes(`"${event}"`), `Evento ausente: ${event}`);
   }
 });

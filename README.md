@@ -31,7 +31,7 @@ npm run validate
 
 ## Onde editar os contatos
 
-Edite `content.js`. O número do WhatsApp, as mensagens, preços, casting, cases, FAQ, rotas e metadados estão centralizados nesse arquivo.
+Edite `content.js`. O endpoint e o número do WhatsApp, as mensagens, textos compartilhados, preços, casting, cases, FAQ, rotas e metadados estão centralizados nesse arquivo.
 
 ## Estrutura
 

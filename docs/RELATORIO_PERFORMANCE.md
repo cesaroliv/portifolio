@@ -47,6 +47,8 @@ O processo do Lighthouse retornou erro `EPERM` ao tentar remover sua pasta tempo
 - Imagens da primeira dobra usam carregamento eager e prioridade alta; as demais usam lazy loading.
 - `assets/landing-mockup.gif` e `assets/biotina/landing.gif`, com mais de 61 MB juntos, foram substituídos na página por MP4 de 549 KB e 608,5 KB. Os GIFs originais permanecem preservados.
 - Vídeos fora da primeira dobra usam `preload="none"`, poster e carregamento completo somente após interação ou proximidade da viewport.
+- O vídeo explicativo de influencer foi reduzido de 15.306.223 para 7.772.398 bytes, convertido para 30 fps em H.264/AAC com `faststart` e recebeu poster WebP de 45.522 bytes.
+- Na carga fria mobile após essa inclusão, 14 recursos locais transferiram 304.859 bytes; o MP4 iniciou com zero bytes transferidos antes da interação e foi reproduzido com sucesso após clique real.
 - Posters pesados em PNG foram substituídos por WebP.
 - CSS de edição permanece em `styles.css`; o build gera `styles.min.css` para publicação.
 - Google Fonts é carregado sem bloquear a primeira pintura e mantém `display=swap`.

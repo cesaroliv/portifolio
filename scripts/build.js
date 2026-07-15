@@ -5,7 +5,20 @@ const path = require("node:path");
 const data = require("../content.js");
 
 const root = path.resolve(__dirname, "..");
-const { site, routes, navigation, whatsappMessages, pricing, casting, cases, faq, metadata } = data;
+const {
+  site,
+  routes,
+  navigation,
+  whatsappMessages,
+  about,
+  influencerExplainer,
+  pricing,
+  casting,
+  cases,
+  faq,
+  metadata,
+  createWhatsAppUrl,
+} = data;
 
 function escapeHtml(value) {
   return String(value)
@@ -54,22 +67,21 @@ function picture(src, alt, width, height, options = {}) {
   return `<picture${className}>${optimized ? `<source srcset="${optimizedSrcset}" type="image/webp"${sizes}>` : ""}<img src="${src}" alt="${escapeHtml(alt)}" width="${width}" height="${height}" loading="${loading}" decoding="async"${priority}${sizes}></picture>`;
 }
 
-function whatsappUrl(message) {
-  return `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(message)}`;
-}
-
 function whatsappLink(label, messageKey, location, className = "btn btn-primary", extra = "") {
   const message = whatsappMessages[messageKey];
   if (!message) throw new Error(`Mensagem de WhatsApp ausente: ${messageKey}`);
-  return `<a class="${className}" href="${whatsappUrl(message)}" target="_blank" rel="noopener noreferrer" data-whatsapp data-message-key="${messageKey}" data-location="${location}"${extra}>${escapeHtml(label)}</a>`;
+  return `<a class="${className}" href="${createWhatsAppUrl(message)}" target="_blank" rel="noopener noreferrer" data-whatsapp data-message-key="${messageKey}" data-location="${location}"${extra}>${escapeHtml(label)}</a>`;
 }
 
 function personWhatsappLink(person, location = "casting_card") {
-  return `<a class="card-cta" href="${whatsappUrl(person.whatsappMessage)}" target="_blank" rel="noopener noreferrer" data-whatsapp data-character-name="${escapeHtml(person.name)}" data-location="${location}">Quero criar com ${escapeHtml(person.name)}</a>`;
+  return `<a class="card-cta" href="${createWhatsAppUrl(person.whatsappMessage)}" target="_blank" rel="noopener noreferrer" data-whatsapp data-character-name="${escapeHtml(person.name)}" data-location="${location}">Quero criar com ${escapeHtml(person.name)}</a>`;
 }
 
-function header() {
-  const links = navigation.map((item) => `<a href="${item.href}">${escapeHtml(item.label)}</a>`).join("");
+function header(pageType) {
+  const links = navigation.map((item) => {
+    const isCurrent = pageType === "case" && item.label === "Cases";
+    return `<a href="${item.href}"${isCurrent ? ' class="nav-current" aria-current="location"' : ""}>${escapeHtml(item.label)}</a>`;
+  }).join("");
   return `
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
   <header class="topbar" data-header>
@@ -169,7 +181,7 @@ function htmlDocument({ route, body, pageType = "page", pageName = "", jsonLd = 
   ${schemas}
 </head>
 <body data-page-type="${pageType}"${pageName ? ` data-page-name="${escapeHtml(pageName)}"` : ""}>
-${header()}
+${header(pageType)}
 ${body}
 ${footer()}
   <script src="/content.js" defer></script>
@@ -186,6 +198,27 @@ function renderCaseCard(item) {
       <div class="case-card-body"><h3>${escapeHtml(item.name)}</h3><p>${escapeHtml(item.description)}</p><span class="case-card-open">Ver case completo <span aria-hidden="true">→</span></span></div>
     </a>
   </article>`;
+}
+
+function renderInfluencerExplainer(location) {
+  const titleId = `influencer-explainer-${location.replaceAll("_", "-")}`;
+  return `<section class="influencer-explainer section" aria-labelledby="${titleId}">
+    <div class="influencer-explainer-grid">
+      <div class="influencer-explainer-copy">
+        <p class="section-label">${escapeHtml(influencerExplainer.eyebrow)}</p>
+        <h2 id="${titleId}">${escapeHtml(influencerExplainer.title)}</h2>
+        <p>${escapeHtml(influencerExplainer.text)}</p>
+        <div class="inline-actions">${whatsappLink(influencerExplainer.cta, influencerExplainer.messageKey, `${location}_cta`, "btn btn-primary", ` data-event="video_cta_click" data-video-name="${influencerExplainer.videoName}"`)}</div>
+      </div>
+      <figure class="influencer-explainer-media">
+        <video controls playsinline preload="metadata" poster="${influencerExplainer.poster}" width="${influencerExplainer.width}" height="${influencerExplainer.height}" aria-label="${escapeHtml(influencerExplainer.title)}" data-video-name="${influencerExplainer.videoName}">
+          <source src="${influencerExplainer.src}" type="video/mp4">
+          <span class="video-fallback">Vídeo explicativo sobre a criação de influencers virtuais.</span>
+        </video>
+        <figcaption>Explicação em vídeo · ${escapeHtml(influencerExplainer.duration)}</figcaption>
+      </figure>
+    </div>
+  </section>`;
 }
 
 function renderCastingCard(person, compact = false) {
@@ -276,12 +309,13 @@ function homePage() {
         <div class="specialty-gallery">${featured.slice(0, 2).map((person) => picture(person.image, person.imageAlt, person.width, person.height, { sizes: "(max-width:760px) 50vw, 20vw" })).join("")}</div>
       </article>
     </section>
+    ${renderInfluencerExplainer("home_influencers")}
     <section class="cases section section-contrast" id="cases" aria-labelledby="cases-title"><div class="section-heading"><p class="section-label">Cases em destaque</p><h2 id="cases-title">Do produto cru à campanha pronta.</h2><p>Entregas reais do portfólio, organizadas para você ver o ponto de partida e o que foi criado.</p></div><div class="cases-grid">${cases.map(renderCaseCard).join("")}</div></section>
     <section class="process section" id="como-funciona" aria-labelledby="process-title"><div class="section-heading"><p class="section-label">Como funciona</p><h2 id="process-title">Você envia o produto. Eu cuido da campanha.</h2></div><ol class="process-grid"><li><span>01</span><h3>Você envia as referências</h3><p>Para fotos e criativos, envie a melhor imagem disponível. Para vídeo 360°, envie frente, laterais e verso.</p></li><li><span>02</span><h3>Definimos o formato</h3><p>Foto de produto, cena lifestyle, influencer do casting, personagem exclusiva, vídeo ou pacote mensal.</p></li><li><span>03</span><h3>Eu produzo e apresento</h3><p>Você recebe a primeira versão para conferência dentro do prazo combinado.</p></li><li><span>04</span><h3>Ajuste e entrega</h3><p>Após os ajustes previstos no serviço, os arquivos são organizados e entregues nos formatos contratados.</p></li></ol></section>
     ${renderPricing()}
     <section class="casting-preview section" id="casting" aria-labelledby="casting-title"><div class="section-heading"><p class="section-label">Prévia do casting</p><h2 id="casting-title">Personagens virtuais com perfis do Brasil real.</h2><p>Escolha um rosto já disponível ou crie uma influencer exclusiva para sua marca.</p></div><div class="casting-grid casting-grid-preview">${featured.map((person) => renderCastingCard(person, true)).join("")}</div><p class="casting-transparency">As pessoas do casting são personagens virtuais criados com IA. Elas podem aparecer com produtos de outras marcas, mas nunca com concorrentes diretos dentro da mesma categoria acordada.</p><div class="section-action"><a class="btn btn-outline" href="${routes.casting}" data-event="casting_open" data-location="home_casting">Ver casting completo com 20 personagens</a></div></section>
     <section class="why section" aria-labelledby="why-title"><div class="section-heading"><p class="section-label">Por que comigo</p><h2 id="why-title">Não é só imagem bonita. É venda.</h2></div><div class="why-grid"><article><span>01</span><h3>Penso em venda</h3><p>Cada peça é criada com objetivo comercial: apresentar melhor o produto, prender atenção e conduzir o público para a próxima ação.</p></article><article><span>02</span><h3>Entrega rápida com IA</h3><p>Produção visual sem set presencial, sem agenda de modelo e com prazos definidos para cada projeto.</p></article><article><span>03</span><h3>Atendimento direto</h3><p>Você fala com o Cesar do briefing à entrega, sem repasse entre atendimento e produção.</p></article></div></section>
-    <section class="about section" id="sobre" aria-labelledby="about-title"><div class="about-grid"><figure>${picture("/assets/Cesar.png", "Cesar C. Oliveira, AI Builder e especialista em criativos com IA", 1165, 1350, { sizes: "(max-width:760px) 90vw, 36vw" })}</figure><div><p class="section-label">Quem está por trás</p><h2 id="about-title">Cesar C. Oliveira <span>· AI Builder</span></h2><p class="about-sub">Especialista em criativos com IA e influencers virtuais.</p><p>Sou o Cesar. Vim de fora do mundo do marketing — e foi justamente na inteligência artificial que encontrei uma forma de criar o que antes só uma agência cara entregava: fotos, vídeos, influenciadores e páginas que vendem.</p><p>Hoje é isso que eu faço: transformo produtos comuns em campanhas que param o dedo e viram venda. Com método, foco em conversão e a agilidade que só a IA permite.</p><p>E quando você me contrata, fala comigo — não com um atendente. <strong>Atendimento direto, do briefing à entrega</strong>, sem intermediário e sem ruído.</p></div></div></section>
+    <section class="about section" id="sobre" aria-labelledby="about-title"><div class="about-grid"><figure>${picture("/assets/Cesar.png", "Cesar C. Oliveira, AI Builder e especialista em criativos com IA", 1165, 1350, { sizes: "(max-width:760px) 90vw, 36vw" })}</figure><div><p class="section-label">Quem está por trás</p><h2 id="about-title">Cesar C. Oliveira <span>· AI Builder</span></h2><p class="about-sub">Especialista em criativos com IA e influencers virtuais.</p><p>${escapeHtml(about.paragraphs[0])}</p><p>${escapeHtml(about.paragraphs[1])}</p><p>${escapeHtml(about.paragraphs[2])} <strong>${escapeHtml(about.highlight)}</strong></p></div></div></section>
     <section class="faq section section-contrast" id="perguntas" aria-labelledby="faq-title"><div class="section-heading"><p class="section-label">Perguntas frequentes</p><h2 id="faq-title">Antes de enviar sua foto.</h2></div><div class="faq-list">${faq.map((item) => `<article class="faq-item"><h3><button type="button" aria-expanded="false" aria-controls="${item.id}" data-faq-button><span>${escapeHtml(item.question)}</span><span aria-hidden="true">+</span></button></h3><div id="${item.id}" class="faq-answer" hidden><p>${escapeHtml(item.answer)}</p></div></article>`).join("")}</div></section>
     <section class="cta" id="contato" aria-labelledby="cta-title"><div><p class="section-label">Vamos conversar</p><h2 id="cta-title">Envie uma foto. Eu mostro o que ela pode virar.</h2><p>Mande a foto do seu produto pelo WhatsApp e receba uma orientação inicial sobre os formatos mais indicados para apresentar sua marca.</p>${whatsappLink("Enviar foto pelo WhatsApp", "finalCta", "final_cta", "btn btn-light")}<p class="cta-proof">Sem compromisso · atendimento direto com o Cesar</p></div></section>
   </main>`;
@@ -337,7 +371,7 @@ function influencersPage() {
     location: "service_virtual_influencers",
     ogImage: "/assets/influencer-1.jpg",
     heroMedia: `<div class="internal-visual portrait-grid">${sample.slice(0, 2).map((person) => picture(person.image, person.imageAlt, person.width, person.height, { eager: true })).join("")}</div>`,
-    content: `<section class="section service-detail"><div class="section-heading"><p class="section-label">Dois caminhos</p><h2>Comece pelo casting ou crie uma persona exclusiva.</h2></div><div class="feature-grid two"><article><h3>Influencer do casting</h3><p>Escolha uma personagem disponível para testar fotos e vídeos com o seu produto. Uso não exclusivo, sem concorrentes diretos na categoria acordada.</p><a class="text-link" href="${routes.casting}">Ver as 20 personagens →</a></article><article><h3>Influencer exclusiva</h3><p>Criação de persona e character sheet para manter o mesmo rosto e corpo em novas fotos e vídeos da sua marca.</p>${whatsappLink("Criar minha influencer exclusiva", "exclusiveInfluencer", "service_exclusive", "text-link")}</article></div><div class="media-grid four">${sample.map((person) => picture(person.image, person.imageAlt, person.width, person.height)).join("")}</div><div class="inline-actions"><a class="btn btn-outline" href="/#precos">Comparar os planos</a><a class="text-link" href="${routes.virtualUgc}">Ver vídeos UGC publicitários →</a></div></section>`,
+    content: `<section class="section service-detail"><div class="section-heading"><p class="section-label">Dois caminhos</p><h2>Comece pelo casting ou crie uma persona exclusiva.</h2></div><div class="feature-grid two"><article><h3>Influencer do casting</h3><p>Escolha uma personagem disponível para testar fotos e vídeos com o seu produto. Uso não exclusivo, sem concorrentes diretos na categoria acordada.</p><a class="text-link" href="${routes.casting}">Ver as 20 personagens →</a></article><article><h3>Influencer exclusiva</h3><p>Criação de persona e character sheet para manter o mesmo rosto e corpo em novas fotos e vídeos da sua marca.</p>${whatsappLink("Criar minha influencer exclusiva", "exclusiveInfluencer", "service_exclusive", "text-link")}</article></div><div class="media-grid four">${sample.map((person) => picture(person.image, person.imageAlt, person.width, person.height)).join("")}</div><div class="inline-actions"><a class="btn btn-outline" href="/#precos">Comparar os planos</a><a class="text-link" href="${routes.virtualUgc}">Ver vídeos UGC publicitários →</a></div></section>${renderInfluencerExplainer("service_influencers")}`,
     links: [{ href: routes.casting, title: "Casting completo", text: "20 personagens de diferentes perfis." }, { href: routes.virtualUgc, title: "Vídeos UGC", text: "Formatos publicitários com personagens virtuais." }, { href: routes.caseRosaMosqueta, title: "Case Rosa Mosqueta", text: "Conheça a personagem Patricia em campanha." }],
   });
 }
@@ -391,13 +425,28 @@ function caseNavigation(currentSlug) {
   const index = cases.findIndex((item) => item.slug === currentSlug);
   const previous = cases[(index - 1 + cases.length) % cases.length];
   const next = cases[(index + 1) % cases.length];
-  return `<nav class="case-navigation" aria-label="Navegação entre cases"><a href="${previous.route}"><span>Case anterior</span><strong>← ${previous.name}</strong></a><a href="/#cases"><span>Todos os cases</span><strong>Voltar para a home</strong></a><a href="${next.route}"><span>Próximo case</span><strong>${next.name} →</strong></a></nav>`;
+  return `<nav class="case-navigation" aria-label="Navegação entre cases"><a href="${previous.route}"><span>Case anterior</span><strong>← ${escapeHtml(previous.name)}</strong></a><a href="/#cases"><span>Todos os cases</span><strong>Ver lista de projetos</strong></a><a href="${next.route}"><span>Próximo case</span><strong>${escapeHtml(next.name)} →</strong></a></nav>`;
 }
 
 function casePage(config) {
   const item = cases.find((entry) => entry.slug === config.slug);
   const items = [{ label: "Início", href: "/" }, { label: "Cases", href: "/#cases" }, { label: item.name, href: item.route }];
-  const body = `<main id="conteudo"><article class="case-page"><header class="case-hero">${breadcrumb(items)}<p class="eyebrow">${escapeHtml(item.badge)}</p><h1>${escapeHtml(config.title)}</h1><p>${escapeHtml(config.lead)}</p>${config.badge || ""}</header><section class="deliverables" aria-labelledby="deliverables-title"><div><p class="section-label">Resumo</p><h2 id="deliverables-title">O que foi entregue</h2></div><ul>${config.deliverables.map((entry) => `<li>${escapeHtml(entry)}</li>`).join("")}</ul></section>${config.content}<section class="case-cta section"><h2>Quer aplicar esse tipo de trabalho ao seu produto?</h2>${whatsappLink("Falar sobre este case", item.messageKey, `case_${item.slug.replaceAll("-", "_")}`, "btn btn-primary")}</section>${caseNavigation(item.slug)}</article></main>`;
+  const body = `<main id="conteudo"><article class="case-page">
+    <section class="case-intro">
+      <div class="case-intro-inner">
+        ${breadcrumb(items)}
+        <a class="case-back" href="/#cases"><span aria-hidden="true">←</span> Voltar para todos os cases</a>
+        <header class="case-hero">
+          <div class="case-hero-copy"><p class="eyebrow">${escapeHtml(item.badge)}</p><h1>${escapeHtml(config.title)}</h1><p>${escapeHtml(config.lead)}</p>${config.badge || ""}</div>
+          <figure class="case-hero-media">${picture(item.image, item.imageAlt, item.width, item.height, { eager: true, sizes: "(max-width: 820px) 100vw, 42vw" })}</figure>
+        </header>
+        <section class="deliverables" aria-labelledby="deliverables-title"><div><p class="section-label">Resumo</p><h2 id="deliverables-title">O que foi entregue</h2></div><ul>${config.deliverables.map((entry) => `<li>${escapeHtml(entry)}</li>`).join("")}</ul></section>
+      </div>
+    </section>
+    ${config.content}
+    <section class="case-cta section"><div><p class="section-label">Seu próximo projeto</p><h2>${escapeHtml(config.ctaTitle)}</h2>${whatsappLink("Quero criar meu projeto", item.messageKey, `case_${item.slug.replaceAll("-", "_")}_final`, "btn btn-primary")}</div></section>
+    ${caseNavigation(item.slug)}
+  </article></main>`;
   return htmlDocument({ route: item.route, body, pageType: "case", pageName: item.name, jsonLd: [breadcrumbJson(items)], ogImage: item.image });
 }
 
@@ -406,6 +455,7 @@ function rosaCasePage() {
     slug: "rosa-mosqueta",
     title: "Rosa Mosqueta: de uma foto a uma campanha completa",
     lead: "Uma foto simples do produto virou imagem profissional, cenas de campanha, influencer virtual, vídeos publicitários demonstrativos e landing page.",
+    ctaTitle: "Quer transformar uma foto simples em uma campanha como esta?",
     deliverables: ["Foto de produto tratada", "3 cenas de campanha", "Influencer virtual Patricia", "Vídeo publicitário com IA", "Conteúdos demonstrativos com personagens virtuais", "Landing page"],
     content: `<section class="case-section section"><div class="section-heading"><p class="section-label">O problema</p><h2>Uma boa oferta apresentada por uma foto fraca.</h2><p>O ponto de partida era uma foto tirada em prateleira, com luz ambiente e sem acabamento de campanha.</p></div>${compareBlock({ src: "/assets/before-produto.jpg", alt: "Antes: foto original do produto na prateleira.", width: 1414, height: 2000 }, { src: "/assets/after-produt.jpg", alt: "Depois: foto profissional do produto em fundo limpo.", width: 1414, height: 2000 }, "Revelar antes e depois da Rosa Mosqueta")}</section><section class="case-section section section-contrast"><div class="section-heading"><p class="section-label">A transformação</p><h2>Cenas que criam desejo, sem estúdio.</h2></div><div class="media-grid three">${picture("/assets/cena-1.jpg", "Cena botânica de campanha da Rosa Mosqueta.", 1414, 2000)}${picture("/assets/cena-2.jpg", "Cena de ritual de cuidado com Rosa Mosqueta.", 1414, 2000)}${picture("/assets/cena-3.jpg", "Cena dramática de campanha da Rosa Mosqueta.", 1414, 2000)}</div></section><section class="case-section section"><div class="section-heading"><p class="section-label">A influencer</p><h2>Patricia, a mesma personagem em fotos e vídeo.</h2><p>Uma persona consistente criada com IA, sem cachê e sem depender de agenda.</p></div><div class="media-grid four">${picture("/assets/influencer-sheet.png", "Character sheet da personagem virtual Patricia.", 1414, 2000)}${picture("/assets/influencer-1.jpg", "Patricia apresentando o produto Rosa Mosqueta.", 1414, 2000)}${picture("/assets/influencer-2.jpg", "Patricia em cena publicitária com o produto.", 1414, 2000)}${picture("/assets/influencer-3.jpg", "Patricia apresentando o produto para a câmera.", 1414, 2000)}</div><div class="media-grid video-grid single"><video controls playsinline preload="none" poster="/assets/optimized/influencer-1.webp" data-video-name="rosa_ugc"><source src="/assets/video-ugc.mp4" type="video/mp4"><span class="video-fallback">Vídeo UGC publicitário com a personagem Patricia.</span></video></div></section><section class="case-section section section-contrast"><div class="section-heading"><p class="section-label">UGC demonstrativo</p><h2>Conteúdo publicitário com personagens virtuais</h2><p>Estas pessoas são personagens virtuais criados com IA. Os vídeos simulam formatos populares de UGC para apresentar o produto em anúncios e peças de campanha, sem representar experiências reais de consumidores.</p></div><div class="media-grid video-grid"><video controls playsinline preload="none" poster="/assets/optimized/depoimento-1.webp" data-video-name="rosa_demonstrativo_1"><source src="/assets/depoimento-video-1.mp4" type="video/mp4"><span class="video-fallback">Primeiro vídeo demonstrativo com personagem virtual.</span></video><video controls playsinline preload="none" poster="/assets/optimized/depoimento-2.webp" data-video-name="rosa_demonstrativo_2"><source src="/assets/depoimento-video-2.mp4" type="video/mp4"><span class="video-fallback">Segundo vídeo demonstrativo com personagem virtual.</span></video></div><div class="media-grid four">${[1, 2, 3, 4].map((number) => picture(`/assets/depoimento-${number}.png`, `Peça publicitária demonstrativa ${number} com personagem virtual.`, 1414, 2000)).join("")}</div></section><section class="case-section section"><div class="section-heading"><p class="section-label">A página</p><h2>Todos os criativos reunidos para conduzir a próxima ação.</h2></div><div class="landing-demo"><video autoplay loop muted playsinline preload="none" poster="/assets/optimized/after-produt.webp" data-lazy-video data-video-name="rosa_landing"><source data-src="/assets/optimized/landing-mockup.mp4" type="video/mp4"><span class="video-fallback">Demonstração da landing page da Rosa Mosqueta.</span></video></div><div class="inline-actions"><a class="text-link" href="${routes.productPhotos}">Conhecer o serviço de fotos de produto →</a><a class="text-link" href="${routes.virtualUgc}">Conhecer vídeos UGC publicitários →</a></div></section>`,
   });
@@ -416,6 +466,7 @@ function biotinaCasePage() {
     slug: "biotina",
     title: "Biotina: da embalagem comum aos criativos de campanha",
     lead: "A apresentação do produto ganhou foto profissional, peças de campanha, influencer virtual exclusiva, vídeos e landing page.",
+    ctaTitle: "Quer transformar seu produto em uma campanha visual como esta?",
     badge: '<p class="compliance">Suplemento alimentar — não é medicamento.</p>',
     deliverables: ["Foto de produto tratada", "6 criativos de campanha", "Influencer virtual exclusiva", "2 vídeos publicitários com IA", "Landing page"],
     content: `<section class="case-section section"><div class="section-heading"><p class="section-label">O problema</p><h2>Uma embalagem que ainda não comunicava seu valor.</h2><p>A transformação começou com uma foto simples do pote e evoluiu para uma apresentação visual organizada.</p></div>${compareBlock({ src: "/assets/biotina/after_before.jpeg", alt: "Antes: foto original do pote de Biotina.", width: 738, height: 1600 }, { src: "/assets/biotina/produto.png", alt: "Depois: foto profissional do pote de Biotina.", width: 1024, height: 1536 }, "Revelar antes e depois da Biotina")}</section><section class="case-section section section-contrast"><div class="section-heading"><p class="section-label">Os criativos</p><h2>Peças para apresentar o produto em campanha.</h2><p>O conteúdo visual apresenta a proposta do suplemento sem acrescentar promessa médica ou resultado garantido.</p></div><div class="media-grid three">${picture("/assets/biotina/antes-depois.png", "Criativo publicitário de Biotina em formato antes e depois visual.", 941, 1672)}${[1, 2, 3, 4, 5].map((number) => picture(`/assets/biotina/criativo-${number}.png`, `Criativo publicitário ${number} da campanha de Biotina.`, 1122, 1402)).join("")}</div></section><section class="case-section section"><div class="section-heading"><p class="section-label">A influencer</p><h2>Uma persona exclusiva, consistente em foto e vídeo.</h2><p>A personagem apresenta o produto em peças publicitárias; o conteúdo não afirma uso real do suplemento.</p></div><div class="media-grid three">${picture("/assets/biotina/influencer-sheet.png", "Character sheet da influencer virtual exclusiva da Biotina.", 1536, 1024)}${picture("/assets/biotina/ugc-1.png", "Personagem virtual apresentando o pote de Biotina em conteúdo publicitário.", 941, 1672)}<video controls playsinline preload="none" poster="/assets/optimized/biotina/ugc-1.webp" data-video-name="biotina_influencer"><source src="/assets/biotina/influencer.mp4" type="video/mp4"><span class="video-fallback">Vídeo publicitário com a personagem virtual da Biotina.</span></video></div></section><section class="case-section section section-contrast"><div class="section-heading"><p class="section-label">O vídeo</p><h2>Peça em movimento pronta para redes sociais.</h2></div><div class="media-grid video-grid single"><video controls playsinline preload="none" poster="/assets/optimized/biotina/produto.webp" data-video-name="biotina_video"><source src="/assets/biotina/download.mp4" type="video/mp4"><span class="video-fallback">Vídeo publicitário da campanha de Biotina.</span></video></div></section><section class="case-section section"><div class="section-heading"><p class="section-label">A página</p><h2>Uma landing page para organizar a campanha.</h2></div><div class="landing-demo"><video autoplay loop muted playsinline preload="none" poster="/assets/optimized/biotina/produto.webp" data-lazy-video data-video-name="biotina_landing"><source data-src="/assets/optimized/biotina/landing.mp4" type="video/mp4"><span class="video-fallback">Demonstração da landing page da Biotina.</span></video></div><div class="inline-actions"><a class="text-link" href="${routes.productPhotos}">Conhecer fotos de produto →</a><a class="text-link" href="${routes.virtualInfluencers}">Conhecer influencers virtuais →</a></div></section>`,
@@ -427,9 +478,10 @@ function gotaCasePage() {
     slug: "gota-nativa",
     title: "Gota Nativa: marca e e-commerce construídos do zero",
     lead: "Projeto próprio desenvolvido para demonstrar uma operação completa: nome, identidade, catálogo, criativos e e-commerce no ar.",
+    ctaTitle: "Quer construir uma presença visual completa para sua marca?",
     badge: '<p class="author-badge">Projeto autoral da Criando com IA</p>',
     deliverables: ["Nome e conceito", "Logo e identidade visual", "Organização de catálogo", "Criativos de marca", "E-commerce no ar"],
-    content: `<section class="case-section section"><div class="section-heading"><p class="section-label">A marca</p><h2>Nome, logo e identidade criados do zero.</h2><p>Gota Nativa — natural por essência. Logo, paleta, tipografia e aplicações foram organizados em um kit coerente.</p></div><figure class="wide-media">${picture("/assets/gota-nativa/kit-marca.png", "Kit da marca Gota Nativa com logo, paleta, tipografia e aplicações.", 1122, 1402, { eager: true })}</figure></section><section class="case-section section section-contrast"><div class="section-heading"><p class="section-label">A loja completa</p><h2>Um e-commerce de verdade, no ar.</h2><p>O projeto conectou identidade, catálogo, carrinho e página de compra em uma presença digital completa.</p></div><div class="landing-demo"><video controls muted playsinline preload="none" poster="/assets/gota-nativa/home-poster.jpg" data-video-name="gota_nativa_store"><source src="/assets/gota-nativa/home.mp4" type="video/mp4"><span class="video-fallback">Navegação pela loja Gota Nativa.</span></video></div><div class="live-link"><p>O projeto está publicado e pode ser visitado no endereço da marca.</p><a class="btn btn-outline" href="https://gotanativa.com.br" target="_blank" rel="noopener noreferrer">Visitar a loja ao vivo</a></div><div class="inline-actions"><a class="text-link" href="${routes.productPhotos}">Conhecer fotos de produto →</a>${whatsappLink("Falar sobre um projeto completo", "largeProject", "case_gota_services", "text-link")}</div></section>`,
+    content: `<section class="case-section section"><div class="section-heading"><p class="section-label">O desafio</p><h2>Construir uma marca coerente do conceito à loja.</h2><p>O projeto partiu de uma ideia autoral e precisava conectar posicionamento, identidade, catálogo, criativos e experiência de compra em um único sistema visual.</p></div></section><section class="case-section section section-soft"><div class="section-heading"><p class="section-label">A transformação</p><h2>Nome, logo e identidade criados do zero.</h2><p>Gota Nativa — natural por essência. Logo, paleta, tipografia e aplicações foram organizados em um kit coerente.</p></div><figure class="wide-media">${picture("/assets/gota-nativa/kit-marca.png", "Kit da marca Gota Nativa com logo, paleta, tipografia e aplicações.", 1122, 1402, { eager: true })}</figure></section><section class="case-section section section-contrast"><div class="section-heading"><p class="section-label">O resultado visual</p><h2>Um e-commerce de verdade, no ar.</h2><p>O projeto conectou identidade, catálogo, carrinho e página de compra em uma presença digital completa.</p></div><div class="landing-demo"><video controls muted playsinline preload="none" poster="/assets/gota-nativa/home-poster.jpg" data-video-name="gota_nativa_store"><source src="/assets/gota-nativa/home.mp4" type="video/mp4"><span class="video-fallback">Navegação pela loja Gota Nativa.</span></video></div><div class="live-link"><p>O projeto está publicado e pode ser visitado no endereço da marca.</p><a class="btn btn-outline" href="https://gotanativa.com.br" target="_blank" rel="noopener noreferrer">Visitar a loja ao vivo</a></div><div class="inline-actions"><a class="text-link" href="${routes.productPhotos}">Conhecer fotos de produto →</a>${whatsappLink("Falar sobre um projeto completo", "largeProject", "case_gota_services", "text-link")}</div></section>`,
   });
 }
 

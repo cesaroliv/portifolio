@@ -69,6 +69,7 @@ O diretório `assets/` contém variantes históricas e arquivos-fonte preservado
 | `assets/gota-nativa/home.mp4` | gota_nativa_store | 1920×1080 · 28,0 s | MP4 | 3319.1 KB | /cases/gota-nativa/ | Arquivo original preservado; download adiado com `preload=none` |
 | `assets/optimized/biotina/landing.mp4` | biotina_landing | 800×800 · 12,5 s | MP4 | 608.5 KB | /cases/biotina/ | `assets/biotina/landing.gif` preservado |
 | `assets/optimized/landing-mockup.mp4` | rosa_landing | 800×800 · 17,5 s | MP4 | 549.0 KB | /cases/rosa-mosqueta/ | `assets/landing-mockup.gif` preservado |
+| `assets/optimized/video-influencer-explicativo.mp4` | influencer_explicativo | — · — | MP4 | 7590.2 KB | /, /servicos/influencers-virtuais/ | `assets/landing-mockup.gif` preservado |
 | `assets/video-ugc.mp4` | ugc_rosa_mosqueta | 720×1280 · 29,7 s | MP4 | 13011.8 KB | /servicos/videos-ugc-com-ia/, /cases/rosa-mosqueta/ | Arquivo original preservado; download adiado com `preload=none` |
 
 ## Observações
