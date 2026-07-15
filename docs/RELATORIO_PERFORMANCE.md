@@ -21,20 +21,20 @@ A transferência mobile inicial não foi usada na comparação porque a primeira
 Comando executado:
 
 ```text
-npx --yes lighthouse@12.8.2 http://127.0.0.1:8000/ --only-categories=performance,accessibility,seo,best-practices --output=json --output-path=docs/lighthouse-final-2.json
+npx --yes lighthouse@12.8.2 http://127.0.0.1:8000/ --only-categories=performance,accessibility,seo,best-practices --output=json --output-path=docs/lighthouse-final-3.json
 ```
 
 Resultados:
 
-- Performance: **87**;
+- Performance: **89**;
 - Acessibilidade: **100**;
 - Boas Práticas: **100**;
 - SEO: **100**;
-- First Contentful Paint: 2.853 ms;
-- Largest Contentful Paint: 3.378 ms;
+- First Contentful Paint: 2.832 ms;
+- Largest Contentful Paint: 3.132 ms;
 - Total Blocking Time: 0 ms;
 - Cumulative Layout Shift: 0,025;
-- peso total medido pelo Lighthouse: 620 KB.
+- peso total medido pelo Lighthouse: 344 KB.
 
 O processo do Lighthouse retornou erro `EPERM` ao tentar remover sua pasta temporária no Windows depois da auditoria. O relatório JSON foi concluído e validado antes desse erro de limpeza.
 
@@ -59,6 +59,6 @@ O servidor Python não configura cache de longa duração nem compressão Brotli
 ## Evidências
 
 - Linha de base: `docs/AUDITORIA_TECNICA_CRIANDO_COM_IA.md`.
-- Lighthouse intermediário: `docs/lighthouse-final.json`.
-- Lighthouse final: `docs/lighthouse-final-2.json`.
+- Lighthouse intermediário: `docs/lighthouse-final.json` e `docs/lighthouse-final-2.json`.
+- Lighthouse final: `docs/lighthouse-final-3.json`.
 - Screenshots: `docs/screenshots/before/` e `docs/screenshots/after/`.

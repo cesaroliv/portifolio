@@ -76,8 +76,8 @@
 
 - Transferência inicial desktop: 23.728 KB → 424 KB (-98,2%).
 - Home mobile: 23.137 px → 16.120 px (-30,3%).
-- Lighthouse final: Performance 87, Acessibilidade 100, Boas Práticas 100, SEO 100.
-- LCP 3.378 ms, CLS 0,025 e TBT 0 ms no servidor local.
+- Lighthouse final: Performance 89, Acessibilidade 100, Boas Práticas 100, SEO 100.
+- LCP 3.132 ms, CLS 0,025 e TBT 0 ms no servidor local.
 
 ## Acessibilidade
 
@@ -105,6 +105,6 @@
 ## Build final
 
 - Comando executado: `npm run validate` e `npm run package`.
-- Resultado: build concluído; 13 testes aprovados; pacote com 123 arquivos públicos.
+- Resultado: build concluído; 13 testes aprovados; pacote com 195 arquivos públicos.
 - Caminho do artefato: `build/criando-com-ia-site-2026-07-15.zip`.
-- SHA256: `BE62292A60EA9A07C0B7FCDD3AA9D9BE59EAF62ED9624A35107241DAE0CA7FFE`.
+- SHA256: `497F0E5B6F3D6837746DC49A3F555BC113A83F6E7926EF7B909FF7542AA4AB0B`.
