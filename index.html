@@ -1,1353 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Criando com IA — Fotos que vendem e influencers virtuais</title>
-  <meta name="description" content="Transformo a foto ruim do seu produto em criativo profissional e crio influencers virtuais que apresentam e vendem. Tudo com IA, em dias." />
-
-  <!-- Favicon (símbolo da marca) -->
-  <link rel="icon" type="image/png" href="assets/favicon-symbol.png" />
-  <link rel="apple-touch-icon" href="assets/favicon-180.png" />
-
-  <!-- Fontes da identidade visual (Space Grotesk + Mulish) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Criando com IA | Fotos de produto e influencers virtuais</title>
+  <meta name="description" content="Transformação de fotos de produtos, criativos para anúncios, vídeos e influencers virtuais com IA para marcas e pequenos negócios.">
+  <link rel="canonical" href="https://criandocomia.com/">
+  <meta property="og:title" content="Criando com IA | Fotos de produto e influencers virtuais">
+  <meta property="og:description" content="Transformação de fotos de produtos, criativos para anúncios, vídeos e influencers virtuais com IA para marcas e pequenos negócios.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://criandocomia.com/">
+  <meta property="og:image" content="https://criandocomia.com/assets/after-produt.jpg">
+  <meta property="og:image:alt" content="Criativo profissional de produto da Criando com IA">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Criando com IA | Fotos de produto e influencers virtuais">
+  <meta name="twitter:description" content="Transformação de fotos de produtos, criativos para anúncios, vídeos e influencers virtuais com IA para marcas e pequenos negócios.">
+  <meta name="twitter:image" content="https://criandocomia.com/assets/after-produt.jpg">
+  <link rel="icon" type="image/png" href="/assets/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/assets/favicon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap"></noscript>
+  <link rel="stylesheet" href="/styles.min.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Criando com IA","url":"https://criandocomia.com","logo":"https://criandocomia.com/assets/logo-header.png","description":"Transformação de fotos de produtos, criativos para anúncios, vídeos e influencers virtuais com IA para marcas e pequenos negócios.","founder":{"@type":"Person","name":"Cesar C. Oliveira","jobTitle":"AI Builder","image":"https://criandocomia.com/assets/Cesar.png"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Preciso enviar o produto fisicamente?","acceptedAnswer":{"@type":"Answer","text":"Na maioria dos projetos, não. A produção é feita a partir de fotos de referência. Quando um serviço exigir material específico, isso será combinado no briefing."}},{"@type":"Question","name":"Que fotos preciso enviar?","acceptedAnswer":{"@type":"Answer","text":"Para fotos e criativos, envie imagens nítidas do produto e do rótulo. Para vídeo 360°, são necessárias quatro referências: frente, lateral esquerda, lateral direita e verso."}},{"@type":"Question","name":"As influencers são pessoas reais?","acceptedAnswer":{"@type":"Answer","text":"Não. São personagens virtuais criados com IA para uso em fotos e vídeos publicitários."}},{"@type":"Question","name":"Posso escolher alguém do casting?","acceptedAnswer":{"@type":"Answer","text":"Sim. Você pode começar com uma personagem já disponível ou contratar a criação de uma influencer exclusiva para sua marca."}},{"@type":"Question","name":"A influencer do casting é exclusiva?","acceptedAnswer":{"@type":"Answer","text":"Não. Ela pode participar de campanhas de outras marcas, mas não será usada com concorrentes diretos dentro da categoria acordada."}},{"@type":"Question","name":"Quantos ajustes estão incluídos?","acceptedAnswer":{"@type":"Answer","text":"A quantidade de ajustes depende do serviço. O Plano Mensal inclui uma rodada de ajustes por entrega. Nos demais projetos, a condição é informada antes do início."}},{"@type":"Question","name":"Em quais formatos recebo os arquivos?","acceptedAnswer":{"@type":"Answer","text":"Os formatos são definidos conforme o uso: feed, Stories, Reels, TikTok, anúncio, catálogo ou página de produto."}},{"@type":"Question","name":"Vocês também criam landing pages e lojas?","acceptedAnswer":{"@type":"Answer","text":"Sim. São projetos complementares, avaliados separadamente conforme a necessidade da marca."}}]}</script>
 </head>
-<body>
+<body data-page-type="home">
 
-  <!-- ====================== BARRA SUPERIOR ====================== -->
-  <header class="topbar" aria-label="Topo">
-    <a href="#topo" class="brand" id="topo">
-      <img src="assets/logo-header.png" alt="Criando com IA" class="brand-logo" />
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="topbar" data-header>
+    <a class="brand" href="/" aria-label="Criando com IA — página inicial">
+      <picture><source srcset="/assets/optimized/logo-header.webp 975w" type="image/webp" sizes="140px"><img src="/assets/logo-header.png" alt="Criando com IA" width="975" height="350" loading="eager" decoding="async" fetchpriority="high" sizes="140px"></picture>
     </a>
-    <nav class="topnav" aria-label="Navegação">
-      <a href="#servicos">Serviços</a>
-      <a href="#casting">Casting</a>
-      <a href="#cases">Cases</a>
-      <a href="#pacotes">Preços</a>
-      <a href="#contato" class="btn btn-mini" data-cta="whatsapp">Falar comigo</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Abrir menu" data-menu-toggle>
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+    <nav class="topnav" id="site-menu" aria-label="Navegação principal" data-menu>
+      <a href="/#servicos">Serviços</a><a href="/#cases">Cases</a><a href="/#precos">Preços</a><a href="/casting/">Casting</a><a href="/#sobre">Sobre</a>
+      <a class="btn btn-mini" href="https://wa.me/5511978230487?text=Ol%C3%A1%2C%20C%C3%A9sar!%20Vi%20o%20site%20Criando%20com%20IA%20e%20quero%20conversar%20sobre%20criativos%20para%20o%20meu%20produto." target="_blank" rel="noopener noreferrer" data-whatsapp data-message-key="header" data-location="header">Falar comigo</a>
     </nav>
+    <button class="menu-backdrop" type="button" aria-label="Fechar menu" tabindex="-1" data-menu-backdrop></button>
   </header>
-
-  <main>
-
-    <!-- ====================== 1. HERO ====================== -->
-    <section class="hero" aria-label="Apresentação">
+<main id="conteudo">
+    <section class="hero" aria-labelledby="hero-title">
       <div class="hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Estúdio de criativos com IA</p>
-          <h1 class="hero-title">
-            A <span class="hl">foto</span> que vende.<br />
-            O <span class="hl">rosto</span> que convence.
-          </h1>
-          <p class="hero-sub">
-            Transformo a foto ruim do seu produto em criativo profissional — e coloco
-            ele nas mãos de influencers virtuais realistas, criados sob medida.
-            Tudo com IA, em dias.
-          </p>
-          <div class="hero-actions">
-            <a href="#contato" class="btn btn-primary" data-cta="whatsapp">Quero o meu diagnóstico grátis</a>
-            <a href="#cases" class="btn btn-ghost">Ver os cases ↓</a>
-          </div>
+          <p class="eyebrow">Estúdio de criativos com IA para produtos</p>
+          <h1 id="hero-title">Fotos de produto e influencers virtuais com IA</h1>
+          <p class="hero-impact">A <span>foto</span> que vende. O <span>rosto</span> que convence.</p>
+          <p class="hero-sub">Transformo fotos simples do seu produto em criativos profissionais e coloco sua marca nas mãos de influencers virtuais realistas — tudo com IA, direção criativa e entrega em dias.</p>
+          <div class="hero-actions"><a class="btn btn-primary" href="https://wa.me/5511978230487?text=Ol%C3%A1%2C%20C%C3%A9sar!%20Vi%20o%20site%20Criando%20com%20IA%20e%20quero%20enviar%20uma%20foto%20do%20meu%20produto%20para%20receber%20ideias%20de%20criativos." target="_blank" rel="noopener noreferrer" data-whatsapp data-message-key="hero" data-location="hero">Enviar uma foto do meu produto</a><a class="btn btn-ghost" href="#cases">Ver os cases</a></div>
+          <p class="cta-proof">Diagnóstico sem compromisso · atendimento direto com o Cesar</p>
         </div>
-
-        <!-- Visual do hero: antes → depois + rostos do casting -->
-        <div class="hero-visual">
-          <figure class="hero-teaser" aria-label="Prévia: antes e depois">
-            <div class="teaser-card teaser-before">
-              <img src="assets/before-produto.jpg" alt="Foto crua do produto enviada pelo cliente, em uma prateleira." />
-              <span class="teaser-tag">ANTES</span>
-            </div>
-            <div class="teaser-arrow" aria-hidden="true">→</div>
-            <div class="teaser-card teaser-after">
-              <img src="assets/after-produt.jpg" alt="Mesmo produto após tratamento, com fundo limpo e visual de campanha." />
-              <span class="teaser-tag teaser-tag-after">DEPOIS</span>
-            </div>
-          </figure>
-
-          <a class="hero-cast" href="#casting" aria-label="Conhecer o casting de 20 influencers virtuais">
-            <span class="hero-cast-avatars" aria-hidden="true">
-              <img src="assets/casting/thumbs/06-jessica-thumb.jpg" alt="" loading="lazy" />
-              <img src="assets/casting/thumbs/02-luana-thumb.jpg" alt="" loading="lazy" />
-              <img src="assets/casting/thumbs/01-patricia-thumb.jpg" alt="" loading="lazy" />
-              <img src="assets/casting/thumbs/05-ricardo-thumb.jpg" alt="" loading="lazy" />
-              <img src="assets/casting/thumbs/07-dona-cida-thumb.jpg" alt="" loading="lazy" />
-              <span class="hero-cast-more">+15</span>
-            </span>
-            <span class="hero-cast-label">Casting com 20 influencers virtuais →</span>
-          </a>
-        </div>
-      </div>
-      <div class="hero-ticker" aria-hidden="true">
-        <span>FOTO DE PRODUTO → CENAS → VÍDEO 360° → INFLUENCER VIRTUAL → UGC → CRIATIVOS DE ANÚNCIO →&nbsp;</span>
-        <span>FOTO DE PRODUTO → CENAS → VÍDEO 360° → INFLUENCER VIRTUAL → UGC → CRIATIVOS DE ANÚNCIO →&nbsp;</span>
-      </div>
-    </section>
-
-    <!-- ====================== SERVIÇOS (capacidades) ====================== -->
-    <section class="services-cap" id="servicos" aria-label="Serviços">
-      <div class="case-intro">
-        <p class="section-label"><span class="num">01</span> Serviços</p>
-        <h2 class="section-title">Duas especialidades. Um objetivo: vender.</h2>
-        <p class="section-lead">Não faço de tudo — faço o que domino: transformar fotos em criativos que vendem e criar influencers virtuais exclusivos pra sua marca.</p>
-      </div>
-
-      <!-- BLOCO A — Transformação de fotos em criativos -->
-      <article class="spec-block">
-        <div class="spec-head">
-          <p class="step-tag">Especialidade 01</p>
-          <h3 class="spec-title">Transformação de fotos em criativos</h3>
-          <p class="spec-desc">
-            Sua foto de celular vira foto de campanha. Fotos de produto profissionais,
-            cenas que criam desejo e criativos prontos pra anunciar no Instagram e
-            TikTok — sem estúdio, sem ensaio.
-          </p>
-        </div>
-
-        <!-- Antes → Depois (elemento-assinatura) + criativo da Biotina -->
-        <div class="spec-media">
-          <figure class="ba-teaser" aria-label="Antes e depois da Rosa Mosqueta">
-            <div class="teaser-card teaser-before">
-              <img src="assets/before-produto.jpg" alt="Foto crua do produto na prateleira, antes." loading="lazy" />
-              <span class="teaser-tag">ANTES</span>
-            </div>
-            <div class="teaser-arrow" aria-hidden="true">→</div>
-            <div class="teaser-card teaser-after">
-              <img src="assets/after-produt.jpg" alt="Foto de produto profissional, depois." loading="lazy" />
-              <span class="teaser-tag teaser-tag-after">DEPOIS</span>
-            </div>
-          </figure>
-          <div class="spec-side">
-            <figure><img src="assets/cena-1.jpg" alt="Cena botânica criada a partir da foto do produto." loading="lazy" /></figure>
-            <figure><img src="assets/cena-3.jpg" alt="Cena dramática de campanha do mesmo produto." loading="lazy" /></figure>
-          </div>
-        </div>
-
-        <!-- DEMONSTRAÇÃO: foto parada vira vídeo 360° -->
-        <div class="demo-360">
-          <figure class="ba-teaser" aria-label="De uma foto parada a um vídeo 360 graus">
-            <div class="teaser-card teaser-before">
-              <img src="assets/daruma/foto.jpg" alt="Foto original de um boneco Daruma, tirada de celular em casa." loading="lazy" />
-              <span class="teaser-tag">FOTO ORIGINAL</span>
-            </div>
-            <div class="teaser-arrow" aria-hidden="true">→</div>
-            <div class="teaser-card teaser-after">
-              <video class="demo-360-video" loop muted playsinline preload="metadata"
-                     aria-label="Vídeo do boneco Daruma girando 360 graus, gerado a partir da foto.">
-                <source src="assets/daruma/video-360.mp4" type="video/mp4" />
-              </video>
-              <span class="teaser-tag teaser-tag-after">VÍDEO 360°</span>
-            </div>
-          </figure>
-          <p class="demo-360-caption">
-            De uma foto parada, um vídeo de apresentação girando 360° — pronto pra página de produto e anúncio.
-          </p>
-        </div>
-
-        <button class="svc-link spec-link" type="button" data-open-gallery="fotos">ver no case →</button>
-      </article>
-
-      <!-- BLOCO B — Influencers virtuais + galeria do casting (seções fundidas) -->
-      <article class="spec-block" id="casting" aria-label="Influencers virtuais e casting">
-        <div class="spec-head">
-          <p class="step-tag">Especialidade 02</p>
-          <h3 class="spec-title">Influencers virtuais. Realistas de verdade.</h3>
-          <p class="spec-desc">
-            Influencers que não cobram cachê, não têm agenda e nunca saem do personagem —
-            100% criados com IA. E diferente do mercado, sem cara de boneca: meu casting
-            parece o Brasil real, de 22 a 68 anos, todos os tons de pele, corpos
-            verdadeiros. Porque quem compra confia em quem se parece com ela.
-          </p>
-        </div>
-        <!-- GALERIA DO CASTING movida pra cá (placeholder trocado pela grade abaixo) -->
-        <!-- ===================================================================
-           COMO ADICIONAR UMA INFLUENCER AO CASTING (2 passos):
-           1) Salve a foto de perfil como assets/casting/[numero]-[nome]-perfil.jpg
-              (ex.: assets/casting/2-luana-perfil.jpg — sem espaços/acentos).
-           2) Duplique um <article class="casting-card"> abaixo (antes do card
-              "em breve") e troque a foto, o nome, a idade e a vibe/nichos.
-           =================================================================== -->
-      <div class="casting-grid">
-        <article class="casting-card">
-          <div class="casting-photo">
-            <img src="assets/casting/01-patricia-perfil.jpg" alt="Patricia, influencer virtual de 42 anos, pele com textura real." loading="lazy" />
-          </div>
-          <div class="casting-info">
-            <h3 class="casting-name">Patricia <span class="casting-age">· 42</span></h3>
-            <p class="casting-vibe">Mãe acolhedora, interior de SP.</p>
-            <p class="casting-niches">Skincare 40+ · casa · bem-estar</p>
-          </div>
-        </article>
-
-        <article class="casting-card">
-          <div class="casting-photo">
-            <img src="assets/casting/02-luana-perfil.jpg" alt="Luana, influencer virtual de 27 anos, cabelo crespo natural." loading="lazy" />
-          </div>
-          <div class="casting-info">
-            <h3 class="casting-name">Luana <span class="casting-age">· 27</span></h3>
-            <p class="casting-vibe">Urbana, criativa, cabelo crespo natural.</p>
-            <p class="casting-niches">Beleza capilar · moda · tech</p>
-          </div>
-        </article>
-
-        <article class="casting-card">
-          <div class="casting-photo">
-            <img src="assets/casting/03-marcia-perfil.jpg" alt="Márcia, influencer virtual de 55 anos, cabelo grisalho assumido." loading="lazy" />
-          </div>
-          <div class="casting-info">
-            <h3 class="casting-name">Márcia <span class="casting-age">· 55</span></h3>
-            <p class="casting-vibe">Elegante sem esforço, avó moderna.</p>
-            <p class="casting-niches">Saúde · suplementos · viagem · casa</p>
-          </div>
-        </article>
-
-        <article class="casting-card">
-          <div class="casting-photo">
-            <img src="assets/casting/04-camila-perfil.jpg" alt="Camila, influencer virtual de 33 anos, plus size, confiante." loading="lazy" />
-          </div>
-          <div class="casting-info">
-            <h3 class="casting-name">Camila <span class="casting-age">· 33</span></h3>
-            <p class="casting-vibe">Plus size, confiante, bem resolvida.</p>
-            <p class="casting-niches">Moda plus · autoestima · beleza</p>
-          </div>
-        </article>
-
-        <article class="casting-card">
-          <div class="casting-photo">
-            <img src="assets/casting/05-ricardo-perfil.jpg" alt="Ricardo, influencer virtual de 38 anos, barba grisalha rala." loading="lazy" />
-          </div>
-          <div class="casting-info">
-            <h3 class="casting-name">Ricardo <span class="casting-age">· 38</span></h3>
-            <p class="casting-vibe">Pai de família, direto, bem-humorado.</p>
-            <p class="casting-niches">Ferramentas · churrasco · finanças · pet</p>
-          </div>
-        </article>
-
-        <article class="casting-card">
-          <div class="casting-photo">
-            <img src="assets/casting/06-jessica-perfil.jpg" alt="Jéssica, influencer virtual de 22 anos, ruiva com sardas." loading="lazy" />
-          </div>
-          <div class="casting-info">
-            <h3 class="casting-name">Jéssica <span class="casting-age">· 22</span></h3>
-            <p class="casting-vibe">Geração Z, energética, gamer casual.</p>
-            <p class="casting-niches">Tech · cosméticos jovens · snacks</p>
-          </div>
-        </article>
-
-        <article class="casting-card">
-          <div class="casting-photo">
-            <img src="assets/casting/07-dona-cida-perfil.jpg" alt="Dona Cida, influencer virtual de 63 anos, vó carismática." loading="lazy" />
-          </div>
-          <div class="casting-info">
-            <h3 class="casting-name">Dona Cida <span class="casting-age">· 63</span></h3>
-            <p class="casting-vibe">Vó carismática, cozinha de afeto.</p>
-            <p class="casting-niches">Alimentos · saúde 60+ · casa</p>
-          </div>
-        </article>
-
-        <article class="casting-card">
-          <div class="casting-photo">
-            <img src="assets/casting/08-thiago-perfil.jpg" alt="Thiago, influencer virtual de 29 anos, atlético." loading="lazy" />
-          </div>
-          <div class="casting-info">
-            <h3 class="casting-name">Thiago <span class="casting-age">· 29</span></h3>
-            <p class="casting-vibe">Fitness acessível, sem exagero.</p>
-            <p class="casting-niches">Suplementos · esporte · bem-estar masc.</p>
-          </div>
-        </article>
-
-        <article class="casting-card">
-          <div class="casting-photo">
-            <img src="assets/casting/09-fernanda-perfil.jpg" alt="Fernanda, influencer virtual de 47 anos, executiva empreendedora." loading="lazy" />
-          </div>
-          <div class="casting-info">
-            <h3 class="casting-name">Fernanda <span class="casting-age">· 47</span></h3>
-            <p class="casting-vibe">Executiva que virou empreendedora.</p>
-            <p class="casting-niches">Serviços · cursos · produtividade · moda 40+</p>
-          </div>
-        </article>
-
-        <article class="casting-card">
-          <div class="casting-photo">
-            <img src="assets/casting/10-yasmin-perfil.jpg" alt="Yasmin, influencer virtual de 25 anos, traços indígenas." loading="lazy" />
-          </div>
-          <div class="casting-info">
-            <h3 class="casting-name">Yasmin <span class="casting-age">· 25</span></h3>
-            <p class="casting-vibe">Natural, consciente, clean girl BR.</p>
-            <p class="casting-niches">Naturais · sustentáveis · skincare clean</p>
-          </div>
-        </article>
-
-        <article class="casting-card">
-          <div class="casting-photo">
-            <img src="assets/casting/11-bruna-perfil.jpg" alt="Bruna, influencer virtual de 35 anos, mãe de dois." loading="lazy" />
-          </div>
-          <div class="casting-info">
-            <h3 class="casting-name">Bruna <span class="casting-age">· 35</span></h3>
-            <p class="casting-vibe">Mãe de 2, rotina corrida, humor.</p>
-            <p class="casting-niches">Infantil · casa · praticidade</p>
-          </div>
-        </article>
-
-        <article class="casting-card">
-          <div class="casting-photo">
-            <img src="assets/casting/12-seu-antonio-perfil.jpg" alt="Seu Antônio, influencer virtual de 58 anos, comerciante nordestino." loading="lazy" />
-          </div>
-          <div class="casting-info">
-            <h3 class="casting-name">Seu Antônio <span class="casting-age">· 58</span></h3>
-            <p class="casting-vibe">Comerciante raiz, papo reto.</p>
-            <p class="casting-niches">Local · ferramentas · alimentos</p>
-          </div>
-        </article>
-
-        <article class="casting-card">
-          <div class="casting-photo">
-            <img src="assets/casting/13-larissa-perfil.jpg" alt="Larissa, influencer virtual de 30 anos, recém-casada." loading="lazy" />
-          </div>
-          <div class="casting-info">
-            <h3 class="casting-name">Larissa <span class="casting-age">· 30</span></h3>
-            <p class="casting-vibe">Recém-casada, organizada.</p>
-            <p class="casting-niches">Casa nova · decoração · financeiro</p>
-          </div>
-        </article>
-
-        <article class="casting-card">
-          <div class="casting-photo">
-            <img src="assets/casting/14-gabriel-perfil.jpg" alt="Gabriel, influencer virtual de 24 anos, estudante e dev." loading="lazy" />
-          </div>
-          <div class="casting-info">
-            <h3 class="casting-name">Gabriel <span class="casting-age">· 24</span></h3>
-            <p class="casting-vibe">Estudante/dev, nerd simpático.</p>
-            <p class="casting-niches">Tech · cursos · café · setup</p>
-          </div>
-        </article>
-
-        <article class="casting-card">
-          <div class="casting-photo">
-            <img src="assets/casting/15-vera-perfil.jpg" alt="Vera, influencer virtual de 50 anos, professora zen." loading="lazy" />
-          </div>
-          <div class="casting-info">
-            <h3 class="casting-name">Vera <span class="casting-age">· 50</span></h3>
-            <p class="casting-vibe">Precisa e zen, professora.</p>
-            <p class="casting-niches">Educação · bem-estar · chás · organização</p>
-          </div>
-        </article>
-
-        <article class="casting-card">
-          <div class="casting-photo">
-            <img src="assets/casting/16-diego-perfil.jpg" alt="Diego, influencer virtual de 33 anos, barbeiro tatuado." loading="lazy" />
-          </div>
-          <div class="casting-info">
-            <h3 class="casting-name">Diego <span class="casting-age">· 33</span></h3>
-            <p class="casting-vibe">Barbeiro, estilo street, tatuado.</p>
-            <p class="casting-niches">Barba · moda masc. · tattoo care</p>
-          </div>
-        </article>
-
-        <article class="casting-card">
-          <div class="casting-photo">
-            <img src="assets/casting/17-helena-perfil.jpg" alt="Helena, influencer virtual de 68 anos, vitalidade na terceira idade." loading="lazy" />
-          </div>
-          <div class="casting-info">
-            <h3 class="casting-name">Helena <span class="casting-age">· 68</span></h3>
-            <p class="casting-vibe">Vitalidade na terceira idade.</p>
-            <p class="casting-niches">Saúde 60+ · mobilidade · hobbies</p>
-          </div>
-        </article>
-
-        <article class="casting-card">
-          <div class="casting-photo">
-            <img src="assets/casting/18-aline-perfil.jpg" alt="Aline, influencer virtual de 28 anos, cadeirante e criadora de conteúdo." loading="lazy" />
-          </div>
-          <div class="casting-info">
-            <h3 class="casting-name">Aline <span class="casting-age">· 28</span></h3>
-            <p class="casting-vibe">Ativa, criadora de conteúdo, cadeirante.</p>
-            <p class="casting-niches">Acessibilidade · moda · lifestyle</p>
-          </div>
-        </article>
-
-        <article class="casting-card">
-          <div class="casting-photo">
-            <img src="assets/casting/19-roberta-perfil.jpg" alt="Roberta, influencer virtual de 40 anos, advogada." loading="lazy" />
-          </div>
-          <div class="casting-info">
-            <h3 class="casting-name">Roberta <span class="casting-age">· 40</span></h3>
-            <p class="casting-vibe">Advogada, autoridade acolhedora.</p>
-            <p class="casting-niches">Serviços · finanças · moda social</p>
-          </div>
-        </article>
-
-        <article class="casting-card">
-          <div class="casting-photo">
-            <img src="assets/casting/20-mateus-perfil.jpg" alt="Mateus, influencer virtual de 45 anos, calvo assumido, faz-tudo." loading="lazy" />
-          </div>
-          <div class="casting-info">
-            <h3 class="casting-name">Mateus <span class="casting-age">· 45</span></h3>
-            <p class="casting-vibe">Pai suburbano, faz-tudo.</p>
-            <p class="casting-niches">Casa · jardim · auto · pet</p>
-          </div>
-        </article>
-
-        <article class="casting-card casting-card-soon" aria-label="Novas influencers em breve">
-          <div class="casting-soon-inner">
-            <span class="casting-soon-plus" aria-hidden="true">+</span>
-            <p class="casting-soon-text">Novas influencers<br />em breve</p>
-            <p class="casting-soon-sub">Casting em expansão: idades, corpos e estilos do Brasil real.</p>
-          </div>
-        </article>
-      </div>
-        <p class="casting-note">
-          <strong>Transparência:</strong> as influencers do casting podem aparecer com produtos
-          de outras marcas — nunca concorrentes diretos. Todas são personagens virtuais criados com IA.
-        </p>
-        <button class="svc-link spec-link" type="button" data-open-gallery="influencers">ver no case →</button>
-      </article>
-    </section>
-
-    <!-- ====================== CASES (galeria) ====================== -->
-    <section class="cases" id="cases" aria-label="Cases">
-      <div class="case-intro">
-        <p class="section-label"><span class="num">02</span> Cases</p>
-        <h2 class="section-title">Do produto cru ao anúncio pronto.</h2>
-        <p class="section-lead">Clique num case pra ver a história completa — da primeira foto à campanha no ar.</p>
-      </div>
-
-      <!-- ===================================================================
-           COMO ADICIONAR UM CASE NOVO (3 passos, sem mexer no resto do site):
-           1) Duplique um <article class="case-card" ...> abaixo e troque a
-              imagem de capa, o selo, o nome e a linha. Use data-open-case="NOME".
-           2) Lá no fim do <body> (bloco "FONTES DE CONTEÚDO DOS CASES"), duplique
-              um <div class="case-content" id="case-NOME"> e escreva a história.
-           3) Coloque as imagens desse case em assets/NOME/ (ex.: assets/biotina/).
-           IMPORTANTE: o data-open-case do card tem que ser igual ao id do bloco,
-           trocando "case-" pelo prefixo. Ex.: data-open-case="biotina" → id="case-biotina".
-           =================================================================== -->
-      <div class="cases-grid">
-        <article class="case-card" data-open-case="gota-nativa" tabindex="0" role="button"
-                 aria-label="Abrir o case Gota Nativa">
-          <div class="case-card-cover">
-            <img src="assets/gota-nativa/kit-marca.png" alt="Identidade visual da Gota Nativa: logo, paleta e aplicações." loading="lazy" />
-            <span class="case-card-tag">Óleos naturais</span>
-          </div>
-          <div class="case-card-body">
-            <h3 class="case-card-name">Gota Nativa</h3>
-            <p class="case-card-line">Fotos de produto e criativos que sustentam uma marca inteira.</p>
-            <span class="case-card-open" aria-hidden="true">Ver case →</span>
-          </div>
-        </article>
-
-        <article class="case-card" data-open-case="rosa" tabindex="0" role="button"
-                 aria-label="Abrir o case Rosa Mosqueta">
-          <div class="case-card-cover">
-            <img src="assets/after-produt.jpg" alt="Foto de produto da Rosa Mosqueta" loading="lazy" />
-            <span class="case-card-tag">Skincare</span>
-          </div>
-          <div class="case-card-body">
-            <h3 class="case-card-name">Rosa Mosqueta</h3>
-            <p class="case-card-line">A foto da prateleira virou criativo profissional — e a influencer Patricia nasceu aqui.</p>
-            <span class="case-card-open" aria-hidden="true">Ver case →</span>
-          </div>
-        </article>
-
-        <article class="case-card" data-open-case="biotina" tabindex="0" role="button"
-                 aria-label="Abrir o case Biotina">
-          <div class="case-card-cover">
-            <img src="assets/biotina/produto.png" alt="Foto de produto da Biotina" loading="lazy" />
-            <span class="case-card-tag">Beleza capilar</span>
-          </div>
-          <div class="case-card-body">
-            <h3 class="case-card-name">Biotina</h3>
-            <p class="case-card-line">Criativos que comunicam valor + uma influencer virtual exclusiva da marca.</p>
-            <span class="case-card-open" aria-hidden="true">Ver case →</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- ====================== PACOTES ====================== -->
-    <section class="services" id="pacotes" aria-label="Pacotes">
-      <div class="case-intro">
-        <p class="section-label"><span class="num">03</span> Preços</p>
-        <p class="launch-badge"><span aria-hidden="true">✦</span> Preço de lançamento</p>
-        <h2 class="section-title">Preços claros, a conta aberta.</h2>
-        <p class="section-lead">Sem pacote obrigatório: você vê o preço de cada peça e monta o que precisar — ou escolhe um dos caminhos prontos abaixo.</p>
-      </div>
-
-      <!-- BLOCO A — Avulsos (a conta aberta) -->
-      <div class="price-table-wrap">
-        <h3 class="price-block-title">Avulsos</h3>
-        <table class="price-table">
-          <caption class="sr-only">Preços unitários, com valor cheio e valor de lançamento</caption>
-          <tbody>
-            <tr>
-              <th scope="row">Foto transformada <span class="price-detail">celular → estúdio · mínimo 3</span></th>
-              <td><s class="price-old">R$70</s> <strong class="price-now">R$53</strong><span class="price-unit">/foto</span></td>
-            </tr>
-            <tr>
-              <th scope="row">Cena lifestyle adicional <span class="price-detail">mesmo produto</span></th>
-              <td><s class="price-old">R$45</s> <strong class="price-now">R$34</strong><span class="price-unit">/foto</span></td>
-            </tr>
-            <tr>
-              <th scope="row">Vídeo 360° do produto</th>
-              <td><s class="price-old">R$130</s> <strong class="price-now">R$98</strong></td>
-            </tr>
-            <tr>
-              <th scope="row">Foto de influencer do casting com seu produto <span class="price-detail">mínimo 3</span></th>
-              <td><s class="price-old">R$65</s> <strong class="price-now">R$49</strong><span class="price-unit">/foto</span></td>
-            </tr>
-            <tr>
-              <th scope="row">Vídeo UGC com influencer do casting <span class="price-detail">até 30s</span></th>
-              <td><s class="price-old">R$220</s> <strong class="price-now">R$165</strong><span class="price-unit">/vídeo</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- BLOCO B — Influencer: dois caminhos + mensalidade -->
-      <h3 class="price-block-title">Influencer: escolha seu caminho</h3>
-
-      <div class="cards cards-3">
-        <article class="card">
-          <span class="card-badge">Entrada acessível</span>
-          <p class="card-name">Influencer do Casting</p>
-          <p class="card-price">
-            <span class="from">a partir de</span>
-            <span class="price-old">R$195</span>
-            <span class="price-new">R$147 <span class="off">-25%</span></span>
-          </p>
-          <p class="card-desc">Escolha uma influencer do casting e coloque seu produto nas mãos dela. Sem custo de criação — você paga só as peças: 3 fotos com seu produto. Vídeo UGC de até 30s: +R$165.</p>
-          <p class="card-fineprint">Ela pode aparecer com outros produtos (nunca concorrentes diretos).</p>
-          <a href="#contato" class="card-cta" data-cta="whatsapp">Quero esse →</a>
-        </article>
-
-        <article class="card card-featured">
-          <span class="card-badge">Mais completo</span>
-          <p class="card-name">Influencer Exclusiva</p>
-          <p class="card-price">
-            <span class="from">pacote de estreia</span>
-            <span class="price-old">R$1.060</span>
-            <span class="price-new">R$795 <span class="off">-25%</span></span>
-          </p>
-          <p class="card-desc">Uma influencer criada do zero, só da sua marca — ninguém mais usa. Estreia completa: criação da persona (character sheet) + 6 fotos + 1 vídeo UGC de até 30s.</p>
-          <p class="card-fineprint">Só a criação: de R$450 por R$340. Depois, fotos a R$49 e vídeos a R$165.</p>
-          <a href="#contato" class="card-cta" data-cta="whatsapp">Quero esse →</a>
-        </article>
-
-        <article class="card">
-          <span class="card-badge card-badge-value">Melhor custo-benefício</span>
-          <p class="card-name">Mensalidade de Criativos</p>
-          <p class="card-price">
-            <span class="from">a partir de</span>
-            <span class="price-old">R$970<span class="per">/mês</span></span>
-            <span class="price-new">R$730<span class="per">/mês</span> <span class="off">-25%</span></span>
-          </p>
-          <p class="card-desc">8 fotos + 2 vídeos novos <strong>todo mês</strong> com a sua influencer — do casting ou exclusiva. Quem anuncia sabe: criativo repetido cansa e para de vender.</p>
-          <p class="card-fineprint">Menos de R$25 por dia pra sua marca nunca sumir do feed.</p>
-          <a href="#contato" class="card-cta" data-cta="whatsapp">Quero esse →</a>
-        </article>
-      </div>
-      <p class="packages-path">
-        <strong>O caminho esperto:</strong> testa com uma influencer do casting por R$147,
-        e quando a persona der resultado, cria a sua exclusiva e mantém a Mensalidade —
-        criativo novo todo mês, sem sua marca depender de ninguém.
-      </p>
-      <p class="packages-note">Precisa de algo maior (landing page, marca completa)? <a href="#contato" data-cta="whatsapp">Me chama que a gente conversa.</a></p>
-    </section>
-
-    <!-- ====================== 4. POR QUE COMIGO ====================== -->
-    <section class="why" aria-label="Por que comigo">
-      <div class="case-intro">
-        <p class="section-label"><span class="num">04</span> Por que comigo</p>
-        <h2 class="section-title">Não é só imagem bonita. É venda.</h2>
-      </div>
-      <div class="why-grid">
-        <article class="why-item">
-          <span class="why-num" aria-hidden="true">01</span>
-          <h3>Penso em venda</h3>
-          <p>Cada criativo é feito pra converter, não só pra ser bonito. Estética com objetivo.</p>
-        </article>
-        <article class="why-item">
-          <span class="why-num" aria-hidden="true">02</span>
-          <h3>Entrega rápida com IA</h3>
-          <p>O que levava semanas e custava caro, eu entrego em dias — sem set, sem ensaio.</p>
-        </article>
-        <article class="why-item">
-          <span class="why-num" aria-hidden="true">03</span>
-          <h3>Preço justo</h3>
-          <p>Pensado pra quem está começando. Você investe pouco e já vê o produto noutro nível.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- ====================== 4B. SOBRE / QUEM ESTÁ POR TRÁS ====================== -->
-    <section class="about" aria-label="Quem está por trás">
-      <div class="about-grid">
-        <figure class="about-photo">
-          <!-- Quando tiver a foto, salve como assets/cesar.jpg que ela aparece aqui automaticamente. -->
-          <img src="assets/Cesar.png" alt="Cesar C. Oliveira" class="about-img"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-          <div class="about-photo-placeholder" role="img" aria-label="Foto de Cesar C. Oliveira (a adicionar)">
-            <span class="ph-ico" aria-hidden="true">▣</span>
-            <span class="ph-text">Falta a foto<br /><code>assets/cesar.jpg</code></span>
-          </div>
+        <figure class="hero-before-after" aria-label="Antes e depois de uma foto de produto">
+          <div class="teaser-card"><picture><source srcset="/assets/optimized/before-produto.webp 1200w" type="image/webp" sizes="(max-width: 760px) 44vw, 22vw"><img src="/assets/before-produto.jpg" alt="Antes: foto simples do produto em uma prateleira." width="1414" height="2000" loading="eager" decoding="async" fetchpriority="high" sizes="(max-width: 760px) 44vw, 22vw"></picture><span>ANTES</span></div>
+          <span class="teaser-arrow" aria-hidden="true">→</span>
+          <div class="teaser-card after"><picture><source srcset="/assets/optimized/after-produt.webp 1200w" type="image/webp" sizes="(max-width: 760px) 44vw, 22vw"><img src="/assets/after-produt.jpg" alt="Depois: foto profissional do mesmo produto em fundo limpo." width="1414" height="2000" loading="eager" decoding="async" fetchpriority="high" sizes="(max-width: 760px) 44vw, 22vw"></picture><span>DEPOIS</span></div>
         </figure>
-
-        <div class="about-text">
-          <p class="section-label"><span class="num">05</span> Quem está por trás</p>
-          <h2 class="about-name">Cesar C. Oliveira <span class="about-role">· AI Builder</span></h2>
-          <p class="about-sub">Especialista em criativos com IA e influencers virtuais.</p>
-
-          <p class="about-body">
-            Sou o Cesar. Vim de fora do mundo do marketing — e foi justamente na
-            inteligência artificial que encontrei uma forma de criar o que antes só
-            uma agência cara entregava: fotos, vídeos, influenciadores e páginas que vendem.
-          </p>
-          <p class="about-body">
-            Hoje é isso que eu faço: transformo produtos comuns em campanhas que param
-            o dedo e viram venda. Com método, foco em conversão e a agilidade que só a IA permite.
-          </p>
-          <p class="about-body">
-            E quando você me contrata, fala comigo — não com um atendente.
-            <strong class="about-hl">Atendimento direto, do briefing à entrega</strong>, sem
-            intermediário e sem ruído.
-          </p>
-        </div>
       </div>
     </section>
-
-    <!-- ====================== SELO: TUDO FEITO COM IA ====================== -->
-    <section class="aiproof" aria-label="Tudo feito com IA">
-      <div class="aiproof-card">
-        <span class="aiproof-seal" aria-hidden="true">✦ IA</span>
-        <p class="aiproof-title">Não é “filtro de IA”.</p>
-        <p class="aiproof-text">
-          Cada imagem, vídeo e página aqui foi construído com engenharia de prompt
-          e direção criativa — o tipo de resultado que a ferramenta sozinha não entrega,
-          só quem sabe conduzi-la. <strong>É essa diferença que eu coloco no seu produto.</strong>
-        </p>
-      </div>
+    <section class="capabilities" aria-label="Capacidades do estúdio"><p class="sr-only">Foto de produto, cenas lifestyle, vídeo 360°, influencer virtual, UGC publicitário, criativos de anúncio e landing page.</p><div class="ticker" aria-hidden="true"><span>FOTO DE PRODUTO → CENAS LIFESTYLE → VÍDEO 360° → INFLUENCER VIRTUAL → UGC PUBLICITÁRIO → CRIATIVOS DE ANÚNCIO → LANDING PAGE →&nbsp;</span><span>FOTO DE PRODUTO → CENAS LIFESTYLE → VÍDEO 360° → INFLUENCER VIRTUAL → UGC PUBLICITÁRIO → CRIATIVOS DE ANÚNCIO → LANDING PAGE →&nbsp;</span></div></section>
+    <section class="services-main section" id="servicos" aria-labelledby="services-title">
+      <div class="section-heading"><p class="section-label">Serviços principais</p><h2 id="services-title">Duas especialidades. Um objetivo: vender.</h2></div>
+      <article class="specialty">
+        <div><p class="step-tag">Especialidade 01</p><h3>Transformação de fotos em criativos</h3><p>Sua foto de celular vira imagem de campanha, cena lifestyle e criativo pronto para Instagram, TikTok, catálogo ou página de produto — sem estúdio e sem ensaio presencial.</p><a class="text-link" href="/servicos/fotos-de-produto-com-ia/">Ver fotos de produto <span aria-hidden="true">→</span></a></div>
+        <div class="specialty-gallery"><picture><source srcset="/assets/optimized/cena-1.webp 1200w" type="image/webp" sizes="(max-width:760px) 50vw, 20vw"><img src="/assets/cena-1.jpg" alt="Produto Rosa Mosqueta em cena botânica de campanha." width="1414" height="2000" loading="lazy" decoding="async" sizes="(max-width:760px) 50vw, 20vw"></picture><picture><source srcset="/assets/optimized/cena-3.webp 1200w" type="image/webp" sizes="(max-width:760px) 50vw, 20vw"><img src="/assets/cena-3.jpg" alt="Produto Rosa Mosqueta em cena dramática de campanha." width="1414" height="2000" loading="lazy" decoding="async" sizes="(max-width:760px) 50vw, 20vw"></picture></div>
+      </article>
+      <article class="specialty specialty-360">
+        <div class="demo-360-media"><picture><source srcset="/assets/optimized/daruma/foto.webp 738w" type="image/webp" sizes="(max-width:760px) 42vw, 18vw"><img src="/assets/daruma/foto.jpg" alt="Foto frontal de referência de um boneco Daruma." width="738" height="1600" loading="lazy" decoding="async" sizes="(max-width:760px) 42vw, 18vw"></picture><span aria-hidden="true">→</span><video controls muted playsinline preload="none" poster="/assets/optimized/daruma/foto.webp" data-video-name="video_360_daruma"><source src="/assets/daruma/video-360.mp4" type="video/mp4"><span class="video-fallback">Vídeo demonstrativo do produto em 360 graus.</span></video></div>
+        <div><p class="step-tag">Vídeo 360°</p><h3>Quatro referências. Uma apresentação completa.</h3><p>A partir de quatro fotos de referência — frente, laterais e verso — crio um vídeo de apresentação 360° pronto para página de produto e anúncio.</p><a class="text-link" href="/servicos/video-360-produto/">Ver vídeo 360° <span aria-hidden="true">→</span></a></div>
+      </article>
+      <article class="specialty reverse">
+        <div><p class="step-tag">Especialidade 02</p><h3>Influencers virtuais. Realistas de verdade.</h3><p>Personagens virtuais criados com IA para apresentar produtos em fotos e vídeos, sem cachê e sem agenda. O casting representa o Brasil real, com diferentes idades, tons de pele, corpos e estilos.</p><p>A mesma personagem pode manter consistência visual em fotos e vídeos, com produção disponível sem depender de agenda de modelo.</p><a class="text-link" href="/servicos/influencers-virtuais/">Conhecer as influencers virtuais <span aria-hidden="true">→</span></a></div>
+        <div class="specialty-gallery"><picture><source srcset="/assets/optimized/casting/01-patricia-perfil.webp 800w" type="image/webp" sizes="(max-width:760px) 50vw, 20vw"><img src="/assets/casting/01-patricia-perfil.jpg" alt="Patricia, personagem virtual de 42 anos do casting da Criando com IA." width="800" height="800" loading="lazy" decoding="async" sizes="(max-width:760px) 50vw, 20vw"></picture><picture><source srcset="/assets/optimized/casting/02-luana-perfil.webp 800w" type="image/webp" sizes="(max-width:760px) 50vw, 20vw"><img src="/assets/casting/02-luana-perfil.jpg" alt="Luana, personagem virtual de 27 anos do casting da Criando com IA." width="800" height="800" loading="lazy" decoding="async" sizes="(max-width:760px) 50vw, 20vw"></picture></div>
+      </article>
     </section>
-
-    <!-- ====================== 5. CONTATO / CTA FINAL ====================== -->
-    <section class="cta" id="contato" aria-label="Contato">
-      <div class="cta-inner">
-        <p class="section-label section-label-light"><span class="num">06</span> Vamos conversar</p>
-        <h2 class="cta-title">Quer assim pro seu produto?</h2>
-        <p class="cta-sub">
-          Te mostro <strong>de graça</strong> o que dá pra fazer com o seu. Manda uma
-          foto do produto e eu te respondo com ideias.
-        </p>
-        <div class="cta-actions">
-          <a href="#" class="btn btn-wpp" data-cta="whatsapp">
-            <span class="btn-ico" aria-hidden="true">✆</span> Falar no WhatsApp
-          </a>
-          <!-- INSTAGRAM (desativado por enquanto — sem perfil ainda).
-               Para reativar: descomente o bloco abaixo e preencha o @ no script.js.
-          <a href="#" class="btn btn-insta" data-cta="instagram">
-            <span class="btn-ico" aria-hidden="true">◎</span> Ver no Instagram
-          </a>
-          -->
-        </div>
-        <p class="cta-note">Diagnóstico sem compromisso · resposta no mesmo dia</p>
-      </div>
-    </section>
+    <section class="cases section section-contrast" id="cases" aria-labelledby="cases-title"><div class="section-heading"><p class="section-label">Cases em destaque</p><h2 id="cases-title">Do produto cru à campanha pronta.</h2><p>Entregas reais do portfólio, organizadas para você ver o ponto de partida e o que foi criado.</p></div><div class="cases-grid"><article class="case-card">
+    <a href="/cases/rosa-mosqueta/" data-event="case_open" data-case-name="Rosa Mosqueta" data-location="case_rosa_mosqueta">
+      <div class="case-card-cover"><picture><source srcset="/assets/optimized/after-produt.webp 1200w" type="image/webp" sizes="(max-width: 760px) 100vw, 33vw"><img src="/assets/after-produt.jpg" alt="Foto profissional do produto Rosa Mosqueta após a transformação." width="1414" height="2000" loading="lazy" decoding="async" sizes="(max-width: 760px) 100vw, 33vw"></picture><span class="case-card-tag">Foto → campanha</span></div>
+      <div class="case-card-body"><h3>Rosa Mosqueta</h3><p>Uma foto simples virou imagem de produto, cenas, influencer virtual, vídeo e landing page.</p><span class="case-card-open">Ver case completo <span aria-hidden="true">→</span></span></div>
+    </a>
+  </article><article class="case-card">
+    <a href="/cases/biotina/" data-event="case_open" data-case-name="Biotina" data-location="case_biotina">
+      <div class="case-card-cover"><picture><source srcset="/assets/optimized/biotina/produto.webp 1024w" type="image/webp" sizes="(max-width: 760px) 100vw, 33vw"><img src="/assets/biotina/produto.png" alt="Foto profissional do pote de Biotina criado para a campanha." width="1024" height="1536" loading="lazy" decoding="async" sizes="(max-width: 760px) 100vw, 33vw"></picture><span class="case-card-tag">Produto → criativos</span></div>
+      <div class="case-card-body"><h3>Biotina</h3><p>Da embalagem comum a uma campanha com criativos, influencer exclusiva e vídeo para redes sociais.</p><span class="case-card-open">Ver case completo <span aria-hidden="true">→</span></span></div>
+    </a>
+  </article><article class="case-card">
+    <a href="/cases/gota-nativa/" data-event="case_open" data-case-name="Gota Nativa" data-location="case_gota_nativa">
+      <div class="case-card-cover"><picture><source srcset="/assets/optimized/gota-nativa/kit-marca.webp 1122w" type="image/webp" sizes="(max-width: 760px) 100vw, 33vw"><img src="/assets/gota-nativa/kit-marca.png" alt="Kit de identidade visual do projeto autoral Gota Nativa." width="1122" height="1402" loading="lazy" decoding="async" sizes="(max-width: 760px) 100vw, 33vw"></picture><span class="case-card-tag">Projeto autoral</span></div>
+      <div class="case-card-body"><h3>Gota Nativa</h3><p>Marca, identidade, catálogo, criativos e e-commerce construídos do zero como projeto próprio da Criando com IA.</p><span class="case-card-open">Ver case completo <span aria-hidden="true">→</span></span></div>
+    </a>
+  </article></div></section>
+    <section class="process section" id="como-funciona" aria-labelledby="process-title"><div class="section-heading"><p class="section-label">Como funciona</p><h2 id="process-title">Você envia o produto. Eu cuido da campanha.</h2></div><ol class="process-grid"><li><span>01</span><h3>Você envia as referências</h3><p>Para fotos e criativos, envie a melhor imagem disponível. Para vídeo 360°, envie frente, laterais e verso.</p></li><li><span>02</span><h3>Definimos o formato</h3><p>Foto de produto, cena lifestyle, influencer do casting, personagem exclusiva, vídeo ou pacote mensal.</p></li><li><span>03</span><h3>Eu produzo e apresento</h3><p>Você recebe a primeira versão para conferência dentro do prazo combinado.</p></li><li><span>04</span><h3>Ajuste e entrega</h3><p>Após os ajustes previstos no serviço, os arquivos são organizados e entregues nos formatos contratados.</p></li></ol></section>
+    <section class="pricing section" id="precos" aria-labelledby="pricing-title">
+    <div class="section-heading"><p class="section-label">Preços</p><h2 id="pricing-title">Escolha por peça ou organize o mês.</h2><p>Valores claros para começar no formato que sua marca precisa.</p></div>
+    <div class="single-prices" aria-label="Serviços avulsos">
+      <article><h3>Foto transformada</h3><p>celular → estúdio · mínimo 3</p><div><s>R$ 70</s><strong>R$ 53/foto</strong></div></article><article><h3>Cena lifestyle adicional</h3><p>mesmo produto</p><div><s>R$ 45</s><strong>R$ 34/foto</strong></div></article><article><h3>Vídeo 360° do produto</h3><p>quatro fotos de referência</p><div><s>R$ 130</s><strong>R$ 98</strong></div></article><article><h3>Foto com influencer do casting</h3><p>mínimo 3</p><div><s>R$ 65</s><strong>R$ 49/foto</strong></div></article><article><h3>Vídeo UGC com influencer do casting</h3><p>até 30 segundos</p><div><s>R$ 220</s><strong>R$ 165/vídeo</strong></div></article>
+    </div>
+    <div class="pricing-cards">
+      <article class="price-card">
+        <span class="card-badge">Entrada acessível</span><h3>Influencer do Casting</h3>
+        <p class="price"><s>R$ 195</s><strong>R$ 147</strong></p>
+        <ul class="production-list"><li>3 fotos com seu produto</li></ul>
+        <p>Vídeo UGC opcional de até 30 segundos: +R$ 165.</p>
+        <p class="fineprint">Uso não exclusivo. A personagem pode aparecer com outras marcas, mas nunca com concorrentes diretos dentro da categoria acordada.</p>
+        <a class="btn btn-outline" href="https://wa.me/5511978230487?text=Ol%C3%A1%2C%20C%C3%A9sar!%20Quero%20testar%20uma%20influencer%20do%20casting%20com%20o%20meu%20produto.%20Vi%20o%20pacote%20de%203%20fotos%20no%20site%20e%20gostaria%20de%20saber%20os%20pr%C3%B3ximos%20passos." target="_blank" rel="noopener noreferrer" data-whatsapp data-message-key="castingStarter" data-location="pricing_casting" data-event="pricing_cta_click" data-plan="casting">Testar uma influencer do casting</a>
+      </article>
+      <article class="price-card featured">
+        <span class="card-badge">Exclusiva da marca</span><h3>Influencer Exclusiva</h3>
+        <p class="price"><s>R$ 1.060</s><strong>R$ 795</strong></p>
+        <ul class="production-list"><li>Criação da persona</li><li>Character sheet</li><li>6 fotos</li><li>1 vídeo UGC de até 30 segundos</li></ul>
+        <p class="fineprint">Só a criação: de R$ 450 por R$ 340. Depois, fotos a R$ 49 e vídeos a R$ 165.</p>
+        <a class="btn btn-light" href="https://wa.me/5511978230487?text=Ol%C3%A1%2C%20C%C3%A9sar!%20Quero%20criar%20uma%20influencer%20exclusiva%20para%20a%20minha%20marca.%20Vi%20o%20pacote%20de%20estreia%20com%20cria%C3%A7%C3%A3o%20da%20persona%2C%206%20fotos%20e%201%20v%C3%ADdeo." target="_blank" rel="noopener noreferrer" data-whatsapp data-message-key="exclusiveInfluencer" data-location="pricing_exclusive" data-event="pricing_cta_click" data-plan="exclusive">Criar minha influencer exclusiva</a>
+      </article>
+      <article class="price-card monthly">
+        <span class="card-badge">MAIS COMPLETO</span><h3>Plano Mensal</h3><p>Conteúdo recorrente para sua marca publicar com consistência.</p>
+        <p class="price"><strong>R$ 730<small>/mês</small></strong></p>
+        <ul class="production-list production-highlight"><li>8 fotos profissionais com IA</li><li>2 vídeos com IA</li></ul>
+        <ul class="benefit-list"><li>Planejamento mensal dos conteúdos</li><li>Roteiro para os 2 vídeos</li><li>Prioridade na produção</li><li>Consistência visual do personagem</li><li>1 rodada de ajustes por entrega</li><li>Arquivos organizados para redes sociais</li></ul>
+        <p>Ideal para marcas que precisam de conteúdo novo todos os meses sem organizar cada produção separadamente.</p>
+        <a class="btn btn-primary" href="https://wa.me/5511978230487?text=Ol%C3%A1%2C%20C%C3%A9sar!%20Vi%20o%20Plano%20Mensal%20no%20site%20Criando%20com%20IA.%20Quero%20saber%20como%20funciona%20a%20produ%C3%A7%C3%A3o%20das%208%20fotos%20e%20dos%202%20v%C3%ADdeos%20para%20minha%20marca." target="_blank" rel="noopener noreferrer" data-whatsapp data-message-key="monthlyPlan" data-location="pricing_monthly" data-event="pricing_cta_click" data-plan="monthly">Quero o plano mensal</a>
+      </article>
+    </div>
+    <div class="pricing-after"><p>Comece com uma pessoa do casting. Quando encontrar a persona ideal, você pode criar uma influencer exclusiva e manter novos conteúdos todos os meses.</p><p><a class="text-link" href="https://wa.me/5511978230487?text=Ol%C3%A1%2C%20C%C3%A9sar!%20Preciso%20de%20um%20projeto%20maior%20com%20criativos%20e%20estrutura%20digital.%20Quero%20conversar%20sobre%20as%20possibilidades." target="_blank" rel="noopener noreferrer" data-whatsapp data-message-key="largeProject" data-location="pricing_large_project">Precisa de landing page, identidade ou e-commerce? Fale comigo sobre um projeto completo.</a></p></div>
+  </section>
+    <section class="casting-preview section" id="casting" aria-labelledby="casting-title"><div class="section-heading"><p class="section-label">Prévia do casting</p><h2 id="casting-title">Personagens virtuais com perfis do Brasil real.</h2><p>Escolha um rosto já disponível ou crie uma influencer exclusiva para sua marca.</p></div><div class="casting-grid casting-grid-preview"><article class="casting-card" data-casting-card data-gender="feminino" data-age="42" data-niches="Beleza|Casa|Saúde e bem-estar">
+    <picture><source srcset="/assets/optimized/casting/01-patricia-perfil.webp 800w" type="image/webp" sizes="(max-width: 480px) 100vw, 16vw"><img src="/assets/casting/01-patricia-perfil.jpg" alt="Patricia, personagem virtual de 42 anos do casting da Criando com IA." width="800" height="800" loading="lazy" decoding="async" sizes="(max-width: 480px) 100vw, 16vw"></picture>
+    <div class="casting-info"><h3>Patricia <span>· 42</span></h3><p>Mãe acolhedora, interior de SP.</p><p class="casting-niches">Skincare 40+ · casa · bem-estar</p></div>
+  </article><article class="casting-card" data-casting-card data-gender="feminino" data-age="27" data-niches="Beleza|Moda|Tecnologia">
+    <picture><source srcset="/assets/optimized/casting/02-luana-perfil.webp 800w" type="image/webp" sizes="(max-width: 480px) 100vw, 16vw"><img src="/assets/casting/02-luana-perfil.jpg" alt="Luana, personagem virtual de 27 anos do casting da Criando com IA." width="800" height="800" loading="lazy" decoding="async" sizes="(max-width: 480px) 100vw, 16vw"></picture>
+    <div class="casting-info"><h3>Luana <span>· 27</span></h3><p>Urbana, criativa, cabelo crespo natural.</p><p class="casting-niches">Beleza capilar · moda · tech</p></div>
+  </article><article class="casting-card" data-casting-card data-gender="feminino" data-age="55" data-niches="Saúde e bem-estar|Casa">
+    <picture><source srcset="/assets/optimized/casting/03-marcia-perfil.webp 800w" type="image/webp" sizes="(max-width: 480px) 100vw, 16vw"><img src="/assets/casting/03-marcia-perfil.jpg" alt="Márcia, personagem virtual de 55 anos do casting da Criando com IA." width="800" height="800" loading="lazy" decoding="async" sizes="(max-width: 480px) 100vw, 16vw"></picture>
+    <div class="casting-info"><h3>Márcia <span>· 55</span></h3><p>Elegante sem esforço, avó moderna.</p><p class="casting-niches">Saúde · suplementos · viagem · casa</p></div>
+  </article><article class="casting-card" data-casting-card data-gender="feminino" data-age="33" data-niches="Moda|Beleza">
+    <picture><source srcset="/assets/optimized/casting/04-camila-perfil.webp 800w" type="image/webp" sizes="(max-width: 480px) 100vw, 16vw"><img src="/assets/casting/04-camila-perfil.jpg" alt="Camila, personagem virtual de 33 anos do casting da Criando com IA." width="800" height="800" loading="lazy" decoding="async" sizes="(max-width: 480px) 100vw, 16vw"></picture>
+    <div class="casting-info"><h3>Camila <span>· 33</span></h3><p>Plus size, confiante, bem resolvida.</p><p class="casting-niches">Moda plus · autoestima · beleza</p></div>
+  </article><article class="casting-card" data-casting-card data-gender="masculino" data-age="38" data-niches="Casa|Serviços|Alimentos">
+    <picture><source srcset="/assets/optimized/casting/05-ricardo-perfil.webp 800w" type="image/webp" sizes="(max-width: 480px) 100vw, 16vw"><img src="/assets/casting/05-ricardo-perfil.jpg" alt="Ricardo, personagem virtual de 38 anos do casting da Criando com IA." width="800" height="800" loading="lazy" decoding="async" sizes="(max-width: 480px) 100vw, 16vw"></picture>
+    <div class="casting-info"><h3>Ricardo <span>· 38</span></h3><p>Pai de família, direto, bem-humorado.</p><p class="casting-niches">Ferramentas · churrasco · finanças · pet</p></div>
+  </article><article class="casting-card" data-casting-card data-gender="feminino" data-age="28" data-niches="Moda|Serviços">
+    <picture><source srcset="/assets/optimized/casting/18-aline-perfil.webp 800w" type="image/webp" sizes="(max-width: 480px) 100vw, 16vw"><img src="/assets/casting/18-aline-perfil.jpg" alt="Aline, personagem virtual de 28 anos do casting da Criando com IA." width="800" height="800" loading="lazy" decoding="async" sizes="(max-width: 480px) 100vw, 16vw"></picture>
+    <div class="casting-info"><h3>Aline <span>· 28</span></h3><p>Ativa, criadora de conteúdo, cadeirante.</p><p class="casting-niches">Acessibilidade · moda · lifestyle</p></div>
+  </article></div><p class="casting-transparency">As pessoas do casting são personagens virtuais criados com IA. Elas podem aparecer com produtos de outras marcas, mas nunca com concorrentes diretos dentro da mesma categoria acordada.</p><div class="section-action"><a class="btn btn-outline" href="/casting/" data-event="casting_open" data-location="home_casting">Ver casting completo com 20 personagens</a></div></section>
+    <section class="why section" aria-labelledby="why-title"><div class="section-heading"><p class="section-label">Por que comigo</p><h2 id="why-title">Não é só imagem bonita. É venda.</h2></div><div class="why-grid"><article><span>01</span><h3>Penso em venda</h3><p>Cada peça é criada com objetivo comercial: apresentar melhor o produto, prender atenção e conduzir o público para a próxima ação.</p></article><article><span>02</span><h3>Entrega rápida com IA</h3><p>Produção visual sem set presencial, sem agenda de modelo e com prazos definidos para cada projeto.</p></article><article><span>03</span><h3>Atendimento direto</h3><p>Você fala com o Cesar do briefing à entrega, sem repasse entre atendimento e produção.</p></article></div></section>
+    <section class="about section" id="sobre" aria-labelledby="about-title"><div class="about-grid"><figure><picture><source srcset="/assets/optimized/Cesar.webp 1165w" type="image/webp" sizes="(max-width:760px) 90vw, 36vw"><img src="/assets/Cesar.png" alt="Cesar C. Oliveira, AI Builder e especialista em criativos com IA" width="1165" height="1350" loading="lazy" decoding="async" sizes="(max-width:760px) 90vw, 36vw"></picture></figure><div><p class="section-label">Quem está por trás</p><h2 id="about-title">Cesar C. Oliveira <span>· AI Builder</span></h2><p class="about-sub">Especialista em criativos com IA e influencers virtuais.</p><p>Sou o Cesar. Vim de fora do mundo do marketing — e foi justamente na inteligência artificial que encontrei uma forma de criar o que antes só uma agência cara entregava: fotos, vídeos, influenciadores e páginas que vendem.</p><p>Hoje é isso que eu faço: transformo produtos comuns em campanhas que param o dedo e viram venda. Com método, foco em conversão e a agilidade que só a IA permite.</p><p>E quando você me contrata, fala comigo — não com um atendente. <strong>Atendimento direto, do briefing à entrega</strong>, sem intermediário e sem ruído.</p></div></div></section>
+    <section class="faq section section-contrast" id="perguntas" aria-labelledby="faq-title"><div class="section-heading"><p class="section-label">Perguntas frequentes</p><h2 id="faq-title">Antes de enviar sua foto.</h2></div><div class="faq-list"><article class="faq-item"><h3><button type="button" aria-expanded="false" aria-controls="faq-1" data-faq-button><span>Preciso enviar o produto fisicamente?</span><span aria-hidden="true">+</span></button></h3><div id="faq-1" class="faq-answer" hidden><p>Na maioria dos projetos, não. A produção é feita a partir de fotos de referência. Quando um serviço exigir material específico, isso será combinado no briefing.</p></div></article><article class="faq-item"><h3><button type="button" aria-expanded="false" aria-controls="faq-2" data-faq-button><span>Que fotos preciso enviar?</span><span aria-hidden="true">+</span></button></h3><div id="faq-2" class="faq-answer" hidden><p>Para fotos e criativos, envie imagens nítidas do produto e do rótulo. Para vídeo 360°, são necessárias quatro referências: frente, lateral esquerda, lateral direita e verso.</p></div></article><article class="faq-item"><h3><button type="button" aria-expanded="false" aria-controls="faq-3" data-faq-button><span>As influencers são pessoas reais?</span><span aria-hidden="true">+</span></button></h3><div id="faq-3" class="faq-answer" hidden><p>Não. São personagens virtuais criados com IA para uso em fotos e vídeos publicitários.</p></div></article><article class="faq-item"><h3><button type="button" aria-expanded="false" aria-controls="faq-4" data-faq-button><span>Posso escolher alguém do casting?</span><span aria-hidden="true">+</span></button></h3><div id="faq-4" class="faq-answer" hidden><p>Sim. Você pode começar com uma personagem já disponível ou contratar a criação de uma influencer exclusiva para sua marca.</p></div></article><article class="faq-item"><h3><button type="button" aria-expanded="false" aria-controls="faq-5" data-faq-button><span>A influencer do casting é exclusiva?</span><span aria-hidden="true">+</span></button></h3><div id="faq-5" class="faq-answer" hidden><p>Não. Ela pode participar de campanhas de outras marcas, mas não será usada com concorrentes diretos dentro da categoria acordada.</p></div></article><article class="faq-item"><h3><button type="button" aria-expanded="false" aria-controls="faq-6" data-faq-button><span>Quantos ajustes estão incluídos?</span><span aria-hidden="true">+</span></button></h3><div id="faq-6" class="faq-answer" hidden><p>A quantidade de ajustes depende do serviço. O Plano Mensal inclui uma rodada de ajustes por entrega. Nos demais projetos, a condição é informada antes do início.</p></div></article><article class="faq-item"><h3><button type="button" aria-expanded="false" aria-controls="faq-7" data-faq-button><span>Em quais formatos recebo os arquivos?</span><span aria-hidden="true">+</span></button></h3><div id="faq-7" class="faq-answer" hidden><p>Os formatos são definidos conforme o uso: feed, Stories, Reels, TikTok, anúncio, catálogo ou página de produto.</p></div></article><article class="faq-item"><h3><button type="button" aria-expanded="false" aria-controls="faq-8" data-faq-button><span>Vocês também criam landing pages e lojas?</span><span aria-hidden="true">+</span></button></h3><div id="faq-8" class="faq-answer" hidden><p>Sim. São projetos complementares, avaliados separadamente conforme a necessidade da marca.</p></div></article></div></section>
+    <section class="cta" id="contato" aria-labelledby="cta-title"><div><p class="section-label">Vamos conversar</p><h2 id="cta-title">Envie uma foto. Eu mostro o que ela pode virar.</h2><p>Mande a foto do seu produto pelo WhatsApp e receba uma orientação inicial sobre os formatos mais indicados para apresentar sua marca.</p><a class="btn btn-light" href="https://wa.me/5511978230487?text=Ol%C3%A1%2C%20C%C3%A9sar!%20Quero%20enviar%20uma%20foto%20do%20meu%20produto%20e%20receber%20uma%20orienta%C3%A7%C3%A3o%20inicial%20sobre%20os%20criativos%20mais%20indicados." target="_blank" rel="noopener noreferrer" data-whatsapp data-message-key="finalCta" data-location="final_cta">Enviar foto pelo WhatsApp</a><p class="cta-proof">Sem compromisso · atendimento direto com o Cesar</p></div></section>
   </main>
 
-  <!-- ====================== 6. RODAPÉ ====================== -->
   <footer class="footer">
     <div class="footer-grid">
+      <div class="footer-brand-block">
+        <picture class="footer-logo"><source srcset="/assets/optimized/logo-header.webp 975w" type="image/webp" sizes="140px"><img src="/assets/logo-header.png" alt="Criando com IA" width="975" height="350" loading="lazy" decoding="async" sizes="140px"></picture>
+        <p>Criativos com IA para produtos e marcas.</p>
+      </div>
       <div>
-        <img src="assets/logo-header.png" alt="Criando com IA" class="footer-logo" />
-        <p class="footer-tag">Criativos com IA que viram venda.</p>
+        <h2 class="footer-heading">Navegação</h2>
+        <nav class="footer-links" aria-label="Navegação do rodapé">
+          <a href="/#servicos">Serviços</a><a href="/#cases">Cases</a><a href="/#precos">Preços</a><a href="/casting/">Casting</a><a href="/#sobre">Sobre</a>
+        </nav>
       </div>
-      <div class="footer-links">
-        <a href="#" data-cta="whatsapp">WhatsApp</a>
-        <!-- INSTAGRAM desativado por enquanto. Para reativar: descomente a linha abaixo.
-        <a href="#" data-cta="instagram">Instagram</a>
-        -->
-        <a href="#cases">Cases</a>
-        <a href="#pacotes">Preços</a>
+      <div>
+        <h2 class="footer-heading">Contato</h2>
+        <div class="footer-links">
+          <a class="footer-link" href="https://wa.me/5511978230487?text=Ol%C3%A1%2C%20C%C3%A9sar!%20Vi%20o%20site%20Criando%20com%20IA%20e%20quero%20conversar%20sobre%20criativos%20para%20o%20meu%20produto." target="_blank" rel="noopener noreferrer" data-whatsapp data-message-key="header" data-location="footer">WhatsApp</a>
+        </div>
+      </div>
+      <div>
+        <h2 class="footer-heading">Transparência</h2>
+        <p>As pessoas apresentadas no casting são personagens virtuais criados com inteligência artificial.</p>
       </div>
     </div>
-    <p class="footer-copy">© <span id="ano">2026</span> Criando com IA. Feito com IA, pensado pra vender.</p>
+    <div class="footer-bottom">
+      <p>© <span data-current-year>2026</span> Criando com IA.</p>
+      <nav aria-label="Links institucionais"><a href="/politica-de-privacidade/">Política de Privacidade</a><a href="/termos-de-uso/">Termos de Uso</a></nav>
+    </div>
   </footer>
-
-  <!-- ====================== OVERLAY DE CASE (tela cheia) ====================== -->
-  <!-- Shell reutilizável: o conteúdo do case clicado é movido pra dentro daqui. -->
-  <div class="case-overlay" id="caseOverlay" aria-hidden="true">
-    <div class="case-overlay-backdrop" data-close-case></div>
-    <div class="case-overlay-panel" role="dialog" aria-modal="true" aria-label="Case" tabindex="-1" id="caseOverlayPanel">
-      <button class="case-overlay-close" type="button" data-close-case aria-label="Fechar case">
-        <span aria-hidden="true">✕</span>
-      </button>
-      <div class="case-overlay-scroll" id="caseOverlayScroll">
-        <!-- o conteúdo do case ativo entra aqui (movido pelo script.js) -->
-      </div>
-    </div>
-  </div>
-
-  <!-- ====================== FONTES DE CONTEÚDO DOS CASES ======================
-       Cada case é um bloco escondido aqui. Ao clicar no card, o script move o
-       bloco correspondente pra dentro do overlay (e devolve ao fechar).
-       Para um case novo: duplique um <div class="case-content" id="case-NOME">.
-       =========================================================================== -->
-  <div class="case-sources" hidden aria-hidden="true">
-    <!-- ===================== CASE DE DESTAQUE · GOTA NATIVA =====================
-         Narrativa de MARCA (não antes/depois): de um produto a uma marca + loja.
-         Blocos opcionais (catálogo, criativos, influencer) ficam comentados abaixo:
-         basta colocar a imagem em assets/gota-nativa/ e descomentar o bloco. ===== -->
-    <div class="case-content" id="case-gota-nativa">
-      <div class="case-intro">
-        <p class="section-label"><span class="num">03</span> O case · Gota Nativa</p>
-        <h2 class="section-title">De um produto a uma <span class="hl">marca completa</span>, pronta pra vender.</h2>
-        <p class="section-lead">
-          A Gota Nativa não foi “transformei uma foto”. Foi criar do zero uma marca de
-          óleos naturais — nome, logo, identidade, catálogo, criativos e uma loja de
-          e-commerce no ar de verdade. Tudo com IA e direção criativa.
-        </p>
-        <p class="biotina-compliance">Cosméticos de cuidado e aparência — sem promessas médicas.</p>
-      </div>
-
-      <!-- O DESAFIO -->
-      <article class="step step-challenge">
-        <div class="step-text step-text-wide">
-          <p class="step-tag">O desafio</p>
-          <h3 class="step-title">Vender óleo natural sem ter uma marca.</h3>
-          <p class="step-body">
-            Um bom produto, mas sem identidade própria: sem nome forte, sem logo, sem
-            loja. Difícil gerar confiança e vender. A solução foi construir uma marca
-            inteira — do conceito à loja no ar.
-          </p>
-        </div>
-      </article>
-
-      <!-- A MARCA -->
-      <article class="step step-scenes">
-        <div class="step-text step-text-wide">
-          <p class="step-tag">A marca</p>
-          <h3 class="step-title">Nome, logo e identidade criados do zero.</h3>
-          <p class="step-body">
-            “Gota Nativa — natural por essência.” Logo, paleta, tipografia e aplicações,
-            num kit de marca coerente, pronto pra usar em produto, embalagem e redes.
-          </p>
-        </div>
-        <figure class="step-figure brandboard">
-          <img src="assets/gota-nativa/kit-marca.png" alt="Kit da marca Gota Nativa: logo principal e secundária, paleta de cores, tipografia, essência e aplicações." loading="lazy" />
-          <figcaption>Kit de marca completo — logo, cores, tipografia e aplicações.</figcaption>
-        </figure>
-      </article>
-
-      <!-- O CATÁLOGO (opcional) — quando tiver o print, salve como
-           assets/gota-nativa/catalogo.jpg e descomente este bloco:
-      <article class="step step-scenes">
-        <div class="step-text step-text-wide">
-          <p class="step-tag">O catálogo</p>
-          <h3 class="step-title">Uma linha de produtos organizada.</h3>
-          <p class="step-body">Óleos para Rosto, Cabelo e Corpo, fotografados e organizados por uso.</p>
-        </div>
-        <figure class="step-figure">
-          <img src="assets/gota-nativa/catalogo.jpg" alt="Catálogo de óleos da Gota Nativa com filtros por Rosto, Cabelo e Corpo." loading="lazy" />
-          <figcaption>Linha de produtos organizada e fotografada.</figcaption>
-        </figure>
-      </article>
-      -->
-
-      <!-- OS CRIATIVOS / INFLUENCER (opcional) — quando tiver, salve como
-           assets/gota-nativa/criativo-1.jpg, criativo-2.jpg, influencer.jpg
-           e descomente este bloco:
-      <article class="step step-scenes">
-        <div class="step-text step-text-wide">
-          <p class="step-tag">Os criativos</p>
-          <h3 class="step-title">Peças prontas pra anunciar.</h3>
-          <p class="step-body">Criativos e influencer com IA, no tom natural da marca.</p>
-        </div>
-        <div class="gallery-grid">
-          <figure><img src="assets/gota-nativa/criativo-1.jpg" alt="Criativo de anúncio da Gota Nativa." loading="lazy" /></figure>
-          <figure><img src="assets/gota-nativa/criativo-2.jpg" alt="Criativo de anúncio da Gota Nativa." loading="lazy" /></figure>
-          <figure><img src="assets/gota-nativa/influencer.jpg" alt="Influencer com IA da Gota Nativa." loading="lazy" /></figure>
-        </div>
-      </article>
-      -->
-
-      <!-- A LOJA COMPLETA -->
-      <article class="step step-landing">
-        <div class="step-text step-text-wide">
-          <p class="step-tag">A loja completa</p>
-          <h3 class="step-title">Um e-commerce de verdade, no ar.</h3>
-          <p class="step-body">
-            Não parou no criativo: virou loja completa, com catálogo, carrinho,
-            pagamento e garantia. Da identidade à página de compra, tudo conectado.
-          </p>
-        </div>
-        <figure class="landing-figure">
-          <div class="device">
-            <video autoplay loop muted playsinline preload="metadata" poster="assets/gota-nativa/home-poster.jpg"
-                   aria-label="Navegação pela loja da Gota Nativa: home, produtos e checkout.">
-              <source src="assets/gota-nativa/home.mp4" type="video/mp4" />
-              <img src="assets/gota-nativa/home-poster.jpg" alt="Loja da Gota Nativa: home, produtos e checkout." loading="lazy" />
-            </video>
-          </div>
-        </figure>
-      </article>
-
-      <!-- PROVA AO VIVO (destaque) -->
-      <article class="step step-live">
-        <div class="live-card">
-          <p class="step-tag step-tag-strong">Prova ao vivo</p>
-          <h3 class="step-title">Não é mockup. É uma loja de verdade, no ar.</h3>
-          <p class="step-body">
-            Criada do início ao fim — marca, identidade e e-commerce. Veja você mesmo,
-            funcionando agora.
-          </p>
-          <a class="btn btn-live" href="https://gotanativa.com.br" target="_blank" rel="noopener">
-            Visitar a loja ao vivo <span aria-hidden="true">→</span>
-          </a>
-        </div>
-      </article>
-
-      <!-- RECAP -->
-      <article class="recap" aria-label="Resumo do que foi criado">
-        <h3 class="recap-title">De um produto, <span class="hl">uma marca completa.</span></h3>
-        <ul class="recap-list">
-          <li>Nome &amp; conceito</li>
-          <li class="rsep" aria-hidden="true">→</li>
-          <li>Logo &amp; identidade</li>
-          <li class="rsep" aria-hidden="true">→</li>
-          <li>Catálogo</li>
-          <li class="rsep" aria-hidden="true">→</li>
-          <li>Criativos</li>
-          <li class="rsep" aria-hidden="true">→</li>
-          <li>Loja no ar</li>
-        </ul>
-      </article>
-    </div>
-
-    <div class="case-content" id="case-rosa">
-      <div class="case-intro">
-        <p class="section-label"><span class="num">01</span> O case · Rosa mosqueta</p>
-        <h2 class="section-title">Um cliente. Uma foto. Uma campanha completa.</h2>
-        <p class="section-lead">
-          Acompanhe como um único produto, com uma foto fraca, virou um arsenal de
-          criativos prontos pra anunciar — sem estúdio, sem ensaio, sem semanas de espera.
-        </p>
-      </div>
-
-      <!-- O DESAFIO -->
-      <article class="step step-challenge">
-        <div class="step-text">
-          <p class="step-tag">O desafio</p>
-          <h3 class="step-title">“O cliente tinha só isto.”</h3>
-          <p class="step-body">
-            Produto excelente, resultado real — e uma foto tirada na correria,
-            numa prateleira, com luz qualquer. O tipo de imagem que não gera
-            desejo e não vende. Era tudo o que existia pra trabalhar.
-          </p>
-        </div>
-        <figure class="step-figure">
-          <img src="assets/before-produto.jpg" alt="Foto original do produto na prateleira, com iluminação amadora." loading="lazy" />
-          <figcaption>A matéria-prima: a foto crua enviada pelo cliente.</figcaption>
-        </figure>
-      </article>
-
-      <!-- ANTES → DEPOIS (bloco principal) -->
-      <article class="step step-compare" aria-label="Antes e depois do produto">
-        <div class="compare-head">
-          <p class="step-tag step-tag-strong">A transformação</p>
-          <h3 class="step-title">
-            Antes <span class="arrow">→</span> Depois
-          </h3>
-          <p class="step-body compare-lead">
-            Arraste a alça para revelar. Mesma garrafa, outro patamar:
-            o produto vira protagonista.
-          </p>
-        </div>
-
-        <!-- Comparador interativo (arrastar) -->
-        <div class="compare" id="compare" aria-label="Comparador antes e depois. Arraste para revelar.">
-          <div class="compare-img compare-after">
-            <img src="assets/after-produt.jpg" alt="Produto após tratamento, com fundo limpo e qualidade de campanha." />
-            <span class="compare-badge badge-after">DEPOIS</span>
-          </div>
-          <div class="compare-img compare-before" id="compareBefore">
-            <img src="assets/before-produto.jpg" alt="Produto na foto original crua." />
-            <span class="compare-badge badge-before">ANTES</span>
-          </div>
-          <div class="compare-handle" id="compareHandle" role="slider" tabindex="0"
-               aria-label="Revelar antes e depois" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
-            <span class="handle-line" aria-hidden="true"></span>
-            <span class="handle-grip" aria-hidden="true">‹ ›</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- AS CENAS -->
-      <article class="step step-scenes">
-        <div class="step-text step-text-wide">
-          <p class="step-tag">As cenas</p>
-          <h3 class="step-title">Criar desejo, sem estúdio.</h3>
-          <p class="step-body">
-            A partir do produto limpo, geramos universos: o lado botânico,
-            o ritual de cuidado, o clima dramático. Cada cena fala com um
-            tipo de cliente — e nenhuma precisou de set de fotografia.
-          </p>
-        </div>
-        <div class="scenes-grid">
-          <figure>
-            <img src="assets/cena-1.jpg" alt="Cena botânica do produto, cercado por elementos naturais." loading="lazy" />
-            <figcaption>Botânica</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/cena-2.jpg" alt="Cena de ritual de cuidado com o produto." loading="lazy" />
-            <figcaption>Ritual</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/cena-3.jpg" alt="Cena dramática do produto com iluminação marcante." loading="lazy" />
-            <figcaption>Dramática</figcaption>
-          </figure>
-        </div>
-      </article>
-
-      <!-- A INFLUENCER -->
-      <article class="step step-influencer">
-        <div class="influencer-head">
-          <p class="step-tag">A influenciadora</p>
-          <h3 class="step-title">“O cliente pediu uma influenciadora.<br />Eu criei a Patricia.”</h3>
-          <p class="step-body">
-            Uma persona consistente, feita 100% com IA: mesmo rosto, mesmo corpo,
-            em qualquer foto. Custo zero de cachê, agenda ou direitos de imagem —
-            e total controle da mensagem.
-          </p>
-        </div>
-        <div class="influencer-grid">
-          <figure class="influencer-sheet">
-            <img src="assets/influencer-sheet.png" alt="Character sheet da Patricia: rosto e corpo, em diferentes ângulos." loading="lazy" />
-            <figcaption>Character sheet — a base que mantém a persona idêntica.</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/influencer-1.jpg" alt="Patricia segurando e apresentando o produto." loading="lazy" />
-          </figure>
-          <figure>
-            <img src="assets/influencer-2.jpg" alt="Patricia usando o produto em um momento de cuidado." loading="lazy" />
-          </figure>
-          <figure>
-            <img src="assets/influencer-3.jpg" alt="Patricia recomendando o produto para a câmera." loading="lazy" />
-          </figure>
-        </div>
-      </article>
-
-      <!-- O VÍDEO -->
-      <article class="step step-video">
-        <div class="step-text step-text-wide">
-          <p class="step-tag">O vídeo</p>
-          <h3 class="step-title">Vídeo pronto pra anúncio.</h3>
-          <p class="step-body">
-            Um UGC no estilo “amiga te indicando”, gerado com IA e pronto pra
-            anunciar no Instagram e TikTok.
-          </p>
-        </div>
-        <figure class="video-wrap">
-          <video controls preload="metadata" playsinline poster="assets/influencer-1.jpg">
-            <source src="assets/video-ugc.mp4" type="video/mp4" />
-            Seu navegador não suporta vídeo. <a href="assets/video-ugc.mp4">Baixe o vídeo aqui.</a>
-          </video>
-        </figure>
-      </article>
-
-      <!-- OS DEPOIMENTOS -->
-      <article class="step step-reviews">
-        <div class="step-text step-text-wide">
-          <p class="step-tag">A prova social</p>
-          <h3 class="step-title">Até a prova social eu crio com IA.</h3>
-          <p class="step-body">
-            Nenhuma dessas pessoas existe: fotos e vídeos de depoimento gerados
-            100% com IA, no estilo de conteúdo de cliente. Em grade, viram um
-            mural de credibilidade pros seus criativos — sem depender de ninguém.
-          </p>
-        </div>
-
-        <!-- Depoimentos em vídeo (prova mais forte, vêm antes da grade de fotos) -->
-        <p class="reviews-videolabel">Depoimentos em vídeo — pessoas criadas com IA</p>
-        <div class="reviews-videos">
-          <figure>
-            <video controls playsinline preload="metadata">
-              <source src="assets/depoimento-video-1.mp4" type="video/mp4" />
-              Seu navegador não suporta vídeo. <a href="assets/depoimento-video-1.mp4">Baixe aqui.</a>
-            </video>
-          </figure>
-          <figure>
-            <video controls playsinline preload="metadata">
-              <source src="assets/depoimento-video-2.mp4" type="video/mp4" />
-              Seu navegador não suporta vídeo. <a href="assets/depoimento-video-2.mp4">Baixe aqui.</a>
-            </video>
-          </figure>
-        </div>
-
-        <div class="reviews-grid">
-          <figure><img src="assets/depoimento-1.png" alt="Depoimento gerado com IA, pessoa que não existe,1." loading="lazy" /></figure>
-          <figure><img src="assets/depoimento-2.png" alt="Depoimento gerado com IA, pessoa que não existe,2." loading="lazy" /></figure>
-          <figure><img src="assets/depoimento-3.png" alt="Depoimento gerado com IA, pessoa que não existe,3." loading="lazy" /></figure>
-          <figure><img src="assets/depoimento-4.png" alt="Depoimento gerado com IA, pessoa que não existe,4." loading="lazy" /></figure>
-        </div>
-      </article>
-
-      <!-- A PÁGINA -->
-      <article class="step step-landing">
-        <div class="step-text">
-          <p class="step-tag">A página</p>
-          <h3 class="step-title">A página que vira clique em venda.</h3>
-          <p class="step-body">
-            Todos os criativos reunidos numa landing page que guia o visitante
-            até o botão de compra. O criativo atrai; a página converte.
-          </p>
-        </div>
-        <figure class="landing-figure">
-          <div class="device">
-            <img src="assets/landing-mockup.gif" alt="Mockup animado da landing page montada com os criativos do produto." loading="lazy" />
-          </div>
-        </figure>
-      </article>
-
-      <!-- RECAP -->
-      <article class="recap" aria-label="Resumo dos entregáveis">
-        <h3 class="recap-title">De uma foto, <span class="hl">uma campanha completa.</span></h3>
-        <ul class="recap-list">
-          <li>Foto de produto</li>
-          <li class="rsep" aria-hidden="true">→</li>
-          <li>3 cenas</li>
-          <li class="rsep" aria-hidden="true">→</li>
-          <li>Influencer com IA</li>
-          <li class="rsep" aria-hidden="true">→</li>
-          <li>Vídeo de anúncio</li>
-          <li class="rsep" aria-hidden="true">→</li>
-          <li>Depoimentos</li>
-          <li class="rsep" aria-hidden="true">→</li>
-          <li>Landing page</li>
-        </ul>
-      </article>
-    </div>
-    <div class="case-content" id="case-biotina">
-      <div class="case-intro">
-        <p class="section-label"><span class="num">02</span> O case · Biotina</p>
-        <h2 class="section-title">Um produto comum. Uma campanha completa.</h2>
-        <p class="section-lead">
-          Um suplemento de beleza (cabelo, pele e unhas) cuja embalagem comum não
-          comunicava valor. Acompanhe a mesma jornada do método — do produto cru a um
-          arsenal de criativos prontos pra anunciar.
-        </p>
-        <p class="biotina-compliance">Suplemento alimentar — não é medicamento.</p>
-      </div>
-
-      <!-- O DESAFIO -->
-      <article class="step step-challenge">
-        <div class="step-text">
-          <p class="step-tag">O desafio</p>
-          <h3 class="step-title">“O cliente tinha só isto.”</h3>
-          <p class="step-body">
-            Um pote fotografado na correria, na parede, com luz qualquer. Uma imagem
-            que não comunica valor nem cria desejo. Era o ponto de partida.
-          </p>
-        </div>
-        <figure class="step-figure">
-          <img src="assets/biotina/after_before.jpeg" alt="Foto crua do pote de Biotina na parede, com luz amadora." loading="lazy" />
-          <figcaption>A matéria-prima: a foto crua do produto.</figcaption>
-        </figure>
-      </article>
-
-      <!-- ANTES → DEPOIS -->
-      <article class="step step-compare" aria-label="Antes e depois do produto Biotina">
-        <div class="compare-head">
-          <p class="step-tag step-tag-strong">A transformação</p>
-          <h3 class="step-title">Antes <span class="arrow">→</span> Depois</h3>
-          <p class="step-body compare-lead">
-            Arraste a alça para revelar. O mesmo pote, outro patamar: de foto
-            improvisada a foto de produto profissional.
-          </p>
-        </div>
-        <div class="compare compare-portrait" aria-label="Comparador antes e depois. Arraste para revelar.">
-          <div class="compare-img compare-after">
-            <img src="assets/biotina/produto.png" alt="Pote de Biotina em foto profissional, depois." />
-            <span class="compare-badge badge-after">DEPOIS</span>
-          </div>
-          <div class="compare-img compare-before">
-            <img src="assets/biotina/after_before.jpeg" alt="Pote de Biotina na foto crua, antes." />
-            <span class="compare-badge badge-before">ANTES</span>
-          </div>
-          <div class="compare-handle" role="slider" tabindex="0"
-               aria-label="Revelar antes e depois" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
-            <span class="handle-line" aria-hidden="true"></span>
-            <span class="handle-grip" aria-hidden="true">‹ ›</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- OS CRIATIVOS -->
-      <article class="step step-scenes">
-        <div class="step-text step-text-wide">
-          <p class="step-tag">Os criativos</p>
-          <h3 class="step-title">Criar desejo, sem estúdio.</h3>
-          <p class="step-body">
-            A partir do produto, geramos um arsenal de peças de anúncio — beleza e
-            autocuidado, fios mais fortes, unhas resistentes e pele com viço. Prontas
-            pra Instagram e TikTok.
-          </p>
-        </div>
-        <div class="gallery-grid">
-          <figure><img src="assets/biotina/antes-depois.png" alt="Criativo de anúncio comparando a aparência dos cabelos antes e depois." loading="lazy" /></figure>
-          <figure><img src="assets/biotina/criativo-1.png" alt="Criativo de anúncio da Biotina, para cabelo, pele e unha." loading="lazy" /></figure>
-          <figure><img src="assets/biotina/criativo-2.png" alt="Criativo de anúncio da Biotina: Seu Novo Ritual." loading="lazy" /></figure>
-          <figure><img src="assets/biotina/criativo-3.png" alt="Criativo de anúncio da Biotina: Beleza de Dentro." loading="lazy" /></figure>
-          <figure><img src="assets/biotina/criativo-4.png" alt="Criativo de anúncio da Biotina: Beleza em Alta." loading="lazy" /></figure>
-          <figure><img src="assets/biotina/criativo-5.png" alt="Criativo de anúncio da Biotina: Simples e Essencial." loading="lazy" /></figure>
-        </div>
-      </article>
-
-      <!-- A INFLUENCIADORA -->
-      <article class="step step-influencer">
-        <div class="influencer-head">
-          <p class="step-tag">A influenciadora</p>
-          <h3 class="step-title">Uma persona criada do zero.</h3>
-          <p class="step-body">
-            Rosto e corpo consistentes, feitos 100% com IA — a mesma pessoa em foto e
-            vídeo, sem cachê e sem agenda. A embaixadora da marca, sob medida.
-          </p>
-        </div>
-        <div class="influencer-grid cols-3">
-          <figure class="influencer-sheet">
-            <img src="assets/biotina/influencer-sheet.png" alt="Character sheet da influenciadora de IA da Biotina, em vários ângulos." loading="lazy" />
-            <figcaption>Character sheet — a base que mantém a persona idêntica.</figcaption>
-          </figure>
-          <figure><img src="assets/biotina/ugc-1.png" alt="Influenciadora da Biotina segurando o produto, com depoimento de beleza." loading="lazy" /></figure>
-          <figure>
-            <video controls playsinline preload="metadata">
-              <source src="assets/biotina/influencer.mp4" type="video/mp4" />
-              Seu navegador não suporta vídeo. <a href="assets/biotina/influencer.mp4">Baixe aqui.</a>
-            </video>
-          </figure>
-        </div>
-      </article>
-
-      <!-- O VÍDEO -->
-      <article class="step step-video">
-        <div class="step-text step-text-wide">
-          <p class="step-tag">O vídeo</p>
-          <h3 class="step-title">Vídeo pronto pra anúncio.</h3>
-          <p class="step-body">
-            Um UGC no estilo “amiga te indicando”, gerado com IA e pronto pra
-            anunciar no Instagram e TikTok.
-          </p>
-        </div>
-        <figure class="video-wrap">
-          <video controls preload="metadata" playsinline>
-            <source src="assets/biotina/download.mp4" type="video/mp4" />
-            Seu navegador não suporta vídeo. <a href="assets/biotina/download.mp4">Baixe o vídeo aqui.</a>
-          </video>
-        </figure>
-      </article>
-
-      <!-- A PROVA SOCIAL (depoimentos): quando houver fotos/vídeos de clientes da
-           Biotina, copie aqui o bloco <article class="step step-reviews"> do case da
-           rosa (no #case-rosa) e troque por assets/biotina/depoimento-*. -->
-
-      <!-- A PÁGINA -->
-      <article class="step step-landing">
-        <div class="step-text">
-          <p class="step-tag">A página</p>
-          <h3 class="step-title">A página que vira clique em venda.</h3>
-          <p class="step-body">
-            Todos os criativos reunidos numa landing page que conduz o visitante até a
-            compra. O criativo atrai; a página converte.
-          </p>
-        </div>
-        <figure class="landing-figure">
-          <div class="device">
-            <img src="assets/biotina/landing.gif" alt="Mockup animado da landing page da Biotina, montada com os criativos." loading="lazy" />
-          </div>
-        </figure>
-      </article>
-
-      <!-- RECAP -->
-      <article class="recap" aria-label="Resumo dos entregáveis">
-        <h3 class="recap-title">De um produto comum, <span class="hl">uma campanha completa.</span></h3>
-        <ul class="recap-list">
-          <li>Foto de produto</li>
-          <li class="rsep" aria-hidden="true">→</li>
-          <li>Criativos de anúncio</li>
-          <li class="rsep" aria-hidden="true">→</li>
-          <li>Influencer com IA</li>
-          <li class="rsep" aria-hidden="true">→</li>
-          <li>Vídeo de anúncio</li>
-          <li class="rsep" aria-hidden="true">→</li>
-          <li>Landing page</li>
-        </ul>
-      </article>
-    </div>
-
-    <!-- ============ GALERIAS POR SERVIÇO (abertas pelos cards de Serviços) ============
-         Cada galeria mostra UM tipo de entrega, agrupado por projeto.
-         Para incluir um projeto novo numa galeria: copie um <section class="gallery-project">
-         e troque o título e as imagens/vídeos (de assets/NOME/). =========================== -->
-
-    <!-- FOTOS TRANSFORMADAS -->
-    <div class="case-content gallery-content" id="gallery-fotos">
-      <div class="case-intro">
-        <p class="section-label"><span class="num">✦</span> Serviço</p>
-        <h2 class="section-title">Fotos transformadas</h2>
-        <p class="section-lead">Produto cru vira foto de e-commerce e cenas que vendem — em cada projeto.</p>
-      </div>
-      <section class="gallery-project">
-        <h3 class="gallery-project-title">Rosa Mosqueta</h3>
-        <figure class="ba-teaser" aria-label="Antes e depois do produto Rosa Mosqueta">
-          <div class="teaser-card teaser-before">
-            <img src="assets/before-produto.jpg" alt="Foto crua da Rosa Mosqueta na prateleira, antes." loading="lazy" />
-            <span class="teaser-tag">ANTES</span>
-          </div>
-          <div class="teaser-arrow" aria-hidden="true">→</div>
-          <div class="teaser-card teaser-after">
-            <img src="assets/after-produt.jpg" alt="Foto de produto profissional da Rosa Mosqueta, depois." loading="lazy" />
-            <span class="teaser-tag teaser-tag-after">DEPOIS</span>
-          </div>
-        </figure>
-        <div class="gallery-grid">
-          <figure><img src="assets/cena-1.jpg" alt="Cena botânica da Rosa Mosqueta." loading="lazy" /></figure>
-          <figure><img src="assets/cena-2.jpg" alt="Cena de ritual de cuidado da Rosa Mosqueta." loading="lazy" /></figure>
-          <figure><img src="assets/cena-3.jpg" alt="Cena dramática da Rosa Mosqueta." loading="lazy" /></figure>
-        </div>
-      </section>
-      <section class="gallery-project">
-        <h3 class="gallery-project-title">Biotina</h3>
-        <figure class="ba-teaser" aria-label="Antes e depois do produto Biotina">
-          <div class="teaser-card teaser-before">
-            <img src="assets/biotina/after_before.jpeg" alt="Foto crua do pote de Biotina na parede, antes." loading="lazy" />
-            <span class="teaser-tag">ANTES</span>
-          </div>
-          <div class="teaser-arrow" aria-hidden="true">→</div>
-          <div class="teaser-card teaser-after">
-            <img src="assets/biotina/produto.png" alt="Foto de produto profissional do pote de Biotina, depois." loading="lazy" />
-            <span class="teaser-tag teaser-tag-after">DEPOIS</span>
-          </div>
-        </figure>
-        <div class="gallery-grid">
-          <figure><img src="assets/biotina/criativo-1.png" alt="Criativo de anúncio da Biotina, para cabelo, pele e unha." loading="lazy" /></figure>
-          <figure><img src="assets/biotina/criativo-2.png" alt="Criativo de anúncio da Biotina: Seu Novo Ritual." loading="lazy" /></figure>
-          <figure><img src="assets/biotina/criativo-3.png" alt="Criativo de anúncio da Biotina: Beleza de Dentro." loading="lazy" /></figure>
-          <figure><img src="assets/biotina/criativo-4.png" alt="Criativo de anúncio da Biotina: Beleza em Alta." loading="lazy" /></figure>
-          <figure><img src="assets/biotina/criativo-5.png" alt="Criativo de anúncio da Biotina: Simples e Essencial." loading="lazy" /></figure>
-        </div>
-      </section>
-    </div>
-
-    <!-- INFLUENCERS COM IA -->
-    <div class="case-content gallery-content" id="gallery-influencers">
-      <div class="case-intro">
-        <p class="section-label"><span class="num">✦</span> Serviço</p>
-        <h2 class="section-title">Criação de influencers com IA</h2>
-        <p class="section-lead">Personas consistentes — mesmo rosto e corpo em foto e vídeo, sem cachê nem agenda.</p>
-      </div>
-      <section class="gallery-project">
-        <h3 class="gallery-project-title">Rosa Mosqueta · Patricia</h3>
-        <div class="gallery-grid">
-          <figure><img src="assets/influencer-sheet.png" alt="Character sheet da Patricia, influenciadora de IA." loading="lazy" /></figure>
-          <figure><img src="assets/influencer-1.jpg" alt="Patricia apresentando o produto." loading="lazy" /></figure>
-          <figure><img src="assets/influencer-2.jpg" alt="Patricia usando o produto." loading="lazy" /></figure>
-          <figure><img src="assets/influencer-3.jpg" alt="Patricia recomendando o produto." loading="lazy" /></figure>
-          <figure class="g-tagged">
-            <video controls playsinline preload="metadata">
-              <source src="assets/depoimento-video-1.mp4" type="video/mp4" />
-              Seu navegador não suporta vídeo.
-            </video>
-            <span class="gallery-tag">Depoimento</span>
-          </figure>
-          <figure class="g-tagged">
-            <video controls playsinline preload="metadata">
-              <source src="assets/depoimento-video-2.mp4" type="video/mp4" />
-              Seu navegador não suporta vídeo.
-            </video>
-            <span class="gallery-tag">Depoimento</span>
-          </figure>
-          <figure class="g-tagged"><img src="assets/depoimento-1.png" alt="Depoimento gerado com IA, pessoa que não existe,1." loading="lazy" /><span class="gallery-tag">Depoimento</span></figure>
-          <figure class="g-tagged"><img src="assets/depoimento-2.png" alt="Depoimento gerado com IA, pessoa que não existe,2." loading="lazy" /><span class="gallery-tag">Depoimento</span></figure>
-          <figure class="g-tagged"><img src="assets/depoimento-3.png" alt="Depoimento gerado com IA, pessoa que não existe,3." loading="lazy" /><span class="gallery-tag">Depoimento</span></figure>
-          <figure class="g-tagged"><img src="assets/depoimento-4.png" alt="Depoimento gerado com IA, pessoa que não existe,4." loading="lazy" /><span class="gallery-tag">Depoimento</span></figure>
-        </div>
-      </section>
-      <section class="gallery-project">
-        <h3 class="gallery-project-title">Biotina</h3>
-        <div class="gallery-grid">
-          <figure><img src="assets/biotina/influencer-sheet.png" alt="Character sheet da influenciadora de IA da Biotina." loading="lazy" /></figure>
-          <figure><img src="assets/biotina/ugc-1.png" alt="Influenciadora da Biotina segurando o produto." loading="lazy" /></figure>
-          <figure>
-            <video controls playsinline preload="metadata">
-              <source src="assets/biotina/influencer.mp4" type="video/mp4" />
-              Seu navegador não suporta vídeo.
-            </video>
-          </figure>
-        </div>
-      </section>
-    </div>
-
-    <!-- VÍDEOS & CRIATIVOS -->
-    <div class="case-content gallery-content" id="gallery-videos">
-      <div class="case-intro">
-        <p class="section-label"><span class="num">✦</span> Serviço</p>
-        <h2 class="section-title">Vídeos &amp; criativos</h2>
-        <p class="section-lead">UGC e anúncios prontos pra rodar no Instagram e no TikTok.</p>
-      </div>
-      <section class="gallery-project">
-        <h3 class="gallery-project-title">Rosa Mosqueta</h3>
-        <div class="gallery-grid">
-          <figure>
-            <video controls playsinline preload="metadata" poster="assets/influencer-1.jpg">
-              <source src="assets/video-ugc.mp4" type="video/mp4" />
-              Seu navegador não suporta vídeo.
-            </video>
-          </figure>
-        </div>
-      </section>
-      <section class="gallery-project">
-        <h3 class="gallery-project-title">Biotina</h3>
-        <div class="gallery-grid">
-          <figure>
-            <video controls playsinline preload="metadata">
-              <source src="assets/biotina/download.mp4" type="video/mp4" />
-              Seu navegador não suporta vídeo.
-            </video>
-          </figure>
-          <figure><img src="assets/biotina/antes-depois.png" alt="Criativo de anúncio da Biotina, comparando a aparência dos cabelos." loading="lazy" /></figure>
-          <figure><img src="assets/biotina/criativo-1.png" alt="Criativo de anúncio do suplemento de beleza Biotina." loading="lazy" /></figure>
-          <figure><img src="assets/biotina/criativo-2.png" alt="Criativo de anúncio da Biotina: Seu Novo Ritual." loading="lazy" /></figure>
-          <figure><img src="assets/biotina/criativo-3.png" alt="Criativo de anúncio da Biotina: Beleza de Dentro." loading="lazy" /></figure>
-          <figure><img src="assets/biotina/criativo-4.png" alt="Criativo de anúncio da Biotina: Beleza em Alta." loading="lazy" /></figure>
-          <figure><img src="assets/biotina/criativo-5.png" alt="Criativo de anúncio da Biotina: Simples e Essencial." loading="lazy" /></figure>
-        </div>
-      </section>
-    </div>
-
-    <!-- LANDING PAGES -->
-    <div class="case-content gallery-content" id="gallery-landing">
-      <div class="case-intro">
-        <p class="section-label"><span class="num">✦</span> Serviço</p>
-        <h2 class="section-title">Landing pages</h2>
-        <p class="section-lead">A página que reúne os criativos e transforma o clique em venda.</p>
-      </div>
-      <section class="gallery-project">
-        <h3 class="gallery-project-title">Rosa Mosqueta</h3>
-        <div class="gallery-grid">
-          <figure><img src="assets/landing-mockup.gif" alt="Mockup animado da landing page da Rosa Mosqueta." loading="lazy" /></figure>
-        </div>
-      </section>
-      <section class="gallery-project">
-        <h3 class="gallery-project-title">Biotina</h3>
-        <div class="gallery-grid">
-          <figure><img src="assets/biotina/landing.gif" alt="Mockup animado da landing page da Biotina." loading="lazy" /></figure>
-        </div>
-      </section>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
+  <script src="/content.js" defer></script>
+  <script src="/script.js" defer></script>
 </body>
 </html>

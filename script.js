@@ -1,193 +1,276 @@
-/* =========================================================================
-   ⚙️  EDITE AQUI OS SEUS CONTATOS  ⚙️
-   -------------------------------------------------------------------------
-   Esta é a ÚNICA parte que você precisa mexer. Troque os valores entre aspas.
-   Depois de salvar este arquivo, é só atualizar a página no navegador (F5).
-   ========================================================================= */
-const CONTATO = {
-  // WhatsApp: só números, com código do país (55) + DDD + número.
-  // Exemplo: (11) 91234-5678  ->  "5511912345678"
-  whatsapp: "5511978230487",
+"use strict";
 
-  // Mensagem que já vem escrita quando o cliente abre seu WhatsApp:
-  whatsappMensagem: "Olá! Vi seu portfólio e quero meu diagnóstico grátis.",
-
-  // Instagram: só o seu @ (sem o arroba e sem link).
-  // Exemplo: instagram.com/seuestudio  ->  "seuestudio"
-  instagram: "seuestudio",
-};
-/* ===== Daqui pra baixo não precisa mexer em nada. ======================== */
-
-
-// Monta os links a partir do que você preencheu acima
-const linkWhatsApp = "https://wa.me/" + CONTATO.whatsapp +
-  "?text=" + encodeURIComponent(CONTATO.whatsappMensagem);
-const linkInstagram = "https://instagram.com/" + CONTATO.instagram;
-
-// Aplica os links em todos os botões marcados com data-cta="whatsapp" / "instagram"
-document.querySelectorAll('[data-cta="whatsapp"]').forEach(function (el) {
-  // Se for um botão dentro de uma seção (âncora #contato), mantém a rolagem;
-  // os botões finais (com href="#") recebem o link direto do WhatsApp.
-  if (el.getAttribute("href") === "#" || el.classList.contains("btn-wpp")) {
-    el.setAttribute("href", linkWhatsApp);
-    el.setAttribute("target", "_blank");
-    el.setAttribute("rel", "noopener");
-  }
-});
-document.querySelectorAll('[data-cta="instagram"]').forEach(function (el) {
-  el.setAttribute("href", linkInstagram);
-  el.setAttribute("target", "_blank");
-  el.setAttribute("rel", "noopener");
-});
-
-// Ano automático no rodapé
-const anoEl = document.getElementById("ano");
-if (anoEl) anoEl.textContent = new Date().getFullYear();
-
-
-/* =========================================================================
-   Comparador ANTES → DEPOIS (arrastar para revelar)
-   ========================================================================= */
 (function () {
-  // Funciona para QUALQUER comparador .compare na página (rosa, biotina, etc.)
-  document.querySelectorAll(".compare").forEach(function (compare) {
-    const handle = compare.querySelector(".compare-handle");
-    if (!handle) return;
+  const data = window.SITE_DATA;
+  if (!data) return;
 
-    let dragging = false;
+  const allowedEvents = new Set([
+    "whatsapp_click",
+    "case_open",
+    "casting_open",
+    "casting_profile_click",
+    "pricing_cta_click",
+    "video_play",
+    "before_after_interaction",
+    "service_page_view",
+    "faq_open",
+  ]);
 
-    function apply(pct) {
-      pct = Math.max(0, Math.min(100, pct));
-      compare.style.setProperty("--pos", pct + "%"); // controla clip-path + alça
-      handle.setAttribute("aria-valuenow", Math.round(pct));
-    }
-    function setFromX(clientX) {
-      const rect = compare.getBoundingClientRect();
-      apply(((clientX - rect.left) / rect.width) * 100);
-    }
-    function startDrag(x) { dragging = true; compare.classList.add("dragging"); setFromX(x); }
-    function moveDrag(x) { if (dragging) setFromX(x); }
-    function endDrag() { dragging = false; compare.classList.remove("dragging"); }
+  const allowedUtmKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
 
-    // Mouse
-    compare.addEventListener("mousedown", (e) => { e.preventDefault(); startDrag(e.clientX); });
-    window.addEventListener("mousemove", (e) => moveDrag(e.clientX));
-    window.addEventListener("mouseup", endDrag);
-
-    // Toque (celular)
-    compare.addEventListener("touchstart", (e) => startDrag(e.touches[0].clientX), { passive: true });
-    compare.addEventListener("touchmove", (e) => moveDrag(e.touches[0].clientX), { passive: true });
-    compare.addEventListener("touchend", endDrag);
-
-    // Teclado (acessibilidade): setas movem a alça
-    handle.addEventListener("keydown", (e) => {
-      const current = parseFloat(handle.getAttribute("aria-valuenow")) || 50;
-      let next = current;
-      if (e.key === "ArrowLeft") next = current - 4;
-      else if (e.key === "ArrowRight") next = current + 4;
-      else if (e.key === "Home") next = 0;
-      else if (e.key === "End") next = 100;
-      else return;
-      e.preventDefault();
-      apply(next);
+  function readUtms() {
+    const current = {};
+    const params = new URLSearchParams(window.location.search);
+    allowedUtmKeys.forEach(function (key) {
+      const value = params.get(key);
+      if (value) current[key] = value.slice(0, 160);
     });
 
-    apply(50); // posição inicial (meio)
-  });
-})();
-
-
-/* =========================================================================
-   Demo FOTO → VÍDEO 360°: dá play só quando o vídeo aparece na tela
-   (e pausa quando sai), pra não gastar dados nem bateria à toa.
-   ========================================================================= */
-(function () {
-  const videos = document.querySelectorAll(".demo-360-video");
-  if (!videos.length) return;
-
-  // Se o navegador não tiver IntersectionObserver (muito raro), só dá play direto.
-  if (!("IntersectionObserver" in window)) {
-    videos.forEach(function (v) { v.play().catch(function () {}); });
-    return;
+    try {
+      if (Object.keys(current).length) {
+        window.sessionStorage.setItem("criando_utm", JSON.stringify(current));
+        return current;
+      }
+      const stored = window.sessionStorage.getItem("criando_utm");
+      return stored ? JSON.parse(stored) : {};
+    } catch (_error) {
+      return current;
+    }
   }
 
-  const observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      const video = entry.target;
-      if (entry.isIntersecting) {
-        video.play().catch(function () {}); // autoplay pode ser bloqueado; ignora sem erro
-      } else {
-        video.pause();
+  const sessionUtms = readUtms();
+
+  function cleanProperties(properties) {
+    const clean = { page_path: window.location.pathname };
+    Object.entries({ ...sessionUtms, ...properties }).forEach(function ([key, value]) {
+      if (value === undefined || value === null || value === "") return;
+      if (/^(message|phone|email|conversation|whatsapp_message)$/i.test(key)) return;
+      clean[key] = typeof value === "string" ? value.slice(0, 180) : value;
+    });
+    return clean;
+  }
+
+  function trackEvent(name, properties) {
+    if (!allowedEvents.has(name)) return;
+    const payload = cleanProperties(properties || {});
+
+    if (typeof window.gtag === "function") {
+      window.gtag("event", name, payload);
+    } else if (Array.isArray(window.dataLayer)) {
+      window.dataLayer.push({ event: name, ...payload });
+    }
+
+    window.dispatchEvent(new CustomEvent("criando:event", { detail: { name, properties: payload } }));
+  }
+
+  window.CriandoAnalytics = Object.freeze({ trackEvent });
+
+  document.querySelectorAll("[data-current-year]").forEach(function (element) {
+    element.textContent = String(new Date().getFullYear());
+  });
+
+  document.querySelectorAll("[data-message-key]").forEach(function (link) {
+    const key = link.dataset.messageKey;
+    const message = data.whatsappMessages[key];
+    if (!message) return;
+    link.href = `https://wa.me/${data.site.whatsapp}?text=${encodeURIComponent(message)}`;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+  });
+
+  document.querySelectorAll("[data-whatsapp]").forEach(function (link) {
+    link.addEventListener("click", function () {
+      const properties = {
+        location: link.dataset.location || "unknown",
+        plan: link.dataset.plan,
+        character_name: link.dataset.characterName,
+        cta_text: link.textContent.trim(),
+      };
+      if (link.dataset.characterName) {
+        trackEvent("casting_profile_click", properties);
+      }
+      trackEvent("whatsapp_click", properties);
+    });
+  });
+
+  document.querySelectorAll("[data-event]").forEach(function (element) {
+    element.addEventListener("click", function () {
+      const eventName = element.dataset.event;
+      trackEvent(eventName, {
+        location: element.dataset.location,
+        plan: element.dataset.plan,
+        case_name: element.dataset.caseName,
+        character_name: element.dataset.characterName,
+        cta_text: element.textContent.trim(),
+      });
+    });
+  });
+
+  const menuToggle = document.querySelector("[data-menu-toggle]");
+  const menu = document.querySelector("[data-menu]");
+  const menuBackdrop = document.querySelector("[data-menu-backdrop]");
+  let menuWasOpened = false;
+
+  function menuFocusable() {
+    return [menuToggle].concat(Array.from(menu ? menu.querySelectorAll("a[href]") : []));
+  }
+
+  function closeMenu(restoreFocus) {
+    if (!menuToggle || !menu || menuToggle.getAttribute("aria-expanded") !== "true") return;
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Abrir menu");
+    document.body.classList.remove("menu-open");
+    document.querySelectorAll("main, footer").forEach(function (element) { element.removeAttribute("inert"); });
+    if (restoreFocus) menuToggle.focus();
+  }
+
+  function openMenu() {
+    if (!menuToggle || !menu) return;
+    menuToggle.setAttribute("aria-expanded", "true");
+    menuToggle.setAttribute("aria-label", "Fechar menu");
+    document.body.classList.add("menu-open");
+    document.querySelectorAll("main, footer").forEach(function (element) { element.setAttribute("inert", ""); });
+    menuWasOpened = true;
+    const firstLink = menu.querySelector("a[href]");
+    if (firstLink) firstLink.focus();
+  }
+
+  if (menuToggle && menu && menuBackdrop) {
+    menuToggle.addEventListener("click", function () {
+      if (menuToggle.getAttribute("aria-expanded") === "true") closeMenu(true);
+      else openMenu();
+    });
+    menuBackdrop.addEventListener("click", function () { closeMenu(true); });
+    menu.querySelectorAll("a[href]").forEach(function (link) {
+      link.addEventListener("click", function () { closeMenu(false); });
+    });
+    document.addEventListener("keydown", function (event) {
+      if (menuToggle.getAttribute("aria-expanded") !== "true") return;
+      if (event.key === "Escape") {
+        event.preventDefault();
+        closeMenu(true);
+        return;
+      }
+      if (event.key !== "Tab") return;
+      const focusable = menuFocusable();
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
       }
     });
-  }, { threshold: 0.35 }); // começa quando ~1/3 do vídeo está visível
-
-  videos.forEach(function (v) { observer.observe(v); });
-})();
-
-
-/* =========================================================================
-   Overlay de Cases — abre o case em tela cheia (X, ESC, clique fora)
-   ========================================================================= */
-(function () {
-  const overlay = document.getElementById("caseOverlay");
-  const scroll = document.getElementById("caseOverlayScroll");
-  const panel = document.getElementById("caseOverlayPanel");
-  const sources = document.querySelector(".case-sources");
-  if (!overlay || !scroll || !panel || !sources) return;
-
-  let activeContent = null; // bloco de conteúdo atualmente exibido
-  let lastTrigger = null;   // card/botão que abriu (pra devolver o foco ao fechar)
-
-  function openById(id, trigger) {
-    const content = document.getElementById(id);
-    if (!content) return;
-    activeContent = content;
-    lastTrigger = trigger || null;
-    scroll.appendChild(content);                  // move o conteúdo pro overlay
-    overlay.classList.add("is-open");
-    overlay.setAttribute("aria-hidden", "false");
-    document.body.classList.add("overlay-open");  // trava o scroll do fundo
-    scroll.scrollTop = 0;
-    panel.focus();                                // foco vai pro overlay
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 820 && menuWasOpened) closeMenu(false);
+    });
   }
 
-  function closeCase() {
-    if (!overlay.classList.contains("is-open")) return;
-    overlay.classList.remove("is-open");
-    overlay.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("overlay-open");
-    if (activeContent) { sources.appendChild(activeContent); activeContent = null; } // devolve à origem
-    if (lastTrigger && typeof lastTrigger.focus === "function") lastTrigger.focus(); // volta o foco ao card
-    lastTrigger = null;
-  }
-
-  // Resolve o id do bloco-alvo a partir do data-attribute:
-  //  - data-open-case="rosa"      -> #case-rosa     (overlay do projeto inteiro)
-  //  - data-open-gallery="fotos"  -> #gallery-fotos (overlay de um serviço, por projeto)
-  function targetId(el) {
-    if (el.hasAttribute("data-open-case")) return "case-" + el.getAttribute("data-open-case");
-    if (el.hasAttribute("data-open-gallery")) return "gallery-" + el.getAttribute("data-open-gallery");
-    return null;
-  }
-
-  document.querySelectorAll("[data-open-case], [data-open-gallery]").forEach(function (el) {
-    el.addEventListener("click", function () { const id = targetId(el); if (id) openById(id, el); });
-    // cards usam role="button": ativar com Enter/Espaço
-    el.addEventListener("keydown", function (e) {
-      if (el.getAttribute("role") === "button" && (e.key === "Enter" || e.key === " ")) {
-        e.preventDefault();
-        const id = targetId(el); if (id) openById(id, el);
+  document.querySelectorAll("[data-faq-button]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      const panel = document.getElementById(button.getAttribute("aria-controls"));
+      if (!panel) return;
+      const opening = button.getAttribute("aria-expanded") !== "true";
+      button.setAttribute("aria-expanded", String(opening));
+      panel.hidden = !opening;
+      if (opening) {
+        trackEvent("faq_open", { location: "home_faq", cta_text: button.querySelector("span")?.textContent.trim() });
       }
     });
   });
 
-  // Fechar: botão X, fundo (backdrop) — tudo que tem data-close-case
-  overlay.querySelectorAll("[data-close-case]").forEach(function (el) {
-    el.addEventListener("click", closeCase);
+  document.querySelectorAll("[data-compare]").forEach(function (compare) {
+    const range = compare.querySelector("[data-compare-range]");
+    if (!range) return;
+    let tracked = false;
+    function update() {
+      compare.style.setProperty("--pos", `${range.value}%`);
+      if (!tracked) {
+        tracked = true;
+        trackEvent("before_after_interaction", { location: "case_compare", service: document.body.dataset.pageName });
+      }
+    }
+    range.addEventListener("input", update);
+    range.addEventListener("change", update);
   });
-  // Fechar com ESC
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") closeCase();
+
+  document.querySelectorAll("video[data-video-name]").forEach(function (video) {
+    video.addEventListener("play", function () {
+      if (video.dataset.playTracked === "true") return;
+      video.dataset.playTracked = "true";
+      trackEvent("video_play", { location: document.body.dataset.pageType, video_name: video.dataset.videoName });
+    });
   });
+
+  const lazyVideos = document.querySelectorAll("[data-lazy-video]");
+  if (lazyVideos.length) {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const loadVideo = function (video) {
+      video.querySelectorAll("source[data-src]").forEach(function (source) {
+        source.src = source.dataset.src;
+        source.removeAttribute("data-src");
+      });
+      video.load();
+      video.removeAttribute("data-lazy-video");
+      if (!reducedMotion && video.autoplay) video.play().catch(function () {});
+    };
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          loadVideo(entry.target);
+          observer.unobserve(entry.target);
+        });
+      }, { rootMargin: "300px 0px", threshold: 0.01 });
+      lazyVideos.forEach(function (video) { observer.observe(video); });
+    } else {
+      lazyVideos.forEach(loadVideo);
+    }
+  }
+
+  const filterButtons = document.querySelectorAll("[data-casting-filter]");
+  const castingCards = document.querySelectorAll("[data-casting-card]");
+  const filterStatus = document.querySelector("[data-filter-status]");
+
+  function matchesFilter(card, filter) {
+    if (filter === "Todos") return true;
+    if (filter === "Feminino" || filter === "Masculino") return card.dataset.gender === filter.toLowerCase();
+    const age = Number(card.dataset.age);
+    if (filter === "22–34") return age >= 22 && age <= 34;
+    if (filter === "35–49") return age >= 35 && age <= 49;
+    if (filter === "50+") return age >= 50;
+    return (card.dataset.niches || "").split("|").includes(filter);
+  }
+
+  filterButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      const filter = button.dataset.castingFilter;
+      let visible = 0;
+      filterButtons.forEach(function (item) {
+        const active = item === button;
+        item.classList.toggle("active", active);
+        item.setAttribute("aria-pressed", String(active));
+      });
+      castingCards.forEach(function (card) {
+        const show = matchesFilter(card, filter);
+        card.hidden = !show;
+        if (show) visible += 1;
+      });
+      if (filterStatus) filterStatus.textContent = `${visible} ${visible === 1 ? "personagem encontrada" : "personagens encontrados"}.`;
+    });
+  });
+
+  document.addEventListener("visibilitychange", function () {
+    document.documentElement.classList.toggle("page-hidden", document.hidden);
+  });
+
+  if (document.body.dataset.pageType === "service") {
+    trackEvent("service_page_view", { service: document.body.dataset.pageName, location: "direct" });
+  }
+  if (document.body.dataset.pageType === "casting") {
+    trackEvent("casting_open", { location: "direct" });
+  }
 })();

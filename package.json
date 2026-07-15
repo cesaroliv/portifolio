@@ -1,0 +1,15 @@
+{
+  "name": "criando-com-ia",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site estático da Criando com IA",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "package": "npm run build && node scripts/package.js",
+    "test": "node --test tests/site.test.js",
+    "validate": "npm run build && npm test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
