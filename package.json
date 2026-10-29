@@ -8,6 +8,9 @@
     "package": "npm run build && node scripts/package.js",
     "test": "node --test tests/focused.test.js",
     "test:legacy": "node --test tests/site.test.js",
+    "design:install": "npx --yes impeccable@4.8.0 install --providers=codex,hermes --scope=project -y",
+    "design:detect": "npx --yes impeccable@4.8.0 detect atelier",
+    "test:atelier": "node scripts/qa-atelier.cjs",
     "validate": "npm run build && npm test"
   },
   "engines": {

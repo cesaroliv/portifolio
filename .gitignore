@@ -5,3 +5,14 @@ assets/casting/*.png
 # Artefatos locais gerados para entrega; o site publicado continua na raiz.
 /dist/
 /build/
+
+# Ferramentas de design locais e relatórios não publicáveis
+/.agents/
+/.codex/
+/.hermes/
+/.impeccable/
+/docs/impeccable-*.txt
+/docs/atelier-*.txt
+/docs/atelier-*.json
+/docs/screenshots/
+/scripts/qa-*-last.txt

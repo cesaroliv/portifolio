@@ -7,6 +7,7 @@ const oldHost = "https://criandocomia.com";
 const newHost = "https://cesaroliv.github.io";
 const pages = [
   "index.html","en/index.html",
+  "atelier/index.html","atelier/landing/index.html","atelier/motion/index.html",
   "experiencias/ritual-botanico/index.html",
   "experiencias/biotina-motion/index.html",
   "experiencias/gota-nativa/index.html",
@@ -21,7 +22,7 @@ const pages = [
   "politica-de-privacidade/index.html",
   "termos-de-uso/index.html"
 ];
-const support = ["styles.min.css","showcase.css","content.js","script.js","showcase.js","focus.css","focus.js","sitemap.xml","robots.txt"];
+const support = ["styles.min.css","showcase.css","content.js","script.js","showcase.js","focus.css","focus.js","atelier/atelier.css","atelier/atelier.js","sitemap.xml","robots.txt"];
 const assets = new Set();
 function putFile(relative, transform=false) {
   const from = path.join(src, relative);
