@@ -49,3 +49,11 @@
 .hub-work-copy h2{text-wrap:balance}
 .taste-hub .hub-intro h1,.taste-hub .hub-right img{will-change:transform,opacity}
 @media(max-width:620px){.hub-movie{min-height:0}.hub-movie video{width:75%}.hub-movie-still{left:0;bottom:6%;width:38%!important}.motion-process{padding:80px 20px}.motion-process-heading{display:block}.motion-process-heading p{margin-top:18px}.motion-process-grid{gap:9px}.motion-process-grid figcaption{font-size:.75rem}.taste-footer{font-size:.81rem}}
+
+/* Taste visual review: secondary photographs must never cover mobile copy. */
+.hub-work-detail,.hub-movie-still{box-shadow:none}
+@media(max-width:620px){
+ .hub-still-pair{display:grid;grid-template-columns:1.3fr .7fr;gap:10px;align-items:end}
+ .hub-still-pair>img:first-child{width:100%;height:100%;object-fit:cover}
+ .hub-work-detail{position:static;right:auto;bottom:auto;width:100%!important;height:auto;aspect-ratio:3/4!important;border:0;margin:0}
+}
