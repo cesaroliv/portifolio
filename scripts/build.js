@@ -663,4 +663,16 @@ ${videoRows.join("\n")}
 `;
 fs.writeFileSync(path.join(root, "docs", "ASSETS_CRIANDO_COM_IA.md"), assetsReport, "utf8");
 
-console.log(`Build concluído: ${pages.size} páginas, sitemap.xml e robots.txt.`);
+// Current commercial positioning: two focused offers. The legacy route generator
+// stays intact for existing deep links, but the homepage is now authored separately.
+for (const [template, destination] of [
+  ["focused-home.html", "index.html"],
+  ["focused-home-en.html", "en/index.html"],
+]) {
+  const source = path.join(root, template);
+  const out = path.join(root, destination);
+  if (!fs.existsSync(source)) throw new Error("Missing focused template: " + source);
+  fs.mkdirSync(path.dirname(out), { recursive: true });
+  fs.copyFileSync(source, out);
+}
+console.log(`Build concluído: ${pages.size} rotas preservadas e vitrine focada em landing pages e motion.`);
