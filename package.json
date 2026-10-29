@@ -12,6 +12,9 @@
     "design:detect": "npx --yes impeccable@4.8.0 detect atelier",
     "test:atelier": "node scripts/qa-atelier.cjs",
     "test:atelier:live": "node scripts/qa-atelier-live.cjs",
+    "design:taste:install": "npx --yes skills@1.7.4 add https://github.com/Leonxlnx/taste-skill --skill design-taste-frontend --agent codex --yes",
+    "test:taste": "node scripts/qa-taste.cjs",
+    "render:taste:motion": "node scripts/render-taste-motion.cjs",
     "validate": "npm run build && npm test"
   },
   "engines": {

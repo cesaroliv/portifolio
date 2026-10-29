@@ -1,0 +1,55 @@
+<!doctype html><html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Rosa Mosqueta — Motion Commercial Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#263b2d;color:#fff}
+body{font-family:Mulish,sans-serif}
+.film{position:relative;width:720px;height:1280px;overflow:hidden;background:#293b2c;isolation:isolate}
+.scene{position:absolute;inset:0;opacity:0;overflow:hidden}
+.scene.one{animation:scene-one 12s linear both;opacity:1;background:#c8c5aa}
+.scene.two{animation:scene-two 12s linear both;background:#172519}
+.scene.three{animation:scene-three 12s linear both;background:#e9dcca}
+.scene.four{animation:scene-four 12s linear both;background:#3a4935}
+.photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.one .photo{object-position:44% 50%;animation:pan-a 12s linear both}
+.two .photo{object-position:50% 35%;animation:pan-b 12s linear both}
+.four .photo{object-position:50% 38%;animation:pan-c 12s linear both}
+.tonal{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(12,21,11,.08) 0%,rgba(12,21,11,.07) 38%,rgba(12,21,11,.8) 95%)}
+.one .tonal{background:linear-gradient(to bottom,rgba(23,33,21,.04),transparent 37%,rgba(18,25,19,.75) 72%,rgba(18,25,19,.95) 100%)}
+.two .tonal{background:linear-gradient(to bottom,rgba(12,19,12,.1) 0%,rgba(12,19,12,.1) 44%,rgba(12,19,12,.77) 97%)}
+.four .tonal{background:linear-gradient(to bottom,rgba(17,25,18,.58),transparent 38%,rgba(17,25,18,.85) 100%)}
+.frame{position:absolute;inset:54px 50px;z-index:4;display:flex;flex-direction:column;justify-content:space-between}
+.small-brand{font-size:18px;letter-spacing:.14em;font-weight:700;text-transform:uppercase}
+.small-brand::after{content:"";width:45px;display:block;border-bottom:2px solid currentColor;margin-top:14px}
+.type{font-family:"Cormorant Garamond",Georgia,serif;font-weight:400;line-height:.9;letter-spacing:-.04em;text-wrap:balance}
+.bottom .type{font-size:112px}
+.bottom .micro{font-size:21px;line-height:1.35;max-width:480px;margin-top:18px}
+.copy{position:absolute;bottom:140px;left:50px;right:50px;color:#fff;z-index:3;animation:type-up 2.8s cubic-bezier(.2,.7,.2,1) both}
+.copy .type{font-size:116px}
+.copy .micro{font-size:22px;font-weight:500;margin-top:22px;line-height:1.4}
+.scene.two .copy{animation-delay:3.25s}
+.scene.four .copy{animation-delay:9.05s}
+.three .product-photo{position:absolute;top:190px;left:100px;width:520px;height:670px;object-fit:contain;filter:drop-shadow(12px 32px 24px rgba(59,45,31,.2));animation:product 3.3s ease-in-out 6.0s both}
+.three .topmark{position:absolute;left:50px;top:68px;color:#3d5237;z-index:2}
+.three .copy{color:#30462f;bottom:115px;animation-delay:6.1s}
+.three .copy .type{font-size:113px}
+.three .copy .micro{font-size:20px}
+.counter{position:absolute;bottom:45px;right:46px;z-index:8;color:#fff;font-size:17px;font-weight:700;letter-spacing:.1em}
+.three .counter{color:#30462f}
+@keyframes scene-one{0%,23%{opacity:1}27%,100%{opacity:0}}
+@keyframes scene-two{0%,22%{opacity:0}27%,46%{opacity:1}51%,100%{opacity:0}}
+@keyframes scene-three{0%,46%{opacity:0}51%,71%{opacity:1}77%,100%{opacity:0}}
+@keyframes scene-four{0%,73%{opacity:0}79%,100%{opacity:1}}
+@keyframes pan-a{0%{transform:scale(1.08) translateX(0)}25%{transform:scale(1.17) translateX(-3%)}100%{transform:scale(1.17) translateX(-3%)}}
+@keyframes pan-b{0%,25%{transform:scale(1.13)}49%{transform:scale(1.02) translateX(-2%)}100%{transform:scale(1.02) translateX(-2%)}}
+@keyframes pan-c{0%,75%{transform:scale(1.16)}100%{transform:scale(1.06)}}
+@keyframes product{0%{transform:translateY(42px) scale(.85);opacity:.2}20%,80%{transform:translateY(0) scale(1);opacity:1}100%{transform:translateY(-12px) scale(1.04);opacity:1}}
+@keyframes type-up{0%{opacity:0;transform:translateY(44px)}25%,100%{opacity:1;transform:translateY(0)}}
+</style></head><body><main class="film" aria-label="Storyboard de motion da Gota Nativa">
+<section class="scene one" aria-label="Cena 1, produto"><img class="photo" src="/atelier/taste/assets/produto-detalhe.jpg" alt=""><div class="tonal"></div><div class="frame"><div class="small-brand">Gota Nativa</div></div><div class="copy"><h1 class="type">Alguns instantes<br>para você.</h1><p class="micro">O cuidado começa com uma pausa.</p></div><div class="counter">01 / 04</div></section>
+<section class="scene two" aria-label="Cena 2, ritual"><img class="photo" src="/atelier/taste/assets/aplicacao.jpg" alt=""><div class="tonal"></div><div class="frame"><div class="small-brand">O ritual</div></div><div class="copy"><h2 class="type">Um gesto.<br>Seu momento.</h2><p class="micro">Uma rotina que cabe no seu tempo.</p></div><div class="counter">02 / 04</div></section>
+<section class="scene three" aria-label="Cena 3, frasco"><span class="small-brand topmark">Rosa Mosqueta</span><img class="product-photo" src="/atelier/taste/assets/rosa-mosqueta.webp" alt=""><div class="copy"><h2 class="type">30 ml.<br>Um ritual.</h2><p class="micro">Frasco original · Fotografia do acervo</p></div><div class="counter">03 / 04</div></section>
+<section class="scene four" aria-label="Cena 4, encerramento"><img class="photo" src="/atelier/taste/assets/kit.jpg" alt=""><div class="tonal"></div><div class="frame"><div class="small-brand">Gota Nativa</div></div><div class="copy"><h2 class="type">O cuidado<br>em imagens.</h2><p class="micro">Conceito autoral · Criando com IA</p></div><div class="counter">04 / 04</div></section>
+</main></body></html>

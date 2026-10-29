@@ -8,6 +8,7 @@ const newHost = "https://cesaroliv.github.io";
 const pages = [
   "index.html","en/index.html",
   "atelier/index.html","atelier/landing/index.html","atelier/motion/index.html",
+  "atelier/taste/index.html","atelier/taste/rosa-mosqueta/index.html","atelier/taste/motion/index.html",
   "experiencias/ritual-botanico/index.html",
   "experiencias/biotina-motion/index.html",
   "experiencias/gota-nativa/index.html",
@@ -22,7 +23,7 @@ const pages = [
   "politica-de-privacidade/index.html",
   "termos-de-uso/index.html"
 ];
-const support = ["styles.min.css","showcase.css","content.js","script.js","showcase.js","focus.css","focus.js","atelier/atelier.css","atelier/atelier.js","sitemap.xml","robots.txt"];
+const support = ["styles.min.css","showcase.css","content.js","script.js","showcase.js","focus.css","focus.js","atelier/atelier.css","atelier/atelier.js","atelier/taste/taste.css","atelier/taste/taste.js","sitemap.xml","robots.txt"];
 const assets = new Set();
 function putFile(relative, transform=false) {
   const from = path.join(src, relative);
@@ -38,9 +39,10 @@ function putFile(relative, transform=false) {
 if(!fs.existsSync(src)) throw Error("Original missing");
 fs.mkdirSync(dst,{recursive:true});
 for(const f of [...pages,...support]) putFile(f, f.endsWith(".html")||f.endsWith(".xml")||f.endsWith(".txt"));
+putFile("atelier/taste/motion/rosa-mosqueta-motion.mp4");
 fs.writeFileSync(path.join(dst,".nojekyll"),"","utf8");
 const publicText = [...pages,...support].map(f=>fs.readFileSync(path.join(dst,f),"utf8")).join("\n");
-const refRegex = /(?:\/assets\/|assets\/)(?:[a-zA-Z0-9_.%-]+\/)*[a-zA-Z0-9_.%-]+\.(?:png|jpe?g|gif|webp|svg|ico|mp4)/gi;
+const refRegex = /(?:\/atelier\/taste\/assets\/|\/assets\/|assets\/)(?:[a-zA-Z0-9_.%-]+\/)*[a-zA-Z0-9_.%-]+\.(?:png|jpe?g|gif|webp|svg|ico|mp4)/gi;
 for (const m of publicText.matchAll(refRegex)) {
   let p = m[0];
   if(p.startsWith("/"))p=p.slice(1);
