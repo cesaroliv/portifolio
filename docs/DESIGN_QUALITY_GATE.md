@@ -40,8 +40,8 @@ O script `design:install` restringe instalação ao projeto, usa provedores Code
 
 - Detector anterior sobre a antiga home encontrou contrastes baixos.
 - Detector inicial do novo `atelier/`: 44 findings, muitos de brilho, legibilidade e padding.
-- Após uma rodada de refinamento: 16 findings; alguns avisos de composição full-bleed são intencionais.
-- 6 verificações de navegador concluídas sem erro no protótipo local após correção de overflow mobile.
+- Após refinamento e detector local: **6 findings** (5 avisos de padding em telas/artefatos full-bleed intencionais e 1 alerta heurístico de papel bege). Os demais padrões foram corrigidos. Auditoria remota antes da última correção: 1 brilho decorativo e 1 observação de quebra de linha, corrigidos no código e aguardando nova verificação pública.
+- **6 verificações locais** e **6 verificações na URL publicada** concluídas sem erro (3 páginas × desktop/mobile). Site público de prévia: `https://cesaroliv.github.io/atelier/`, `noindex` até aprovação do proprietário.
 - Não há demonstração de receita, aprovação estética final ou clientes reais atribuídos aos dois conceitos.
 
 ## Segurança e preservação

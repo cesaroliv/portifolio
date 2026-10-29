@@ -11,6 +11,7 @@
     "design:install": "npx --yes impeccable@4.8.0 install --providers=codex,hermes --scope=project -y",
     "design:detect": "npx --yes impeccable@4.8.0 detect atelier",
     "test:atelier": "node scripts/qa-atelier.cjs",
+    "test:atelier:live": "node scripts/qa-atelier-live.cjs",
     "validate": "npm run build && npm test"
   },
   "engines": {
