@@ -26,3 +26,26 @@
 @media(max-width:850px){.rosa-nav{grid-template-columns:1fr auto}.rosa-nav nav{display:none}.rosa-hero{min-height:740px}.rosa-hero-typeset{grid-column:1/13}.rosa-title-second{margin-left:15%}.rosa-hero-photo{grid-column:1/7}.rosa-hero-small{grid-column:9/13}.rosa-hero-note{grid-column:8/13;padding-top:15px}.rosa-facts{grid-column:1/9}.rosa-intro-image{grid-column:9/13}.hub-work{min-height:0}.motion-layout{gap:4vw}}
 @media(max-width:620px){.concept-ribbon{font-size:.67rem}.concept-ribbon span{display:none}.rosa-nav{min-height:66px}.rosa-wordmark{font-size:1.42rem}.rosa-nav-cta{font-size:.78rem}.rosa-hero{display:flex;flex-direction:column;padding:48px 20px 70px;min-height:unset}.rosa-hero-typeset{order:0}.rosa-hero h1{font-size:clamp(4rem,14vw,6.4rem)}.rosa-title-second{margin-left:16vw}.rosa-hero-small{order:1;max-width:46%;align-self:flex-end;margin:18px 0 15px}.rosa-hero-photo{order:2;margin:15px 0 0;width:76%;max-width:unset}.rosa-hero-note{order:3;padding:24px 0 0;max-width:330px}.rosa-intro{display:block;padding:95px 20px}.rosa-intro-heading{display:block}.rosa-intro h2{font-size:clamp(3.1rem,12vw,5rem)}.rosa-intro-heading>p{margin-top:30px}.rosa-facts{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:65px 0 55px}.rosa-intro-image{width:77%;margin:0 0 0 auto}.rosa-gallery{padding:85px 0}.rosa-gallery-intro{display:block;padding:0 20px}.rosa-gallery-intro p{margin-top:20px}.rosa-gallery-run{padding:0 20px;gap:12px;margin-top:30px}.rosa-gallery-run figure{flex-basis:62vw;min-width:0}.rosa-gallery-run figure.rosa-gallery-big{flex-basis:85vw}.rosa-gallery-run img{height:280px}.rosa-gallery-run .rosa-gallery-big img{height:420px}.rosa-ritual{padding:90px 0}.rosa-ritual-heading{padding:0 20px}.rosa-ritual h2{font-size:clamp(3.4rem,12vw,5.5rem)}.rosa-ritual-heading p{font-size:.88rem}.ritual-buttons{display:none}.ritual-progress{margin:29px 20px 32px}.ritual-track{gap:16px;padding:0 20px 12px}.ritual-card{flex-basis:72vw}.ritual-card:nth-child(2),.ritual-card:nth-child(3){padding-top:0}.rosa-finale{display:block;padding:105px 20px}.rosa-finale h2{font-size:clamp(3.8rem,13vw,6.7rem)}.rosa-finale>div:last-child{padding-top:50px}.rosa-finale img{width:65%}.taste-footer{padding:24px 20px}.taste-header{padding:15px 20px}.taste-header>span{display:none}.hub-intro{display:block;padding:70px 20px}.hub-intro h1{font-size:clamp(4rem,14vw,6.5rem)}.hub-right{margin:48px 0 0 20%;width:80%}.hub-work{display:flex;flex-direction:column;gap:30px;padding:80px 20px}.hub-work-motion{flex-direction:column-reverse}.hub-work-copy{width:100%}.hub-work-copy h2{font-size:clamp(3.8rem,13vw,6rem)}.hub-contact{padding:95px 20px}.hub-contact h2{font-size:clamp(3.3rem,12vw,5.3rem)}.motion-top{padding:21px 20px}.motion-layout{display:block;padding:70px 20px}.motion-layout h1{font-size:clamp(3.8rem,13vw,6rem)}.motion-reel{width:85%;margin:50px auto 0}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
+
+/* Taste critic round 2: subject-driven extra footage and editorial process frames. */
+.taste-hub{--sans:"DM Sans",system-ui,sans-serif}
+.rosa-page,.motion-page{--sans:"Mulish",system-ui,sans-serif}
+.skip-link{color:#18241b!important}
+.hub-work-image{position:relative}
+.hub-still-pair>img:first-child{width:83%}
+.hub-work-detail{position:absolute;right:0;bottom:9%;width:35%!important;aspect-ratio:3/4!important;object-fit:cover;border:7px solid var(--paper);box-shadow:0 14px 24px rgba(27,39,26,.13)}
+.hub-movie{min-height:520px;display:flex;align-items:center;justify-content:center}
+.hub-movie video{width:72%;height:auto;aspect-ratio:9/16;object-fit:cover;background:#1a2c1f}
+.hub-movie-still{position:absolute;left:0;bottom:8%;width:35%!important;aspect-ratio:1!important;object-fit:cover;border:7px solid #e7ddcb;box-shadow:0 14px 24px rgba(28,35,27,.13)}
+.motion-process{padding:clamp(80px,9vw,150px) 6vw;background:#e8dfd1;color:#283927}
+.motion-process-heading{display:flex;justify-content:space-between;align-items:end;gap:36px;margin-bottom:50px}
+.motion-process-heading h2{font:400 clamp(3.6rem,6vw,6rem)/.91 var(--serif)}
+.motion-process-heading p{max-width:380px;line-height:1.65}
+.motion-process-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,2vw,40px)}
+.motion-process-grid figure{min-width:0}
+.motion-process-grid img{width:100%;aspect-ratio:9/16;object-fit:cover}
+.motion-process-grid figcaption{font:600 .87rem var(--sans);margin-top:14px}
+.taste-header,.taste-footer,.concept-ribbon,.motion-top,.hub-right p,.hub-work-copy>span,.rosa-gallery-run figcaption{font-size:.83rem}
+.hub-work-copy h2{text-wrap:balance}
+.taste-hub .hub-intro h1,.taste-hub .hub-right img{will-change:transform,opacity}
+@media(max-width:620px){.hub-movie{min-height:0}.hub-movie video{width:75%}.hub-movie-still{left:0;bottom:6%;width:38%!important}.motion-process{padding:80px 20px}.motion-process-heading{display:block}.motion-process-heading p{margin-top:18px}.motion-process-grid{gap:9px}.motion-process-grid figcaption{font-size:.75rem}.taste-footer{font-size:.81rem}}

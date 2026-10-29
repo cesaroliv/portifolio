@@ -73,3 +73,7 @@ Fotos copiadas de `H:\Projeto Gota Nativa\gota-nativa\gota-nativa\assets\img`, n
 ## Propriedade e segurança
 
 Versão pública é um **preview `noindex`**, separada de Gota Nativa e da homepage do estúdio. Não altera loja ativa, checkout, pixel Meta ou arquivos existentes não relacionados. Nenhuma venda atribuída a esses conceitos.
+## Rodada de crítica pública Taste Skill
+
+Inspeção em 1440/768/390 da primeira versão identificou: títulos com quebras excessivas, tipografia funcional abaixo do mínimo, falta de movimento inicial no hub, e pouca prova visual na apresentação de motion. Corrigimos as manchetes, incorporamos vídeo real na vitrine e adicionamos frames renderizados do filme. Mantivemos a paleta creme/oliva documentada da Gota Nativa, mesmo quando o verificador genérico a sinaliza como comum. A seção de fotografias é propositalmente assimétrica, podendo receber avisos de bordas em carrossel. Nova revisão visual e aprovação do proprietário ainda são necessárias antes de colocar esses cases na homepage principal.
+
