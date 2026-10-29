@@ -160,7 +160,7 @@ test("home exibe somente os preços atuais e a cena de uso adicional", () => {
 test("home segue a ordem comercial e mostra seis pessoas", () => {
   const html = readRoute("/");
   const markers = [
-    'class="hero"',
+    'class="hero hero-atelier"',
     'class="capabilities"',
     'id="servicos"',
     'class="influencer-explainer section"',
@@ -356,8 +356,9 @@ test("nome profissional usa Cesar sem acento no conteúdo público", () => {
 
 test("sitemap lista somente as rotas públicas", () => {
   const sitemap = fs.readFileSync(path.join(root, "sitemap.xml"), "utf8");
-  assert.equal((sitemap.match(/<url>/g) || []).length, publicRoutes.length);
-  for (const route of publicRoutes) assert.ok(sitemap.includes(`<loc>${site.domain + route}</loc>`));
+  const showcases = ["/en/", "/experiencias/ritual-botanico/", "/experiencias/biotina-motion/", "/experiencias/gota-nativa/"];
+  assert.equal((sitemap.match(/<url>/g) || []).length, publicRoutes.length + showcases.length);
+  for (const route of [...publicRoutes, ...showcases]) assert.ok(sitemap.includes(`<loc>${site.domain + route}</loc>`));
   assert.ok(!sitemap.includes("assets/"));
   assert.ok(!sitemap.includes("docs/"));
 });
@@ -413,4 +414,37 @@ test("estrutura básica de acessibilidade está presente em todas as páginas", 
     assert.ok(html.includes('<main id="conteudo">'));
     assert.ok(html.includes('<footer class="footer">'));
   }
+});
+
+
+test("vitrine imersiva inclui páginas exploráveis, versão inglesa e interações reais", () => {
+  const home = readRoute("/");
+  const paths = ["/en/", "/experiencias/ritual-botanico/", "/experiencias/biotina-motion/", "/experiencias/gota-nativa/"];
+  assert.match(home, /class="hero hero-atelier"/);
+  assert.match(home, /id="experiencias"/);
+  assert.match(home, /data-reveal/);
+  assert.match(home, /src="\/showcase\.js"/);
+  assert.match(home, /GSAP|gsap@3\.15\.0/);
+  for (const route of paths) {
+    const pagePath = path.join(root, route.replace(/^\//, ""), "index.html");
+    assert.ok(fs.existsSync(pagePath), "Experiência ausente: " + route);
+    const content = fs.readFileSync(pagePath, "utf8");
+    assert.match(content, /<h1/);
+    assert.match(content, /\/showcase\.css/);
+    assert.match(content, /\/showcase\.js/);
+    assert.match(content, /api\.whatsapp\.com\/send/);
+    assert.ok(home.includes(route) || route === "/en/", "Vitrine sem link de entrada: " + route);
+    for (const match of content.matchAll(/\s(?:src|href|poster)="(\/assets\/[^"]+)"/g)) {
+      const target = path.join(root, match[1].replace(/^\//, ""));
+      assert.ok(fs.existsSync(target), "Asset ausente em " + route + ": " + match[1]);
+    }
+  }
+  const botanico = fs.readFileSync(path.join(root, "experiencias", "ritual-botanico", "index.html"), "utf8");
+  const biotina = fs.readFileSync(path.join(root, "experiencias", "biotina-motion", "index.html"), "utf8");
+  const js = fs.readFileSync(path.join(root, "showcase.js"), "utf8");
+  assert.match(botanico, /input class="cx-range"/);
+  assert.equal((biotina.match(/data-switch-image=/g) || []).length, 4);
+  assert.match(js, /addEventListener\("input"/);
+  assert.match(js, /addEventListener\("click"/);
+  assert.match(js, /prefers-reduced-motion/);
 });

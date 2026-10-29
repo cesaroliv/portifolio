@@ -95,6 +95,7 @@ function header(pageType) {
     </button>
     <nav class="topnav" id="site-menu" aria-label="Navegação principal" data-menu>
       ${links}
+      <a href="/en/" hreflang="en" lang="en" aria-label="View in English">EN ↗</a>
       ${whatsappLink("Falar comigo", "header", "header", "btn btn-mini")}
     </nav>
     <button class="menu-backdrop" type="button" aria-label="Fechar menu" tabindex="-1" data-menu-backdrop></button>
@@ -163,6 +164,7 @@ function htmlDocument({ route, body, pageType = "page", pageName = "", jsonLd = 
   <title>${escapeHtml(meta.title)}</title>
   <meta name="description" content="${escapeHtml(meta.description)}">
   <link rel="canonical" href="${url}">
+  ${route === "/" ? '<link rel="alternate" hreflang="en" href="https://criandocomia.com/en/">' : ""}
   <meta property="og:title" content="${escapeHtml(meta.title)}">
   <meta property="og:description" content="${escapeHtml(meta.description)}">
   <meta property="og:type" content="website">
@@ -180,6 +182,7 @@ function htmlDocument({ route, body, pageType = "page", pageName = "", jsonLd = 
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap"></noscript>
   <link rel="stylesheet" href="/styles.min.css">
+  ${pageType === "home" ? '<link rel="stylesheet" href="/showcase.css">' : ""}
   ${schemas}
 </head>
 <body data-page-type="${pageType}"${pageName ? ` data-page-name="${escapeHtml(pageName)}"` : ""}>
@@ -188,6 +191,7 @@ ${body}
 ${footer()}
   <script src="/content.js" defer></script>
   <script src="/script.js" defer></script>
+  ${pageType === "home" ? '<script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script><script defer src="https://unpkg.com/lenis@1.3.27/dist/lenis.min.js"></script><script defer src="/showcase.js"></script>' : ""}
 </body>
 </html>
 `;
@@ -279,25 +283,55 @@ function homePage() {
   const faqSchema = { "@type": "FAQPage", mainEntity: faq.map((item) => ({ "@type": "Question", name: item.question, acceptedAnswer: { "@type": "Answer", text: item.answer } })) };
   const featured = casting.filter((person) => ["patricia", "luana", "marcia", "camila", "ricardo", "aline"].includes(person.slug));
   const body = `<main id="conteudo">
-    <section class="hero" aria-labelledby="hero-title">
+    <section class="hero hero-atelier" aria-labelledby="hero-title">
       <div class="hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Estúdio de criativos com IA para produtos</p>
-          <h1 id="hero-title">Fotos de produto e influencers virtuais com IA</h1>
-          <p class="hero-impact">A <span>foto</span> que vende. O <span>rosto</span> que convence.</p>
-          <p class="hero-sub">Transformo fotos simples do seu produto em criativos profissionais e coloco sua marca nas mãos de influencers virtuais realistas — tudo com IA, direção criativa e entrega em dias.</p>
-          <p class="hero-audience">${escapeHtml(copy.home.audience)}</p>
-          <div class="hero-actions">${whatsappLink("Enviar uma foto do meu produto", "hero", "hero")}<a class="btn btn-ghost" href="#cases">Ver os cases</a></div>
-          <p class="cta-proof">Diagnóstico sem compromisso · atendimento direto com o Cesar</p>
+          <p class="eyebrow"><span class="cx-pulse" aria-hidden="true"></span> Criando com IA · Estúdio criativo · Brasil / Worldwide</p>
+          <h1 id="hero-title">Do comum ao <em>inesquecível.</em></h1>
+          <p class="hero-impact">Imagem. Movimento. Experiência digital.</p>
+          <p class="hero-sub">Criamos visuais, campanhas e páginas que fazem as pessoas parar, explorar e pensar: <strong>“Quero um assim para a minha marca.”</strong></p>
+          <p class="hero-audience">Fotos de produto · Vídeos comerciais · Influencers virtuais · Páginas com experiências interativas</p>
+          <p class="sr-only">${escapeHtml(copy.home.audience)}</p>
+          <div class="hero-actions">${whatsappLink("Quero uma experiência assim", "largeProject", "hero")}<a class="btn btn-ghost" href="#experiencias">Explorar experiências ↘</a></div>
+          <p class="cta-proof">Projetos para marcas no Brasil e no exterior · Atendimento direto · ${whatsappLink("Enviar foto do produto", "hero", "hero_photo", "text-link")}</p>
         </div>
-        <figure class="hero-before-after" aria-label="Antes e depois de uma foto de produto">
-          <div class="teaser-card">${picture("/assets/before-produto.jpg", "Antes: foto simples do produto em uma prateleira.", 1414, 2000, { eager: true, sizes: "(max-width: 760px) 44vw, 22vw" })}<span>ANTES</span></div>
-          <span class="teaser-arrow" aria-hidden="true">→</span>
-          <div class="teaser-card after">${picture("/assets/after-produt.jpg", "Depois: foto profissional do mesmo produto em fundo limpo.", 1414, 2000, { eager: true, sizes: "(max-width: 760px) 44vw, 22vw" })}<span>DEPOIS</span></div>
+        <figure class="hero-before-after" aria-label="Comparação interativa de uma imagem simples com a produção comercial">
+          <div class="cx-stage" data-reveal>
+            <img src="/assets/after-produt.jpg" width="1414" height="2000" fetchpriority="high" alt="Imagem final de campanha do produto Rosa Mosqueta">
+            <div class="cx-before"><img src="/assets/before-produto.jpg" width="1414" height="2000" alt="Foto simples original do produto antes da direção criativa"></div>
+            <div class="cx-reveal-line" aria-hidden="true"></div>
+            <input class="cx-range" type="range" min="0" max="100" value="48" aria-label="Arraste para comparar a foto original com a imagem de campanha">
+            <div class="cx-stage-caption" aria-hidden="true"><span>FOTO ORIGINAL</span><span>DIREÇÃO CRIATIVA</span></div>
+          </div>
+          <span class="cx-stage-badge">Arraste & descubra</span><span class="cx-stage-note">BEFORE / AFTER</span>
         </figure>
       </div>
+      <div class="cx-hero-bottom"><span>ESTÚDIO DE CRIAÇÃO E EXPERIÊNCIAS</span><strong>↓ EXPLORE OS PROJETOS</strong><span>01 / PORTFÓLIO</span></div>
     </section>
     <section class="capabilities" aria-label="Capacidades do estúdio"><p class="sr-only">Foto de produto, cenas de uso, vídeo 360°, influencer virtual, UGC publicitário, criativos de anúncio e landing page.</p><div class="ticker" aria-hidden="true"><span>FOTO DE PRODUTO → CENAS DE USO → VÍDEO 360° → INFLUENCER VIRTUAL → UGC PUBLICITÁRIO → CRIATIVOS DE ANÚNCIO → LANDING PAGE →&nbsp;</span><span>FOTO DE PRODUTO → CENAS DE USO → VÍDEO 360° → INFLUENCER VIRTUAL → UGC PUBLICITÁRIO → CRIATIVOS DE ANÚNCIO → LANDING PAGE →&nbsp;</span></div></section>
+    <section class="cx-projects" id="experiencias" aria-labelledby="cx-projects-title">
+      <div class="cx-projects-inner">
+        <div class="cx-section-top"><div><p class="cx-kicker">O site é a primeira experiência</p><h2 id="cx-projects-title">Trabalhos que você <em>sente</em> antes de entender.</h2></div><p>Não são apenas imagens em uma galeria. Entre nas experiências e veja como ideias podem ganhar vida.</p></div>
+        <div class="cx-project-grid">
+          <a class="cx-project" href="/experiencias/ritual-botanico/" aria-label="Explorar a experiência Ritual Botânico">
+            <div class="cx-project-visual"><img src="/assets/cena-1.jpg" width="1414" height="2000" loading="lazy" alt="Rosa Mosqueta em cena publicitária botânica"><span class="cx-project-number">01 / VISUAL STORYTELLING</span><span class="cx-project-go" aria-hidden="true">↗</span></div>
+            <div class="cx-project-label"><h3>Ritual Botânico</h3><span>Direção de arte · Imagem · Interação</span></div>
+            <p class="cx-project-desc">Uma foto simples transformada em um universo visual sensorial. Explore o antes e o depois.</p>
+          </a>
+          <a class="cx-project" href="/experiencias/biotina-motion/" aria-label="Explorar a experiência Biotina Motion">
+            <div class="cx-project-visual"><img src="/assets/biotina/criativo-1.png" width="1200" height="1200" loading="lazy" alt="Criativo de campanha para Biotina"><span class="cx-project-number">02 / CAMPAIGN LAB</span><span class="cx-project-go" aria-hidden="true">↗</span></div>
+            <div class="cx-project-label"><h3>Biotina / Motion</h3><span>Campanha · Vídeo · Variações</span></div>
+            <p class="cx-project-desc">A mesma marca em vários ângulos. Uma campanha que o visitante pode explorar.</p>
+          </a>
+          <a class="cx-project" href="/experiencias/gota-nativa/" aria-label="Explorar a experiência Gota Nativa">
+            <div class="cx-project-visual"><img src="/assets/gota-nativa/home-poster.jpg" width="1600" height="1000" loading="lazy" alt="Projeto autoral da marca Gota Nativa"><span class="cx-project-number">03 / BRAND EXPERIENCE</span><span class="cx-project-go" aria-hidden="true">↗</span></div>
+            <div class="cx-project-label"><h3>Gota Nativa</h3><span>Marca · Loja · Experiência digital</span></div>
+            <p class="cx-project-desc">Do conceito ao universo da marca. Uma prévia de como podemos dar presença a um produto.</p>
+          </a>
+        </div>
+        <div class="cx-projects-foot"><span>Projetos conceituais e produções próprias · Sem métricas de vendas inventadas</span><a href="#contato">Sua marca pode ser a próxima ↗</a></div>
+      </div>
+    </section>
     <section class="services-main section" id="servicos" aria-labelledby="services-title">
       <div class="section-heading"><p class="section-label">Serviços principais</p><h2 id="services-title">Duas especialidades. Um objetivo: vender.</h2></div>
       <article class="specialty">
@@ -526,12 +560,13 @@ const pages = new Map([
 for (const [route, html] of pages) {
   const destination = outputPath(route);
   fs.mkdirSync(path.dirname(destination), { recursive: true });
-  fs.writeFileSync(destination, html, "utf8");
+  fs.writeFileSync(destination, html.replace(/[ \t]+$/gm, ""), "utf8");
 }
 
+const showcaseRoutes = ["/en/", "/experiencias/ritual-botanico/", "/experiencias/biotina-motion/", "/experiencias/gota-nativa/"];
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${[...pages.keys()].map((route) => `  <url><loc>${canonical(route)}</loc></url>`).join("\n")}
+${[...pages.keys(), ...showcaseRoutes].map((route) => `  <url><loc>${canonical(route)}</loc></url>`).join("\n")}
 </urlset>
 `;
 fs.writeFileSync(path.join(root, "sitemap.xml"), sitemap, "utf8");

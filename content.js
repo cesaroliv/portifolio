@@ -229,7 +229,7 @@
       headline: item[4],
       description: item[5],
       niches: item[6],
-      image: "/assets/casting/" + item[7],
+      image: item[0] === "dona-cida" ? "/assets/optimized/casting/07-dona-cida-perfil.webp" : "/assets/casting/" + item[7],
       imageAlt: item[1] + ", personagem virtual de " + item[2] + " anos do casting da Criando com IA.",
       width: item[8],
       height: item[9],
