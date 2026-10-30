@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NOCTIS — Filme cinematográfico | Criando com IA</title>
+<meta name="description" content="Um pôster que se transforma em cinema. NOCTIS é um concept film de produto criado com direção de arte, vídeo generativo e finalização autoral.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://criandocomia.com/atelier/noctis/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--ink:#090a0b;--paper:#f6eadd;--muted:#b1a199;--copper:#dbab74;--line:rgba(218,174,130,.23)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ink);color:var(--paper);font-family:'DM Sans',Arial,sans-serif}
+a{color:inherit}.skip{position:absolute;left:20px;top:-90px;padding:10px;background:white;color:#000}.skip:focus{top:20px}
+.page{overflow:hidden;background:radial-gradient(ellipse at 68% 31%,rgba(102,52,34,.26),transparent 40%),#090a0b}
+.head{position:relative;z-index:3;padding:28px clamp(25px,6vw,110px);display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
+.logo{font-size:12px;letter-spacing:.2em;font-weight:800;text-decoration:none}.head-right{font-size:10px;text-transform:uppercase;letter-spacing:.25em;color:#c59a70}
+.hero{min-height:calc(100svh - 76px);max-width:1560px;margin:auto;display:grid;grid-template-columns:minmax(320px,.92fr) minmax(300px,1.08fr);align-items:center;padding:55px clamp(25px,6vw,110px) 92px;gap:4vw}
+.kicker{font-size:11px;letter-spacing:.27em;text-transform:uppercase;color:var(--copper);display:flex;align-items:center;gap:13px}.kicker:before{content:"";width:36px;border-top:1px solid}
+.hero h1{font-family:Manrope,Arial,sans-serif;font-weight:800;font-size:clamp(82px,11vw,175px);letter-spacing:-.1em;line-height:.9;margin:32px 0 22px}.hero h1 span{font-family:Georgia,serif;font-style:italic;color:#c58f61;font-weight:400;font-size:.49em;letter-spacing:-.05em;display:block;margin-top:14px}
+.hero p{font-size:clamp(16px,1.4vw,19px);line-height:1.7;color:#c0b2a8;max-width:440px}.meta{display:flex;gap:24px;flex-wrap:wrap;margin-top:44px;border-top:1px solid var(--line);padding-top:24px;font-size:10px;text-transform:uppercase;letter-spacing:.18em;color:#bba18c}
+.film{position:relative;min-height:500px;height:min(74vh,790px);background:radial-gradient(ellipse at 50% 50%,#41261d 0,#160e0b 43%,#080809 75%);border:1px solid var(--line);overflow:hidden;isolation:isolate;display:flex;align-items:center;justify-content:center}
+.film:after{content:"";pointer-events:none;position:absolute;inset:0;box-shadow:inset 0 0 100px 45px rgba(0,0,0,.4)}
+.film img{width:100%;height:100%;object-fit:cover;object-position:center;filter:contrast(1.08)}
+.film video,.film iframe{width:100%;height:100%;border:0;object-fit:contain;background:#0b090a;display:block}
+.play{position:absolute;z-index:2;top:50%;left:50%;transform:translate(-50%,-50%);border:1px solid rgba(255,234,207,.6);background:rgba(18,10,9,.68);color:#fff;border-radius:100px;width:112px;height:112px;font-family:inherit;font-weight:700;font-size:11px;letter-spacing:.15em;cursor:pointer;backdrop-filter:blur(13px)}
+.play:hover,.play:focus-visible{background:rgba(102,58,35,.87)}.frame-caption{position:absolute;z-index:2;bottom:27px;left:27px;right:27px;display:flex;justify-content:space-between;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#f2dcc3}
+.frame-caption .status{color:#d5a671}
+.story{border-top:1px solid var(--line);max-width:1450px;margin:0 auto;padding:95px clamp(25px,6vw,110px) 112px}
+.story-kicker{font-size:11px;letter-spacing:.25em;color:var(--copper);text-transform:uppercase}
+.story h2{font-size:clamp(40px,5vw,80px);font-family:Manrope,Arial,sans-serif;font-weight:800;letter-spacing:-.07em;max-width:1050px;line-height:1.06;margin:25px 0 60px}
+.beats{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.beat{padding-top:22px;border-top:1px solid var(--line)}
+.beat span{font-size:10px;color:var(--copper);letter-spacing:.16em}.beat h3{font-size:20px;letter-spacing:-.04em;margin:19px 0 10px}.beat p{color:#b9aaa0;line-height:1.6;font-size:14px;margin:0}
+.outro{background:#19120f;display:flex;align-items:center;justify-content:space-between;gap:40px;padding:70px clamp(25px,8vw,140px);border-top:1px solid var(--line)}
+.outro h2{font-size:clamp(32px,4.5vw,72px);font-weight:800;letter-spacing:-.065em;line-height:1.08;margin:0;max-width:850px}
+.cta{text-decoration:none;border:1px solid #d6a372;padding:20px 24px;font-size:11px;white-space:nowrap;letter-spacing:.12em;text-transform:uppercase;transition:background .2s}.cta:hover{background:#8a5537}
+.foot{display:flex;justify-content:space-between;gap:30px;padding:25px clamp(25px,6vw,110px);color:#a5968d;font-size:11px;border-top:1px solid var(--line)}
+@media(max-width:900px){.hero{grid-template-columns:1fr;gap:40px;padding-top:72px}.hero h1{font-size:clamp(76px,15vw,130px)}.film{height:600px}.beats{grid-template-columns:1fr}.outro{flex-direction:column;align-items:start}}
+@media(max-width:540px){.hero{padding:55px 20px 70px}.film{height:530px;min-height:430px}.play{width:90px;height:90px}.head{padding:24px 20px}.head-right{letter-spacing:.1em}.story{padding:60px 20px 70px}.outro{padding:55px 20px}.foot{padding:22px 20px;flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body><div class="page"><a class="skip" href="#main">Ir para o filme</a>
+<header class="head"><a class="logo" href="/atelier/">CRIANDO COM IA <span style="color:#c58f61">/ MOTION</span></a><span class="head-right">Concept film / 01</span></header>
+<main id="main">
+<section class="hero" aria-labelledby="title">
+<div class="copy"><div class="kicker">Direção de arte × Motion cinematográfico</div>
+<h1 id="title">NOCTIS<span>a noite tem assinatura.</span></h1>
+<p>Um pôster se rompe. O frasco ganha profundidade. O cinema revela aquilo que uma imagem estática não consegue contar.</p>
+<div class="meta"><span>Produto fictício</span><span>10 segundos</span><span>Formato vertical</span><span>Conceito autoral</span></div>
+</div>
+<div class="film" id="film"><img src="./assets/noctis-poster.png" alt="Pôster artístico NOCTIS, frasco de perfume em composição noturna de cobre e vidro" loading="eager" width="720" height="1280">
+<div class="play" role="status" style="display:grid;place-items:center;text-align:center;cursor:default;font-size:9px">VÍDEO EM<br>HOSPEDAGEM</div>
+<div class="frame-caption" id="caption"><span>01 / NOCTIS</span><span class="status">Filme conceitual</span></div>
+</div></section>
+<section class="story"><span class="story-kicker">A experiência</span><h2>De uma imagem para um universo de luz, vidro e movimento.</h2>
+<div class="beats"><div class="beat"><span>01 / TRANSFORMAÇÃO</span><h3>O pôster ganha vida.</h3><p>Uma abertura que rompe a bidimensionalidade e convida o olhar a atravessar a imagem.</p></div>
+<div class="beat"><span>02 / MATERIALIDADE</span><h3>Detalhe que se sente.</h3><p>Órbitas, reflexos e closes exibem a superfície do vidro e a textura da tampa.</p></div>
+<div class="beat"><span>03 / ASSINATURA</span><h3>Um final memorável.</h3><p>Movimento, direção de arte e edição convergem num enquadramento de produto.</p></div></div></section>
+<section class="outro"><h2>Seu produto também pode ganhar presença.</h2><a class="cta" href="/atelier/#contato">CONVERSAR SOBRE UM PROJETO ↗</a></section>
+</main><footer class="foot"><span>© 2026 CRIANDO COM IA / LUMEN MOTION</span><span>Estudo autoral com marca fictícia. Sem resultados comerciais atribuídos.</span></footer>
+</div>
+<script>
+(()=>{const film=document.querySelector('#film'),btn=document.querySelector('#play');if(!btn)return;btn.addEventListener('click',async()=>{btn.disabled=true;const videoPath='./assets/noctis-film.mp4';let hasVideo=false;try{const r=await fetch(videoPath,{method:'HEAD',cache:'no-store'});hasVideo=r.ok&&r.headers.get('content-type')?.includes('video')===true}catch{}
+const el=document.createElement(hasVideo?'video':'iframe');
+if(hasVideo){el.src=videoPath;el.controls=true;el.playsInline=true;el.autoplay=true;el.setAttribute('aria-label','Filme NOCTIS, dez segundos');}
+else{el.src='https://drive.google.com/file/d/1pNCeBlhZcYgiNNZ3UlZWOPSVgEdAYWcn/preview';el.allow='autoplay;fullscreen';el.title='Vídeo NOCTIS em reprodução via Drive (disponibilidade depende das permissões do arquivo)';el.referrerPolicy='strict-origin-when-cross-origin';}
+film.replaceChildren(el);if(hasVideo)el.play().catch(()=>{});});
+})();
+</script></body></html>

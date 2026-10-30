@@ -1,0 +1,11 @@
+/* NOCTIS case insert — editorial concept, scoped to prevent regressions. */
+.showpiece-noctis{background:radial-gradient(ellipse at 65% 46%,rgba(129,72,41,.22),transparent 52%),#100d0c;color:#f3e1ca;border-top:1px solid rgba(201,148,98,.2)}
+.showpiece-noctis .showpiece-top{border-color:rgba(233,198,158,.25);color:#c6a183}
+.showpiece-noctis .showpiece-description h2{font-family:inherit;font-weight:800;letter-spacing:-.075em}
+.showpiece-noctis .showpiece-description h2 em{color:#d2a173}
+.showpiece-noctis .showpiece-description p{color:#bcab9f}
+.showpiece-noctis .visit-work{color:#f4e0cb;border-color:rgba(232,192,143,.4)}
+.showpiece-noctis .visit-work:hover{color:#e3b383}
+.showpiece-noctis .noctis-stage{background:radial-gradient(ellipse at 50% 50%,#5b3428,#16100d 65%,#0a090a);display:grid;place-items:center;overflow:hidden;min-height:460px}
+.showpiece-noctis .noctis-stage img{max-width:100%;height:470px;object-fit:contain;filter:drop-shadow(0 30px 55px #050403)}
+@media(max-width:900px){.showpiece-noctis .noctis-stage{min-height:330px}.showpiece-noctis .noctis-stage img{height:360px}}
