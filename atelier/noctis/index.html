@@ -38,6 +38,7 @@ a{color:inherit}.skip{position:absolute;left:20px;top:-90px;padding:10px;backgro
 @media(max-width:900px){.hero{grid-template-columns:1fr;gap:40px;padding-top:72px}.hero h1{font-size:clamp(76px,15vw,130px)}.film{height:600px}.beats{grid-template-columns:1fr}.outro{flex-direction:column;align-items:start}}
 @media(max-width:540px){.hero{padding:55px 20px 70px}.film{height:530px;min-height:430px}.play{width:90px;height:90px}.head{padding:24px 20px}.head-right{letter-spacing:.1em}.story{padding:60px 20px 70px}.outro{padding:55px 20px}.foot{padding:22px 20px;flex-wrap:wrap}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+.concept-link{margin-top:24px;display:inline-flex;gap:30px;align-items:center;padding:12px 0;border-bottom:1px solid var(--copper);color:#f3d8bd;text-decoration:none;font-size:12px;letter-spacing:.09em;font-weight:700}.concept-link:hover{color:#fff}.availability-note{font-size:11px!important;letter-spacing:.08em;text-transform:uppercase;color:#a9907e!important;margin-top:25px!important}
 </style>
 </head>
 <body><div class="page"><a class="skip" href="#main">Ir para o filme</a>
@@ -46,25 +47,18 @@ a{color:inherit}.skip{position:absolute;left:20px;top:-90px;padding:10px;backgro
 <section class="hero" aria-labelledby="title">
 <div class="copy"><div class="kicker">Direção de arte × Motion cinematográfico</div>
 <h1 id="title">NOCTIS<span>a noite tem assinatura.</span></h1>
-<p>Um pôster se rompe. O frasco ganha profundidade. O cinema revela aquilo que uma imagem estática não consegue contar.</p>
+<p>Um pôster se rompe. O frasco ganha profundidade. O cinema revela aquilo que uma imagem estática não consegue contar.</p><a class="concept-link" href="#processo">Explorar a direção de arte <span aria-hidden="true">↘</span></a><p class="availability-note">Filme finalizado · exibição pública em preparação</p>
 <div class="meta"><span>Produto fictício</span><span>10 segundos</span><span>Formato vertical</span><span>Conceito autoral</span></div>
 </div>
 <div class="film" id="film"><img src="./assets/noctis-poster.png" alt="Pôster artístico NOCTIS, frasco de perfume em composição noturna de cobre e vidro" loading="eager" width="720" height="1280">
-<div class="play" role="status" style="display:grid;place-items:center;text-align:center;cursor:default;font-size:9px">VÍDEO EM<br>HOSPEDAGEM</div>
+
 <div class="frame-caption" id="caption"><span>01 / NOCTIS</span><span class="status">Filme conceitual</span></div>
 </div></section>
-<section class="story"><span class="story-kicker">A experiência</span><h2>De uma imagem para um universo de luz, vidro e movimento.</h2>
+<section class="story" id="processo"><span class="story-kicker">A experiência</span><h2>De uma imagem para um universo de luz, vidro e movimento.</h2>
 <div class="beats"><div class="beat"><span>01 / TRANSFORMAÇÃO</span><h3>O pôster ganha vida.</h3><p>Uma abertura que rompe a bidimensionalidade e convida o olhar a atravessar a imagem.</p></div>
 <div class="beat"><span>02 / MATERIALIDADE</span><h3>Detalhe que se sente.</h3><p>Órbitas, reflexos e closes exibem a superfície do vidro e a textura da tampa.</p></div>
 <div class="beat"><span>03 / ASSINATURA</span><h3>Um final memorável.</h3><p>Movimento, direção de arte e edição convergem num enquadramento de produto.</p></div></div></section>
-<section class="outro"><h2>Seu produto também pode ganhar presença.</h2><a class="cta" href="/atelier/#contato">CONVERSAR SOBRE UM PROJETO ↗</a></section>
+<section class="outro"><h2>Seu produto também pode ganhar presença.</h2><a class="cta" href="/#contato">CONVERSAR SOBRE UM PROJETO ↗</a></section>
 </main><footer class="foot"><span>© 2026 CRIANDO COM IA / LUMEN MOTION</span><span>Estudo autoral com marca fictícia. Sem resultados comerciais atribuídos.</span></footer>
 </div>
-<script>
-(()=>{const film=document.querySelector('#film'),btn=document.querySelector('#play');if(!btn)return;btn.addEventListener('click',async()=>{btn.disabled=true;const videoPath='./assets/noctis-film.mp4';let hasVideo=false;try{const r=await fetch(videoPath,{method:'HEAD',cache:'no-store'});hasVideo=r.ok&&r.headers.get('content-type')?.includes('video')===true}catch{}
-const el=document.createElement(hasVideo?'video':'iframe');
-if(hasVideo){el.src=videoPath;el.controls=true;el.playsInline=true;el.autoplay=true;el.setAttribute('aria-label','Filme NOCTIS, dez segundos');}
-else{el.src='https://drive.google.com/file/d/1pNCeBlhZcYgiNNZ3UlZWOPSVgEdAYWcn/preview';el.allow='autoplay;fullscreen';el.title='Vídeo NOCTIS em reprodução via Drive (disponibilidade depende das permissões do arquivo)';el.referrerPolicy='strict-origin-when-cross-origin';}
-film.replaceChildren(el);if(hasVideo)el.play().catch(()=>{});});
-})();
-</script></body></html>
+</body></html>
