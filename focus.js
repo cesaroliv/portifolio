@@ -1,6 +1,7 @@
 "use strict";
 (function(){
 const reduced=window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const studio=document.querySelector(".studio-hero");if(studio){studio.querySelectorAll("[data-portal]").forEach(link=>{const enter=()=>studio.dataset.preview=link.dataset.portal;const leave=()=>delete studio.dataset.preview;link.addEventListener("pointerenter",enter);link.addEventListener("pointerleave",leave);link.addEventListener("focus",enter);link.addEventListener("blur",leave);});}
 const preview=document.querySelector("[data-web-demo]");
 if(preview){
  const image=preview.querySelector("[data-web-image]");
@@ -47,8 +48,10 @@ try{
  const gsap=window.gsap;
  if(window.ScrollTrigger)gsap.registerPlugin(window.ScrollTrigger);
  gsap.from(".hero-copy .eyebrow,.hero h1,.hero-intro,.actions",{opacity:0,y:25,duration:.85,stagger:.12,ease:"power3.out",clearProps:"all"});
- gsap.from(".hero-visual",{opacity:0,y:35,rotate:4,duration:1.15,delay:.2,ease:"power3.out",clearProps:"all"});
+ gsap.from(".studio-scene",{opacity:0,duration:1.6,delay:.15,ease:"power2.out",clearProps:"all"});
+ gsap.from(".studio-portal-nav a",{opacity:0,y:22,duration:.9,stagger:.16,ease:"power3.out",clearProps:"all"});
  if(window.ScrollTrigger){
+  gsap.to(".studio-scene",{yPercent:12,ease:"none",scrollTrigger:{trigger:".studio-hero",start:"top top",end:"bottom top",scrub:.8}});
   gsap.utils.toArray(".service,.section-heading,.contact>div").forEach(el=>{
    gsap.from(el,{opacity:0,y:28,duration:.85,ease:"power2.out",clearProps:"all",scrollTrigger:{trigger:el,start:"top 92%",once:true}});
   });
