@@ -45,3 +45,11 @@
 .studio-hero .studio-portal-nav,.studio-hero .hero-bottom{margin-left:21px!important;margin-right:21px!important}
 }
 @media(prefers-reduced-motion:reduce){.studio-hero .studio-film-wrap video{visibility:hidden!important}}
+
+/* KEEP THE FINAL LOGO CLEAR — concise film-overlaid title and CTA. */
+@media(min-width:901px){
+.studio-hero .hero-copy{top:28px!important}
+.studio-hero .hero-copy .eyebrow{margin-bottom:12px!important}
+.studio-hero .hero-copy .hero-intro{display:none!important}
+.studio-hero .hero-copy .actions{margin-top:13px!important}
+}
