@@ -1,0 +1,112 @@
+{
+  "version": "2026-10-31",
+  "studio": "CRIANDO COM IA",
+  "collection": "MOTION / ORIGINALS",
+  "positioning": "Filmes e experiências autorais com direção de arte e movimento, produzidos no estúdio.",
+  "works": [
+    {
+      "id": "MotionTypeRush",
+      "slug": "tipografia",
+      "title": "Sem limites",
+      "category": "Tipografia cinética",
+      "detail": "Impacto verbal, ritmo e composição tipográfica.",
+      "format": "16:9",
+      "duration": 6,
+      "posterFrame": 110,
+      "accent": "#ff5f2c",
+      "filename": "motion-type-rush.mp4",
+      "poster": "motion-type-rush.jpg"
+    },
+    {
+      "id": "MotionSolar",
+      "slug": "luz",
+      "title": "Luz em forma",
+      "category": "Direção de luz",
+      "detail": "Volumes, atmosferas e transições de iluminação.",
+      "format": "16:9",
+      "duration": 6,
+      "posterFrame": 115,
+      "accent": "#d78b46",
+      "filename": "motion-solar.mp4",
+      "poster": "motion-solar.jpg"
+    },
+    {
+      "id": "MotionVessel",
+      "slug": "objeto",
+      "title": "Matéria & presença",
+      "category": "Motion de produto",
+      "detail": "Matéria, superfícies e revelação de objeto.",
+      "format": "16:9",
+      "duration": 6,
+      "posterFrame": 125,
+      "accent": "#c29c82",
+      "filename": "motion-vessel.mp4",
+      "poster": "motion-vessel.jpg"
+    },
+    {
+      "id": "MotionWave",
+      "slug": "organic",
+      "title": "Marea",
+      "category": "Arte generativa",
+      "detail": "Fluxos orgânicos e poesia visual em movimento.",
+      "format": "16:9",
+      "duration": 6,
+      "posterFrame": 125,
+      "accent": "#49dbc2",
+      "filename": "motion-wave.mp4",
+      "poster": "motion-wave.jpg"
+    },
+    {
+      "id": "MotionStructure",
+      "slug": "arquitetura",
+      "title": "Espaço em camadas",
+      "category": "Motion arquitetônico",
+      "detail": "Linhas, perspectiva e construção de volumes.",
+      "format": "16:9",
+      "duration": 6,
+      "posterFrame": 135,
+      "accent": "#5d8c7b",
+      "filename": "motion-structure.mp4",
+      "poster": "motion-structure.jpg"
+    },
+    {
+      "id": "MotionVelocity",
+      "slug": "energia",
+      "title": "Velocidade",
+      "category": "Sport motion",
+      "detail": "Energia cinética, contraste e velocidade visual.",
+      "format": "16:9",
+      "duration": 6,
+      "posterFrame": 135,
+      "accent": "#d6ff4e",
+      "filename": "motion-velocity.mp4",
+      "poster": "motion-velocity.jpg"
+    },
+    {
+      "id": "MotionMetrics",
+      "slug": "dados",
+      "title": "Dados em sinais",
+      "category": "Motion de dados",
+      "detail": "Transformação de informação em narrativa.",
+      "format": "16:9",
+      "duration": 6,
+      "posterFrame": 145,
+      "accent": "#86dfcc",
+      "filename": "motion-metrics.mp4",
+      "poster": "motion-metrics.jpg"
+    },
+    {
+      "id": "MotionMagazine",
+      "slug": "editorial",
+      "title": "Atitude em cena",
+      "category": "Motion editorial",
+      "detail": "Direção editorial, tipografia e linguagem de moda.",
+      "format": "16:9",
+      "duration": 6,
+      "posterFrame": 145,
+      "accent": "#cf4b67",
+      "filename": "motion-magazine.mp4",
+      "poster": "motion-magazine.jpg"
+    }
+  ]
+}
