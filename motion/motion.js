@@ -1,21 +1,56 @@
-/* Motion Originals: GSAP for website interactions; all final video frames originate in Remotion. */
+/* Motion Originals — automatic silent film playback; GSAP drives page transitions. */
 (()=>{'use strict';
-const videos=[...document.querySelectorAll('video[data-src]')];
-const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-const saveData=!!navigator.connection?.saveData;
-const autoplay=!reduce&&!saveData;
-const activate=(video)=>{
- if(!video.dataset.ready){const source=video.querySelector('source[data-src]');if(source){source.src=source.dataset.src;video.dataset.ready='1';video.load()}}
- if(autoplay){video.play().catch(()=>{});}
+const videos=[...document.querySelectorAll('.intro-visual video, .work .frame video')];
+const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const saveData=Boolean(navigator.connection&&navigator.connection.saveData);
+const enabled=!reduced&&!saveData;
+const active=new WeakSet();
+const prepare=(video)=>{
+  video.controls=false;video.removeAttribute('controls');
+  video.muted=true;video.defaultMuted=true;
+  video.loop=true;video.playsInline=true;video.setAttribute('playsinline','');
+  video.setAttribute('webkit-playsinline','');video.autoplay=enabled;
+  if(video.dataset.motionPrepared)return;
+  video.dataset.motionPrepared='1';
+  const source=video.querySelector('source[data-src]');
+  if(!source)return;
+  source.src=source.dataset.src;
+  video.preload='auto';
+  video.load();
 };
-if('IntersectionObserver' in window){
- const observer=new IntersectionObserver(entries=>{for(const e of entries){
- const video=e.target;if(e.isIntersecting){activate(video)}else if(!video.paused){video.pause()}}
- },{rootMargin:'170px 0px',threshold:.15});
- videos.forEach(v=>observer.observe(v));
-}else videos.forEach(activate);
-document.addEventListener('visibilitychange',()=>{if(document.hidden)videos.forEach(v=>v.pause())});
-if(!reduce&&window.gsap&&window.ScrollTrigger){
+const play=(video)=>{
+ if(!enabled||document.hidden||!active.has(video))return;
+ prepare(video);
+ if(!video.paused)return;
+ const result=video.play();
+ if(result&&typeof result.catch==='function')result.catch(()=>{
+   /* A browser policy can defer playback: retry when playable or after page activity. */
+ });
+};
+const observer='IntersectionObserver' in window?new IntersectionObserver(entries=>{
+ for(const item of entries){
+  const video=item.target;
+  if(item.isIntersecting){
+   active.add(video);play(video);
+  }else{
+   active.delete(video);video.pause();
+  }
+ }
+},{threshold:.12,rootMargin:'70px 0px'}):null;
+for(const video of videos){
+ video.controls=false;video.removeAttribute('controls');
+ video.muted=true;video.defaultMuted=true;video.playsInline=true;
+ video.setAttribute('playsinline','');video.setAttribute('webkit-playsinline','');
+ video.setAttribute('loop','');
+ if(enabled){
+  video.addEventListener('canplay',()=>play(video));
+  video.addEventListener('loadeddata',()=>play(video));
+  if(observer)observer.observe(video);else {active.add(video);play(video)}
+ }
+}
+document.addEventListener('visibilitychange',()=>{for(const video of videos){if(document.hidden)video.pause();else play(video)}});
+window.addEventListener('pageshow',()=>{for(const video of videos)play(video)});
+if(!reduced&&window.gsap&&window.ScrollTrigger){
  gsap.registerPlugin(ScrollTrigger);
  gsap.from('.intro .intro-copy > *',{opacity:0,y:30,stagger:.12,duration:.95,ease:'power3.out'});
  gsap.from('.intro-visual',{opacity:0,scale:.96,duration:1.15,delay:.32,ease:'power3.out'});

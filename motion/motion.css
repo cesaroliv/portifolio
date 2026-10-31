@@ -64,3 +64,7 @@ button{font:inherit}
 @media(max-width:1000px){.intro{grid-template-columns:1fr;gap:45px;padding-top:76px}.intro-visual{max-width:820px}.work,.work:nth-of-type(even){grid-template-columns:1fr;padding:70px 0;gap:35px}.work:nth-of-type(even) .frame,.work:nth-of-type(even) .work-copy{grid-column:1;grid-row:auto}.work .number{font-size:5.8rem}.archive-head{display:block}.offer-inner{grid-template-columns:1fr;gap:40px}}
 @media(max-width:600px){.top{padding:20px}.top nav a:not(.estimate){display:none}.intro{min-height:auto;padding:60px 20px 65px}.intro h1{font-size:clamp(3.8rem,13vw,6.2rem)}.intro-visual{width:100%}.archive{padding:70px 20px 20px}.work{padding:58px 0}.work h3{font-size:3.2rem}.offer{padding:80px 20px}.offer h2{font-size:3.3rem}.offer .side{border-left:0;border-top:1px solid #cba67955;padding:30px 0 0}.footer{padding:22px;display:block}.footer a{display:inline-block;margin-top:15px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+
+/* The showreel is a seamless, non-interactive motion surface. */
+.intro-visual video,.frame video{pointer-events:none}
+.intro-visual video::-webkit-media-controls,.frame video::-webkit-media-controls{display:none!important}
