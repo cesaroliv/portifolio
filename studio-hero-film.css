@@ -1,0 +1,12 @@
+/* Flow cinematic brand film, layered behind interactive studio hero. */
+.studio-film-wrap{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none;background:#070a0f}
+.studio-film-wrap video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.84;transform:translateX(15%) scale(1.04);filter:contrast(1.08) saturate(.91)}
+.studio-film-wrap:after{content:"";position:absolute;z-index:2;inset:0;pointer-events:none;background:linear-gradient(90deg,#070a0f 0%,rgba(7,10,15,.97) 28%,rgba(7,10,15,.88) 48%,rgba(7,10,15,.27) 83%),linear-gradient(0deg,#070a0f 0%,transparent 34%)}
+.studio-hero .studio-scene{display:none}
+.studio-hero h1 em{color:#e8c89a}
+.studio-hero .primary{background:#e2c79d;color:#17191e}
+.studio-hero .primary:hover{background:#fff1d4}
+.studio-hero .live-dot{background:#dfb87c}
+.studio-portal-nav .portal-arrow{color:#e2c79d}
+@media(max-width:700px){.studio-film-wrap{display:none}.studio-hero .studio-scene{display:block}}
+@media(prefers-reduced-motion:reduce){.studio-film-wrap video{opacity:0}.studio-film-wrap{background:#070a0f url("/assets/criando-hero-poster.jpg") 60% center/cover no-repeat}}
