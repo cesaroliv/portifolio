@@ -11,18 +11,37 @@
 @media(max-width:700px){.studio-film-wrap{display:none}.studio-hero .studio-scene{display:block}}
 @media(prefers-reduced-motion:reduce){.studio-film-wrap video{opacity:0}.studio-film-wrap{background:#070a0f url("/assets/criando-hero-poster.jpg") 60% center/cover no-repeat}}
 
-/* VIDEO FIRST — no copy or visual mask over the full 16:9 film */
-.studio-hero{display:flex;flex-direction:column;min-height:0!important;padding:0 0 22px!important;overflow:visible;background:#07090c}
-.studio-hero:before,.studio-hero:after{display:none!important}
-.studio-hero .studio-film-wrap{position:relative!important;inset:auto;display:block!important;width:100%;height:auto;aspect-ratio:16/9;background:#07090c url('/assets/criando-hero-poster.jpg') center/contain no-repeat}
-.studio-hero .studio-film-wrap video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:1;transform:none;filter:none}
-.studio-hero .studio-film-wrap:after,.studio-hero .studio-scene{display:none!important}
-.studio-hero .studio-eyeline{padding:20px 6vw 0;margin:0}
-.studio-hero .hero-copy{max-width:none;width:100%;box-sizing:border-box;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;column-gap:6vw;row-gap:10px;padding:35px 6vw 52px!important;margin:0}
-.studio-hero .hero-copy .eyebrow{grid-column:1/-1;margin:0 0 10px}
-.studio-hero .hero-copy h1{grid-column:1;grid-row:2/4;margin:0;font-size:clamp(3.5rem,5.6vw,7rem);line-height:.98}
-.studio-hero .hero-copy .hero-intro{grid-column:2;grid-row:2;margin:0}
-.studio-hero .hero-copy .actions{grid-column:2;grid-row:3;margin:14px 0 0!important;flex-wrap:wrap}
-.studio-hero .studio-portal-nav,.studio-hero .hero-bottom{margin-left:6vw!important;margin-right:6vw!important}
-@media(max-width:900px){.studio-hero .studio-eyeline{padding:16px 22px 0}.studio-hero .hero-copy{display:block;padding:28px 22px 38px!important}.studio-hero .hero-copy h1{font-size:clamp(3rem,10vw,5rem);margin:18px 0}.studio-hero .hero-copy .hero-intro{max-width:520px}.studio-hero .hero-copy .actions{margin:20px 0 0!important}.studio-hero .studio-portal-nav,.studio-hero .hero-bottom{margin-left:22px!important;margin-right:22px!important}}
-@media(prefers-reduced-motion:reduce){.studio-hero .studio-film-wrap video{visibility:hidden}}
+/* CINEMA HERO — retain the complete film and place compact editorial copy INSIDE its upper negative space. */
+.studio-hero{position:relative!important;display:flex!important;flex-direction:column!important;min-height:0!important;padding:0 0 22px!important;overflow:hidden!important;background:#07090c}
+.studio-hero:before,.studio-hero:after,.studio-hero .studio-scene{display:none!important}
+.studio-hero .studio-film-wrap{position:relative!important;inset:auto!important;width:100%;height:auto;aspect-ratio:16/9;display:block!important;background:#07090c url('/assets/criando-hero-poster.jpg') center/contain no-repeat}
+.studio-hero .studio-film-wrap video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain!important;object-position:center;transform:none!important;filter:none!important;opacity:1!important}
+.studio-hero .studio-film-wrap:after{display:none!important}
+.studio-hero .hero-copy{position:absolute!important;z-index:8!important;top:clamp(29px,4vw,68px)!important;left:clamp(28px,5vw,88px)!important;max-width:min(36vw,455px)!important;width:36vw!important;padding:0!important;margin:0!important;display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:0!important;pointer-events:auto}
+.studio-hero .hero-copy .eyebrow{font-size:9px!important;letter-spacing:.13em!important;line-height:1.4;color:#d8c7ac!important;margin:0 0 17px!important;max-width:100%}
+.studio-hero .hero-copy h1{font:400 clamp(2.2rem,3.45vw,3.9rem)/.99 "Italiana",Georgia,serif!important;letter-spacing:-.033em!important;color:#f4f0e9!important;margin:0!important;max-width:100%!important;grid-row:auto!important}
+.studio-hero .hero-copy h1 em{color:#e1c09a!important}
+.studio-hero .hero-copy .hero-intro{font-size:clamp(.72rem,.92vw,.88rem)!important;line-height:1.62!important;color:#e0dfd9!important;margin:17px 0 0!important;max-width:330px!important;grid-row:auto!important}
+.studio-hero .hero-copy .actions{display:flex!important;flex-wrap:wrap!important;align-items:center!important;gap:18px!important;margin:19px 0 0!important;grid-row:auto!important}
+.studio-hero .hero-copy .actions .btn{font-size:11px!important;min-height:40px!important;padding:10px 13px!important}
+.studio-hero .hero-copy .actions .btn.secondary{min-height:34px!important;padding:8px 0!important;color:#f3ece1!important}
+.studio-hero .studio-eyeline{position:relative;z-index:3;margin:0!important;padding:17px clamp(24px,5vw,88px) 0!important;color:#aaa9a4}
+.studio-hero .studio-portal-nav,.studio-hero .hero-bottom{margin-left:clamp(24px,5vw,88px)!important;margin-right:clamp(24px,5vw,88px)!important}
+@media(max-width:900px){
+.studio-hero .hero-copy{position:relative!important;top:auto!important;left:auto!important;max-width:none!important;width:auto!important;margin:0!important;padding:30px 24px 34px!important;display:flex!important}
+.studio-hero .hero-copy h1{font-size:clamp(3rem,7vw,5rem)!important}
+.studio-hero .hero-copy .hero-intro{font-size:13px!important;max-width:490px!important}
+.studio-hero .hero-copy .actions{margin-top:23px!important}
+.studio-hero .studio-eyeline{padding:14px 24px 0!important}
+.studio-hero .studio-portal-nav,.studio-hero .hero-bottom{margin-left:24px!important;margin-right:24px!important}
+}
+@media(max-width:700px){
+.studio-hero{min-height:0!important;padding:0 0 20px!important}
+.studio-hero .studio-film-wrap{display:block!important}
+.studio-hero .hero-copy{padding:24px 21px 32px!important}
+.studio-hero .hero-copy h1{font-size:clamp(3.1rem,10vw,4.4rem)!important}
+.studio-hero .hero-copy .hero-intro{font-size:13px!important;line-height:1.65!important}
+.studio-hero .studio-eyeline{padding:13px 21px 0!important}
+.studio-hero .studio-portal-nav,.studio-hero .hero-bottom{margin-left:21px!important;margin-right:21px!important}
+}
+@media(prefers-reduced-motion:reduce){.studio-hero .studio-film-wrap video{visibility:hidden!important}}
