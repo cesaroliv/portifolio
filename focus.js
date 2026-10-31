@@ -1,6 +1,13 @@
 "use strict";
 (function(){
 const reduced=window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const heroFilm=document.querySelector("[data-studio-film]");
+if(heroFilm&&!reduced&&!window.matchMedia("(max-width:700px)").matches&&!navigator.connection?.saveData){
+ const control=()=>{const r=heroFilm.getBoundingClientRect();if(!document.hidden&&r.bottom>0&&r.top<innerHeight)heroFilm.play().catch(()=>{});else heroFilm.pause();};
+ if("IntersectionObserver" in window)new IntersectionObserver(control,{threshold:.08}).observe(heroFilm);
+ else control();
+ document.addEventListener("visibilitychange",control);
+}
 const studio=document.querySelector(".studio-hero");if(studio){studio.querySelectorAll("[data-portal]").forEach(link=>{const enter=()=>studio.dataset.preview=link.dataset.portal;const leave=()=>delete studio.dataset.preview;link.addEventListener("pointerenter",enter);link.addEventListener("pointerleave",leave);link.addEventListener("focus",enter);link.addEventListener("blur",leave);});}
 const preview=document.querySelector("[data-web-demo]");
 if(preview){
