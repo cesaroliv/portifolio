@@ -1,0 +1,79 @@
+{
+  "version": "2026-10-31",
+  "collection": "Motion Comercial — Obras autorais",
+  "format": "1280x720",
+  "fps": 30,
+  "durationFrames": 450,
+  "works": [
+    {
+      "id": "CommercialSkincare",
+      "slug": "cosmeticos",
+      "title": "O ritual da luz",
+      "category": "Perfumaria e cosméticos",
+      "description": "Filme de sérum com iluminação, textura e identidade premium.",
+      "file": "commercial-skincare.mp4",
+      "poster": "commercial-skincare.jpg",
+      "accent": "#dfba82"
+    },
+    {
+      "id": "CommercialCoffee",
+      "slug": "gastronomia",
+      "title": "Tempo de sentir",
+      "category": "Gastronomia e bebidas",
+      "description": "Comercial de café de origem com composição de produto e tipografia.",
+      "file": "commercial-coffee.mp4",
+      "poster": "commercial-coffee.jpg",
+      "accent": "#eaa86c"
+    },
+    {
+      "id": "CommercialWatch",
+      "slug": "relojoaria",
+      "title": "Cada segundo importa",
+      "category": "Joalheria e relojoaria",
+      "description": "Revelação de relógio com detalhes, ponteiros e acabamento.",
+      "file": "commercial-watch.mp4",
+      "poster": "commercial-watch.jpg",
+      "accent": "#c2d3dc"
+    },
+    {
+      "id": "CommercialCar",
+      "slug": "automotivo",
+      "title": "Brilho de outro nível",
+      "category": "Estética automotiva",
+      "description": "Apresentação de serviço com reflexos, volume e movimento.",
+      "file": "commercial-car.mp4",
+      "poster": "commercial-car.jpg",
+      "accent": "#8edbff"
+    },
+    {
+      "id": "CommercialRealEstate",
+      "slug": "imobiliario",
+      "title": "Uma nova perspectiva",
+      "category": "Imobiliário e arquitetura",
+      "description": "Motion arquitetônico com edifício, perspectiva e composição editorial.",
+      "file": "commercial-realestate.mp4",
+      "poster": "commercial-realestate.jpg",
+      "accent": "#b8d3c2"
+    },
+    {
+      "id": "CommercialWellness",
+      "slug": "bem-estar",
+      "title": "O cuidado tem presença",
+      "category": "Clínicas de estética e bem-estar",
+      "description": "Filme de serviço com gestos delicados e atmosfera acolhedora.",
+      "file": "commercial-wellness.mp4",
+      "poster": "commercial-wellness.jpg",
+      "accent": "#e8b9c0"
+    },
+    {
+      "id": "CommercialSoftware",
+      "slug": "tecnologia",
+      "title": "Tudo flui melhor",
+      "category": "Tecnologia e aplicativos",
+      "description": "Animação de dashboard e apresentação de produto digital.",
+      "file": "commercial-software.mp4",
+      "poster": "commercial-software.jpg",
+      "accent": "#7edced"
+    }
+  ]
+}
