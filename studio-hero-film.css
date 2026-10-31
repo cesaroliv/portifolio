@@ -10,3 +10,19 @@
 .studio-portal-nav .portal-arrow{color:#e2c79d}
 @media(max-width:700px){.studio-film-wrap{display:none}.studio-hero .studio-scene{display:block}}
 @media(prefers-reduced-motion:reduce){.studio-film-wrap video{opacity:0}.studio-film-wrap{background:#070a0f url("/assets/criando-hero-poster.jpg") 60% center/cover no-repeat}}
+
+/* VIDEO FIRST — no copy or visual mask over the full 16:9 film */
+.studio-hero{display:flex;flex-direction:column;min-height:0!important;padding:0 0 22px!important;overflow:visible;background:#07090c}
+.studio-hero:before,.studio-hero:after{display:none!important}
+.studio-hero .studio-film-wrap{position:relative!important;inset:auto;display:block!important;width:100%;height:auto;aspect-ratio:16/9;background:#07090c url('/assets/criando-hero-poster.jpg') center/contain no-repeat}
+.studio-hero .studio-film-wrap video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:1;transform:none;filter:none}
+.studio-hero .studio-film-wrap:after,.studio-hero .studio-scene{display:none!important}
+.studio-hero .studio-eyeline{padding:20px 6vw 0;margin:0}
+.studio-hero .hero-copy{max-width:none;width:100%;box-sizing:border-box;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;column-gap:6vw;row-gap:10px;padding:35px 6vw 52px!important;margin:0}
+.studio-hero .hero-copy .eyebrow{grid-column:1/-1;margin:0 0 10px}
+.studio-hero .hero-copy h1{grid-column:1;grid-row:2/4;margin:0;font-size:clamp(3.5rem,5.6vw,7rem);line-height:.98}
+.studio-hero .hero-copy .hero-intro{grid-column:2;grid-row:2;margin:0}
+.studio-hero .hero-copy .actions{grid-column:2;grid-row:3;margin:14px 0 0!important;flex-wrap:wrap}
+.studio-hero .studio-portal-nav,.studio-hero .hero-bottom{margin-left:6vw!important;margin-right:6vw!important}
+@media(max-width:900px){.studio-hero .studio-eyeline{padding:16px 22px 0}.studio-hero .hero-copy{display:block;padding:28px 22px 38px!important}.studio-hero .hero-copy h1{font-size:clamp(3rem,10vw,5rem);margin:18px 0}.studio-hero .hero-copy .hero-intro{max-width:520px}.studio-hero .hero-copy .actions{margin:20px 0 0!important}.studio-hero .studio-portal-nav,.studio-hero .hero-bottom{margin-left:22px!important;margin-right:22px!important}}
+@media(prefers-reduced-motion:reduce){.studio-hero .studio-film-wrap video{visibility:hidden}}
