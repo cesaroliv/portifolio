@@ -46,3 +46,7 @@ Edite `content.js`. O endpoint e o número do WhatsApp, as mensagens, textos com
 - `docs/` — auditorias e relatórios;
 - `assets/` — imagens e vídeos originais;
 - `assets/optimized/` — variantes WebP e MP4 otimizadas.
+
+
+## Padrão mínimo de qualidade das landing pages
+Consultar `docs/LANDING_PAGE_QUALITY_FLOOR.md` antes de criar nova landing. Por decisão do proprietário em 2026-11-01, Papelería Creativa (https://lumenanima.com/papelaria-criativa/) é o **piso mínimo de qualidade**, não um template para copiar. Verificar materiais reais, direção autoral, narrativa, motion, responsividade e QA técnico E visual.

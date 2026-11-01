@@ -62,3 +62,7 @@ Estúdio criativo especializado em **landing pages com experiência visual** e *
 
 - Preços e prazos para serviço: ainda não confirmados, portanto propostas personalizadas.
 - A direção visual final será validada pelo proprietário ao ver as experiências reais; nenhum estilo deve ser considerado aprovado só por ter sido construído.
+
+
+## Decisão vigente — piso de qualidade (2026-11-01)
+A landing Papelería Creativa publicada em https://lumenanima.com/papelaria-criativa/ é o **mínimo aceitável** para TODAS as landing pages comerciais do Criando com IA. Consultar `docs/LANDING_PAGE_QUALITY_FLOOR.md` antes do projeto. Requer direção cinematográfica autoral, materiais verdadeiros, experiência editorial/motion da landing inteira, mobile cuidado, CTA e QA visual. Não copiar o visual de Papelería para outro cliente, não voltar a modelos genéricos. Governança de autorização e gastos permanece.
