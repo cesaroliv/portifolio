@@ -28,3 +28,18 @@
 .project-arts .arts-media .video-horizontal{width:min(100%,510px);aspect-ratio:4/5;flex:0 1 auto;max-height:none;border:1px solid rgba(222,179,120,.35);background:#0b0a09;box-shadow:0 30px 80px rgba(0,0,0,.54),0 0 70px rgba(189,120,57,.12)}
 .project-arts .arts-media .video-horizontal video{display:block;width:100%;height:100%;object-fit:contain;object-position:center center;transform:none}
 @media(max-width:760px){.project-arts .arts-media{padding:28px 16px 73px;min-height:0}.project-arts .arts-media .video-horizontal{width:min(100%,460px);aspect-ratio:4/5}}
+/* Verified live-site portfolio cases — no fictitious mockups, no cropped screenshot art. */
+.case-still{display:block;position:relative;width:100%;max-width:100%;overflow:hidden;border:1px solid rgba(230,207,167,.20);box-shadow:0 26px 75px rgba(0,0,0,.35);background:#0c0b0a;transition:box-shadow .4s,border-color .4s}
+.case-still:hover{border-color:rgba(236,212,169,.52);box-shadow:0 30px 90px rgba(0,0,0,.55)}
+.case-still img{display:block;width:100%;height:auto;object-fit:contain;object-position:center;transform:none}
+.project-gota .case-still-gota{width:min(100%,820px)}
+.project-gota .gota-media{background:radial-gradient(ellipse at 50% 45%,#344e3e 0%,#14251d 57%,#090e0b 100%);padding:55px 30px 80px}
+.project-papelaria .papelaria-media{background:radial-gradient(ellipse at 50% 40%,#865d8c 0%,#33223b 54%,#110e14 100%);padding:65px 30px 80px}
+.project-papelaria .project-copy h3{font-size:clamp(42px,5vw,78px);letter-spacing:-.05em;overflow-wrap:normal;word-break:normal}
+.project-papelaria .project-copy .project-sub{font-size:11px}
+@media(max-width:760px){
+ .project-gota .gota-media,.project-papelaria .papelaria-media{padding:45px 14px 76px;min-height:0}
+ .project-papelaria .project-copy h3{font-size:clamp(44px,10vw,65px)}
+ .case-still{max-width:100%}
+}
+@media(max-width:375px){.project-papelaria .project-copy h3{font-size:42px}}
