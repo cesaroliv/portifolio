@@ -18,3 +18,6 @@
 /* Cinematic wordmark, avoiding the deprecated purple logo asset. */
 .identity{gap:12px}.brand-monogram{font:400 44px/1 "Italiana",Georgia,serif;letter-spacing:-.11em;color:var(--gold);padding-right:5px}.brand-monogram span{color:#faf0dd}.brand-lockup{font:500 11px/1.1 "Space Grotesk",sans-serif;letter-spacing:.13em;color:#efe8da;display:flex;flex-direction:column;gap:5px;white-space:nowrap}.brand-lockup small{font-size:10px;letter-spacing:.32em;color:var(--gold)}.identity .brand-caption{font-size:9px;color:#918574;letter-spacing:.14em;border-left:1px solid var(--line);padding-left:16px;margin-left:9px}.site-header nav{flex-shrink:0}
 @media(max-width:760px){.brand-monogram{font-size:37px}.brand-lockup{font-size:9px;letter-spacing:.08em}.brand-lockup small{font-size:8px}.identity .brand-caption{display:none}.identity{gap:8px}}
+.project-arts .arts-media{background:radial-gradient(ellipse at center,#68482e,#120e0b 68%);padding:55px 45px}
+.project-arts .project-copy h3{font-size:clamp(68px,7.7vw,135px)}
+@media(max-width:760px){.project-arts .arts-media{padding:45px 15px 75px;min-height:290px}.project-arts .project-copy h3{font-size:clamp(60px,14vw,100px)}}
