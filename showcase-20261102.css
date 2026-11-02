@@ -1,0 +1,185 @@
+/* CRIANDO COM IA — Showroom claro e cinematográfico / 2026-11-02
+   Marca do estúdio ≠ identidade dos cases. Preserve a hero filmada e os sites dos clientes.
+   Vídeos de portfólio são gravações originais fornecidas, não templates ou mockups. */
+:root{
+ --show-paper:#f7f8f4;--show-paper2:#edf0e9;--show-ink:#172421;
+ --show-dim:#64706b;--show-line:#d6ddd4;--show-accent:#acd9be;
+ --show-deep:#142723;--show-ice:#e5f0e9;
+}
+html{scroll-padding-top:20px}
+body{background:var(--show-paper);color:var(--show-ink)}
+.site-grain{opacity:.017;z-index:5}
+.site-header{background:var(--show-paper);border-color:#dfe4da;min-height:79px;padding:13px clamp(21px,5vw,88px)}
+.site-header .identity{gap:13px}
+.site-header .identity span{border:0;padding:0;margin:0;white-space:nowrap}
+.site-header .brand-monogram{font-family:"Space Grotesk",Arial,sans-serif;font-weight:600;font-size:32px;letter-spacing:-.13em;line-height:1;color:var(--show-ink)}
+.site-header .brand-monogram span{color:#439675}
+.site-header .brand-lockup{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:11px;letter-spacing:.12em;line-height:1.05;color:var(--show-ink)}
+.site-header .brand-lockup small{color:#3f9270;letter-spacing:.19em;font-size:10px}
+.site-header .identity .brand-caption{border-left:1px solid #c3cbc1;padding-left:17px;margin-left:5px;color:#738079;font-size:9px;letter-spacing:.07em}
+.site-header nav{gap:clamp(13px,2.3vw,35px);font-family:"Space Grotesk",sans-serif;font-size:11px;letter-spacing:.005em;text-transform:none;font-weight:500}
+.site-header nav a{color:#4a5b53}
+.site-header nav a:hover,.site-header nav a:focus-visible{color:#0a6d53}
+.site-header nav .nav-contact{border:1px solid #b8c7bb;padding:11px 16px;border-radius:99px;color:var(--show-ink)}
+.site-header nav .nav-contact span{margin-left:9px}
+.site-header nav .language{opacity:1;color:#78857d}
+a:focus-visible,button:focus-visible{outline-color:#2d8068}
+.cia-film-hero.opening{background:#080908}
+.cia-film-hero__stage{max-height:1020px}
+.cia-film-hero__stage + *{position:relative}
+.work-index{display:grid;grid-template-columns:1.2fr repeat(3,1fr);align-items:stretch;padding:0 clamp(21px,5vw,88px);background:#f1f4ee;border-bottom:1px solid var(--show-line);min-height:92px}
+.work-index__label{display:flex;align-items:center;font:600 10px "Space Grotesk",sans-serif;letter-spacing:.14em;color:#6b7972}
+.work-index a{border-left:1px solid var(--show-line);display:flex;align-items:center;gap:13px;padding:22px 14px 22px 25px;font:600 clamp(13px,1.3vw,17px) "Space Grotesk",sans-serif;color:#2a3b34;transition:background .25s}
+.work-index a:hover{background:#e2ebe1}
+.work-index a span:first-child{font:500 10px "Space Grotesk",sans-serif;color:#7b8f83}
+.work-index a span:last-child{margin-left:auto;color:#2b8064}
+.studio-intro,.work-group--products,.studio-offer{padding-inline:clamp(24px,7vw,125px)}
+.studio-eyebrow,.work-heading__index,.studio-case__number,.studio-case__link,.studio-service-feature__footer>div>span,.work-status,.studio-contact__cta{font-family:"Space Grotesk",Arial,sans-serif}
+.studio-eyebrow{font-size:11px;letter-spacing:.16em;font-weight:600;color:#5b8270}
+.studio-intro{padding-top:clamp(90px,11vw,160px);padding-bottom:clamp(100px,11vw,162px)}
+.studio-intro__grid{display:grid;grid-template-columns:minmax(0,1.9fr) minmax(230px,.8fr);gap:clamp(35px,8vw,160px);align-items:end;margin-top:35px}
+.studio-intro h2{font:500 clamp(47px,6.1vw,110px)/1.03 "Space Grotesk",sans-serif;letter-spacing:-.085em;margin:0;max-width:1060px}
+.studio-intro h2 em{color:#5b9379;font-style:normal}
+.studio-intro__grid>p{font-size:clamp(14px,1.35vw,17px);line-height:1.8;max-width:360px;color:var(--show-dim);margin:0 0 7px}
+.work-group{scroll-margin-top:0}
+.work-group--products{padding-block:clamp(90px,10vw,140px) clamp(125px,11vw,170px);background:#fff}
+.work-heading{display:flex;justify-content:space-between;align-items:end;gap:40px;border-top:1px solid var(--show-line);padding-top:23px;margin-bottom:58px}
+.work-heading__index{display:block;color:#668073;font-size:11px;letter-spacing:.14em;font-weight:600}
+.work-heading h2{font:500 clamp(62px,8vw,137px)/.97 "Space Grotesk",sans-serif;letter-spacing:-.09em;margin:30px 0 0}
+.work-heading__point{color:#6fb896}
+.work-heading>p{color:var(--show-dim);font-size:15px;line-height:1.7;max-width:330px;margin:0 0 8px}
+.studio-case-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(25px,3.5vw,60px);row-gap:clamp(80px,7vw,120px)}
+.studio-case{min-width:0}
+.studio-case--wide{grid-column:1/-1}
+.studio-case__film,.studio-service-feature__film{position:relative;overflow:hidden;isolation:isolate;background:#17251e}
+.studio-case__film{aspect-ratio:1440/680}
+.studio-case__film video,.studio-service-feature__film video{display:block;width:100%;height:100%;object-fit:contain;object-position:center;background:#101818}
+.studio-case__film:after,.studio-service-feature__film:after{content:"";position:absolute;inset:auto 0 0;height:26%;pointer-events:none;background:linear-gradient(0deg,#08130f72,transparent)}
+.studio-case__film-label{position:absolute;bottom:19px;left:20px;z-index:2;font:600 10px "Space Grotesk",sans-serif;letter-spacing:.14em;color:#f9fff5;text-shadow:0 2px 10px #0008}
+.studio-case__info{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:30px;align-items:end;padding-top:23px;border-top:1px solid #cbd6ca;margin-top:19px}
+.studio-case__number{grid-column:1/-1;color:#588171;font-size:10px;font-weight:600;letter-spacing:.13em;margin-bottom:15px}
+.studio-case__text{min-width:0}
+.studio-case h3{font:500 clamp(27px,3.1vw,50px)/1.13 "Space Grotesk",sans-serif;letter-spacing:-.065em;margin:0 0 11px}
+.studio-case__text p{font-size:14px;line-height:1.75;max-width:540px;color:#65716b;margin:0}
+.studio-case__link{display:flex;gap:25px;align-items:center;white-space:nowrap;padding:13px 0;border-bottom:1px solid #729d83;font-size:12px;font-weight:600;color:#1e5543;transition:color .2s}
+.studio-case__link:hover{color:#239773}
+.studio-case__link span{font-size:21px}
+.work-group--services{background:var(--show-deep);color:#f5f8f4;padding:clamp(100px,10vw,155px) clamp(24px,7vw,125px) clamp(100px,10vw,150px)}
+.work-group--services .work-heading{border-color:#ffffff30}
+.work-group--services .work-heading__index{color:#a1c9ad}
+.work-group--services .work-heading>p{color:#b4c8b9}
+.work-group--services .work-heading__point{color:#94d6ac}
+.studio-service-feature__film{aspect-ratio:1440/680;background:#0a1512}
+.studio-service-feature__footer{display:flex;align-items:end;justify-content:space-between;gap:32px;padding-top:23px;border-top:1px solid #ffffff50;margin-top:23px}
+.studio-service-feature__footer>div>span{font-size:11px;color:#9ac4ac;letter-spacing:.12em}
+.studio-service-feature__footer h3{font:500 clamp(32px,4.5vw,66px)/1.1 "Space Grotesk",sans-serif;letter-spacing:-.065em;margin:15px 0 10px}
+.studio-service-feature__footer p{font-size:14px;max-width:560px;line-height:1.7;color:#b5c6b9;margin:0}
+.studio-service-feature__cta{color:#e9f7ef;white-space:nowrap;display:flex;align-items:center;gap:30px;padding:0 0 15px;border-bottom:1px solid #b6d8bd;font-size:12px;font-weight:600}
+.studio-service-feature__cta:hover{color:#bde6c7}
+.work-group--motion{padding:clamp(100px,11vw,160px) clamp(24px,7vw,125px);background:#e8f1e9;display:grid;grid-template-columns:1.3fr .65fr;gap:8%;align-items:end}
+.work-group--motion h2{font:500 clamp(58px,8.5vw,144px)/.95 "Space Grotesk",sans-serif;letter-spacing:-.095em;margin:25px 0 0}
+.work-group--motion h2 em{font-style:normal;color:#648a74}
+.work-group--motion__side{max-width:360px;padding-bottom:4px}
+.work-status{display:inline-flex;gap:11px;align-items:center;font-weight:600;font-size:10px;letter-spacing:.14em;color:#31634a;border:1px solid #a0b7a8;border-radius:90px;padding:13px 17px}
+.work-status i{height:6px;width:6px;background:#6caa8d;border-radius:50%}
+.work-group--motion__side p{line-height:1.8;font-size:15px;color:#52695b;margin:25px 0 0}
+.studio-offer{display:grid;grid-template-columns:1.1fr 1fr;gap:12%;padding-block:clamp(100px,10vw,155px);background:#fff}
+.studio-offer h2{font:500 clamp(46px,5.4vw,89px)/1.08 "Space Grotesk",sans-serif;letter-spacing:-.075em;margin:22px 0 0}
+.studio-offer h2 em{color:#5d9980;font-style:normal}
+.studio-offer__items{border-top:1px solid var(--show-line);align-self:stretch}
+.studio-offer__items a{display:grid;grid-template-columns:34px 1fr auto;gap:12px;padding:27px 0;align-items:center;border-bottom:1px solid var(--show-line);color:#243d30;transition:color .2s}
+.studio-offer__items a:hover{color:#398563}
+.studio-offer__items a span:first-child{color:#7f9b8a;font-size:12px}
+.studio-offer__items a strong{font:500 clamp(17px,1.9vw,26px)/1.4 "Space Grotesk",sans-serif;letter-spacing:-.03em}
+.studio-offer__items a span:last-child{font-size:23px}
+.studio-contact{padding:clamp(110px,11vw,165px) clamp(24px,7vw,125px);background:#142622;color:#f5f8f3;text-align:left}
+.studio-contact__inside{max-width:1300px;margin:auto}
+.studio-contact .studio-eyebrow{color:#b0d1b6}
+.studio-contact h2{font:500 clamp(53px,7.6vw,124px)/1.01 "Space Grotesk",sans-serif;letter-spacing:-.09em;margin:24px 0 32px}
+.studio-contact h2 em{font-style:normal;color:#a7d5b5}
+.studio-contact p{font-size:16px;line-height:1.8;color:#b7c7bc;max-width:520px;margin-bottom:40px}
+.studio-contact__cta{display:inline-flex;align-items:center;gap:55px;background:#c6e8ce;color:#162d20;border-radius:100px;padding:21px 25px;font-size:12px;font-weight:700;transition:transform .2s,background .2s}
+.studio-contact__cta:hover{background:#ebfff0;transform:translateY(-2px)}
+.studio-contact__cta span{font-size:19px}
+body>footer{background:#f7f8f4;border-top:1px solid #dce4d9;color:#58675d;display:grid;grid-template-columns:1fr 1.3fr 1fr auto;gap:22px;padding:36px clamp(24px,6vw,110px) 48px;font-size:10px;letter-spacing:.07em}
+body>footer .footer-brand{font:600 20px "Space Grotesk",sans-serif;color:#1f3b2d;letter-spacing:-.06em}
+body>footer p{font-size:12px;color:#66776b}
+body>footer a:hover{color:#3e9070}
+@media(max-width:1100px){
+ .studio-intro__grid{gap:35px;grid-template-columns:1.5fr 1fr}
+ .studio-case__info{grid-template-columns:1fr}
+ .studio-case__link{justify-self:start;margin-top:20px}
+}
+@media(max-width:780px){
+ .site-header{min-height:70px;padding-inline:20px}
+ .site-header .identity .brand-caption{display:none}
+ .site-header nav{font-size:11px;gap:15px}
+ .site-header nav a[href="#produtos"],.site-header nav a[href="#servicos"]{display:none}
+ .site-header nav .nav-contact{padding:10px 13px}
+ .work-index{grid-template-columns:repeat(3,1fr);padding:0 16px;min-height:80px}
+ .work-index__label{display:none}
+ .work-index a{padding:19px 10px;gap:8px;font-size:12px;white-space:normal}
+ .work-index a:first-of-type{border-left:0}
+ .work-index a span:last-child{display:none}
+ .studio-intro{padding:92px 25px 102px}
+ .studio-intro__grid{display:block;margin-top:24px}
+ .studio-intro h2{font-size:clamp(45px,9vw,73px)}
+ .studio-intro__grid>p{max-width:580px;margin-top:34px}
+ .work-group--products,.work-group--services,.work-group--motion,.studio-offer{padding-left:25px;padding-right:25px}
+ .work-heading{align-items:start;display:block;margin-bottom:35px}
+ .work-heading h2{font-size:clamp(64px,11vw,96px);margin-top:22px}
+ .work-heading>p{margin-top:25px;max-width:540px}
+ .studio-case-grid{grid-template-columns:1fr;row-gap:72px}
+ .studio-case--wide{grid-column:auto}
+ .studio-case__film-label{font-size:9px;bottom:14px;left:14px}
+ .studio-service-feature__footer{display:block}
+ .studio-service-feature__cta{width:fit-content;margin-top:29px}
+ .work-group--motion{display:block}
+ .work-group--motion h2{font-size:clamp(64px,11vw,99px)}
+ .work-group--motion__side{margin-top:35px}
+ .studio-offer{display:block}
+ .studio-offer__items{margin-top:45px}
+ .studio-contact{padding:90px 25px}
+ .studio-contact h2{font-size:clamp(52px,10.5vw,83px)}
+ body>footer{grid-template-columns:1fr 1fr;gap:25px}
+}
+@media(max-width:480px){
+ .site-header .brand-monogram{font-size:29px}
+ .site-header .brand-lockup{font-size:10px}
+ .site-header nav{gap:10px}
+ .site-header nav .nav-contact{font-size:10px;padding:9px 10px}
+ .site-header nav .language{font-size:10px}
+ .work-index{padding:0 12px;min-height:72px}
+ .work-index a{font-size:11px;gap:4px;padding:14px 7px}
+ .work-index a span:first-child{font-size:9px}
+ .studio-intro{padding:76px 20px 88px}
+ .studio-intro h2{font-size:clamp(41px,9.8vw,60px)}
+ .work-group--products,.work-group--services,.work-group--motion,.studio-offer{padding-left:20px;padding-right:20px}
+ .work-group--products,.work-group--services{padding-top:75px;padding-bottom:85px}
+ .studio-case__info{padding-top:15px;margin-top:15px}
+ .studio-case h3{font-size:32px}
+ .studio-case__text p{font-size:13px}
+ .studio-case__film-label{bottom:11px;left:10px;font-size:8px}
+ .studio-service-feature__footer h3{font-size:36px}
+ .studio-service-feature__footer p{font-size:13px}
+ .work-group--motion h2{font-size:clamp(54px,12vw,82px)}
+ .studio-offer h2{font-size:clamp(45px,10vw,65px)}
+ .studio-contact{padding:82px 20px}
+ .studio-contact h2{font-size:clamp(50px,11vw,75px)}
+ .studio-contact__cta{gap:22px;padding:17px 20px}
+ body>footer{padding:35px 20px;grid-template-columns:1fr 1fr}
+ body>footer nav{grid-column:1/-1}
+ body>footer>span{grid-column:1/-1}
+}
+@media(max-width:340px){
+ .site-header{padding:11px 13px}
+ .site-header nav{gap:7px}
+ .site-header .brand-monogram{font-size:25px}
+ .site-header .brand-lockup{font-size:8px}
+ .work-index a{font-size:10px;padding:13px 4px}
+ .studio-intro h2{font-size:39px}
+ .studio-case__link{white-space:normal}
+}
+@media(prefers-reduced-motion:reduce){
+ .studio-contact__cta,.studio-case__link,.work-index a{transition:none}
+}
