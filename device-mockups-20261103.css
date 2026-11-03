@@ -46,3 +46,6 @@ body.has-device-dialog{overflow:hidden}
 @media(min-width:741px){.studio-case:not(.studio-case--wide) .device-stage{aspect-ratio:4/3}.studio-case:not(.studio-case--wide) .mock-monitor{top:19%}.studio-case:not(.studio-case--wide) .mock-phone{bottom:16%}}
 @media(max-width:740px){.device-stage{aspect-ratio:6/5}.mock-monitor{top:20%;left:4%;width:80%}.mock-phone{right:5.5%;bottom:14.5%;width:23%}.mock-phone__body{border-radius:3.5cqw}.mock-phone__screen{border-radius:2.9cqw}.device-stage__caption{top:6%;left:5%;font-size:8px;letter-spacing:.07em;gap:5px}.device-stage__toggle{top:3.5%;right:3%;font-size:9px;min-height:32px;padding:8px 9px;gap:5px}.device-stage__expand{bottom:3.5%;left:5%;font-size:10px}.device-dialog{width:96vw;max-width:96vw;padding:16px 12px 13px}.device-dialog__bar{gap:12px}.device-dialog__title{font-size:16px}.device-dialog__media{border-width:4px}.device-dialog__note{font-size:10px}}
 @media(prefers-reduced-motion:reduce){.device-stage__toggle,.device-stage__expand,.device-stage__expand span{transition:none}}
+
+/* Book case: same responsive device composition, quiet slate and parchment palette. */
+.device-stage--o-legado-dos-corvos{--stage-a:#e8e3de;--stage-b:#bfc8cd;--stage-ink:#55484d}
