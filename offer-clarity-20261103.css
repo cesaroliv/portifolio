@@ -1,0 +1,68 @@
+/* Criando com IA — offer-first editorial hierarchy. Existing films and device components preserved. */
+.offer-clarity-page{--clarity-pad:clamp(22px,6.5vw,118px);--clarity-ink:#182b24;--clarity-dim:#5b6d63;--clarity-rule:#d6dfd4}
+.offer-clarity-page .site-header nav{gap:clamp(16px,2.2vw,34px)}
+.clarity-intro{padding:clamp(68px,7.5vw,114px) var(--clarity-pad) clamp(65px,7vw,105px);background:#f2f5ee;color:var(--clarity-ink);border-bottom:1px solid var(--clarity-rule)}
+.clarity-eyebrow{font:600 10px/1.6 'Space Grotesk',Arial,sans-serif;letter-spacing:.15em;color:#4b755e;margin:0 0 26px;text-transform:uppercase}
+.clarity-intro__grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(270px,.85fr);gap:clamp(32px,7vw,110px);align-items:end}
+.clarity-intro h2{font:500 clamp(44px,4.6vw,79px)/1.07 'Space Grotesk',Arial,sans-serif;letter-spacing:-.065em;margin:0;max-width:860px}
+.clarity-intro h2 em{font-style:normal;color:#4e8568}
+.clarity-intro__body{max-width:440px;padding-bottom:4px}
+.clarity-intro__body p{font:400 clamp(15px,1.23vw,18px)/1.75 'DM Sans',Arial,sans-serif;color:#41584a;margin:0}
+.clarity-intro__body a{display:inline-flex;align-items:center;gap:27px;font:600 12px/1.5 'Space Grotesk',Arial,sans-serif;color:#214f3b;border-bottom:1px solid #749c7d;padding:0 0 10px;margin-top:27px}
+.clarity-intro__body a span{font-size:19px}
+.clarity-disciplines{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:34px;font:500 10px/1.6 'Space Grotesk',Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#607664}
+.clarity-disciplines span+span:before{content:'·';padding-right:24px;color:#8faaa0}
+.clarity-projects{position:relative;padding:clamp(67px,7vw,106px) var(--clarity-pad) clamp(70px,8vw,116px);background:#fff;color:var(--clarity-ink);scroll-margin-top:28px}
+.clarity-projects__head{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(240px,.7fr);align-items:end;gap:clamp(28px,6vw,88px);margin-bottom:48px}
+.clarity-projects__head .clarity-eyebrow{margin-bottom:21px}
+.clarity-projects__head h2{font:500 clamp(34px,3.75vw,63px)/1.12 'Space Grotesk',Arial,sans-serif;letter-spacing:-.065em;margin:0}
+.clarity-projects__head h2 em{font-style:normal;color:#629175}
+.clarity-projects__head>p{max-width:390px;font:400 14px/1.8 'DM Sans',Arial,sans-serif;color:var(--clarity-dim);margin:0 0 5px}
+.clarity-projects .studio-case-grid{column-gap:clamp(24px,3vw,48px);row-gap:clamp(54px,5.5vw,84px);align-items:start}
+.clarity-projects .studio-case{position:relative}
+.clarity-projects .studio-case__info{display:block;margin-top:20px;padding-top:19px;border-color:var(--clarity-rule)}
+.clarity-case-meta{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px 14px;margin-bottom:13px}
+.clarity-case-meta .studio-case__number{margin:0;font-size:9px;line-height:1.6;letter-spacing:.09em;color:#50755e}
+.clarity-study{font:500 9px/1.4 'Space Grotesk',Arial,sans-serif;color:#5c7065;border:1px solid #d4ded5;border-radius:30px;padding:4px 8px;letter-spacing:.02em;white-space:nowrap}
+.clarity-projects .studio-case h3{font-size:clamp(26px,2.7vw,43px);line-height:1.12;letter-spacing:-.06em;margin:0 0 13px;text-wrap:balance}
+.clarity-projects .studio-case__text p{font-size:14px;line-height:1.75;color:#5a6b60;max-width:62ch;margin:0}
+.clarity-projects .studio-case__link{display:inline-flex;width:auto;max-width:100%;margin-top:18px;gap:24px;min-height:44px;padding:10px 0;border:0;border-bottom:1px solid #83a18b;border-radius:0;background:transparent;color:#28563f;font:600 12px/1.4 'Space Grotesk',Arial,sans-serif;text-align:left;cursor:pointer;white-space:normal}
+.clarity-projects .studio-case__link span{font-size:20px}
+.clarity-projects .studio-case__link:hover{color:#0c7952;border-bottom-color:#0c7952}
+.clarity-projects .studio-case__link:focus-visible{outline:2px solid #276b4b;outline-offset:5px}
+.clarity-projects .clarity-case--feature{display:grid;grid-template-columns:minmax(0,1.28fr) minmax(230px,.72fr);gap:clamp(28px,4vw,65px);align-items:center;padding-block:clamp(30px,3vw,46px);border-top:1px solid var(--clarity-rule);border-bottom:1px solid var(--clarity-rule)}
+.clarity-projects .clarity-case--feature .studio-case__info{border:0;margin:0;padding:0}
+.clarity-projects .clarity-case--feature .studio-case__text p{max-width:36ch}
+.clarity-projects .clarity-case--feature .device-stage{aspect-ratio:8/5}
+.clarity-projects .clarity-case--feature .mock-monitor{top:10.5%}
+.clarity-projects .clarity-case--feature .mock-phone{bottom:10%}
+.clarity-projects__bridge{display:flex;align-items:center;justify-content:space-between;gap:32px;margin-top:clamp(54px,6vw,86px);padding-top:29px;border-top:1px solid var(--clarity-rule)}
+.clarity-projects__bridge p{font:500 clamp(19px,1.7vw,27px)/1.4 'Space Grotesk',Arial,sans-serif;letter-spacing:-.035em;margin:0;max-width:610px}
+.clarity-projects__bridge a{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;flex:none;min-height:48px;padding:14px 20px;background:#e4efdf;color:#244f36;border-radius:50px;font:600 11px/1.4 'Space Grotesk',Arial,sans-serif}
+.clarity-projects__bridge a:hover{background:#d5e9d0}
+.clarity-offer{position:relative;background:#eff3ec;padding:clamp(73px,8vw,118px) var(--clarity-pad);color:var(--clarity-ink);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(36px,8vw,124px);scroll-margin-top:28px}
+.clarity-offer__lead h2{font:500 clamp(43px,4.7vw,76px)/1.06 'Space Grotesk',Arial,sans-serif;letter-spacing:-.07em;margin:0 0 25px}
+.clarity-offer__lead h2 em{font-style:normal;color:#588366}
+.clarity-offer__lead>p:last-child{font:400 15px/1.8 'DM Sans',Arial,sans-serif;color:#5a705f;max-width:360px;margin:0}
+.clarity-offer__items{border-top:1px solid #bdcdbd}
+.clarity-offer__item{position:relative;padding:25px 0 28px;border-bottom:1px solid #bdcdbd}
+.clarity-offer__item>span{font:600 10px/1.4 'Space Grotesk',Arial,sans-serif;letter-spacing:.1em;color:#6c8873}
+.clarity-offer__item h3{font:500 clamp(22px,2.2vw,33px)/1.2 'Space Grotesk',Arial,sans-serif;letter-spacing:-.045em;margin:13px 0 12px}
+.clarity-offer__item p{font:400 14px/1.8 'DM Sans',Arial,sans-serif;color:#526758;max-width:55ch;margin:0}
+.offer-clarity-page .studio-contact h2{font-size:clamp(46px,6.25vw,101px);max-width:1120px}
+.offer-clarity-page .studio-contact p{max-width:600px}
+.clarity-anchor{position:absolute;top:0;left:0;width:1px;height:1px;pointer-events:none;scroll-margin-top:28px}
+@media(max-width:1050px){.clarity-intro__grid{grid-template-columns:minmax(0,1.2fr) minmax(250px,1fr);gap:32px}.clarity-intro h2{font-size:clamp(42px,5vw,56px)}.clarity-projects__head{grid-template-columns:minmax(0,1.35fr) minmax(230px,.85fr);gap:30px}.clarity-case-meta{display:block}.clarity-study{display:inline-block;margin-top:7px}.clarity-projects .clarity-case--feature{grid-template-columns:minmax(0,1.2fr) minmax(230px,.85fr);gap:30px}.clarity-projects__bridge{align-items:start}.clarity-projects__bridge p{max-width:440px}}
+@media(max-width:780px){.clarity-intro__grid,.clarity-projects__head{grid-template-columns:1fr;gap:27px}.clarity-intro h2{font-size:clamp(43px,7.8vw,64px);max-width:660px}.clarity-intro__body{max-width:570px}.clarity-intro__body p{font-size:16px}.clarity-projects__head h2{font-size:clamp(35px,6.5vw,52px)}.clarity-projects__head>p{max-width:550px}.clarity-projects .studio-case-grid{grid-template-columns:1fr;row-gap:54px}.clarity-case-meta{display:flex}.clarity-study{margin:0}.clarity-projects .studio-case h3{font-size:34px}.clarity-projects .clarity-case--feature{grid-column:auto;display:block;padding-block:0;border:0}.clarity-projects .clarity-case--feature .studio-case__info{border-top:1px solid var(--clarity-rule);margin-top:20px;padding-top:19px}.clarity-projects .clarity-case--feature .studio-case__text p{max-width:62ch}.clarity-offer{grid-template-columns:1fr;gap:35px}.clarity-offer__lead h2{font-size:clamp(44px,7vw,62px)}.clarity-offer__lead>p:last-child{max-width:510px}.clarity-projects__bridge{display:block}.clarity-projects__bridge p{max-width:580px}.clarity-projects__bridge a{margin-top:23px}.offer-clarity-page .site-header{flex-wrap:wrap;gap:12px}.offer-clarity-page .site-header nav{width:100%;justify-content:space-between;gap:10px;padding-top:10px;border-top:1px solid #dce5d8}.offer-clarity-page .site-header .identity .brand-caption{display:inline-block;font-size:8px;padding-left:12px}}
+@media(max-width:740px){.clarity-projects .clarity-case--feature .device-stage{aspect-ratio:6/5}.clarity-projects .clarity-case--feature .mock-monitor{top:20%}.clarity-projects .clarity-case--feature .mock-phone{bottom:14.5%}}
+@media(max-width:480px){.clarity-intro{padding-block:58px 62px}.clarity-eyebrow{font-size:9px;margin-bottom:21px;letter-spacing:.1em}.clarity-intro h2{font-size:clamp(37px,9.3vw,46px);letter-spacing:-.064em}.clarity-intro__body p{font-size:15px;line-height:1.8}.clarity-disciplines{gap:7px 15px;font-size:8px;margin-top:25px}.clarity-disciplines span+span:before{padding-right:15px}.clarity-projects{padding-block:58px 65px}.clarity-projects__head{margin-bottom:31px;gap:20px}.clarity-projects__head h2{font-size:clamp(31px,8vw,39px)}.clarity-projects__head>p{font-size:13px}.clarity-projects .studio-case h3{font-size:31px}.clarity-projects .studio-case__text p{font-size:13px}.clarity-case-meta .studio-case__number{font-size:8px;letter-spacing:.06em}.clarity-projects__bridge p{font-size:22px}.clarity-offer{padding-block:65px}.clarity-offer__lead h2{font-size:47px}.clarity-offer__item h3{font-size:25px}.clarity-offer__item p{font-size:13px}.offer-clarity-page .site-header nav{font-size:10px;gap:8px}.offer-clarity-page .site-header nav .nav-contact{padding:9px 12px}.offer-clarity-page .site-header .identity .brand-caption{font-size:7px}.offer-clarity-page .studio-contact h2{font-size:clamp(43px,10.4vw,55px);letter-spacing:-.068em}.offer-clarity-page .studio-contact p{font-size:15px}.offer-clarity-page .studio-contact__cta{gap:20px;max-width:100%;font-size:11px}}
+@media(max-width:350px){.offer-clarity-page .site-header nav{gap:6px;font-size:9px}.offer-clarity-page .site-header nav .nav-contact{padding:9px}.offer-clarity-page .site-header .identity .brand-caption{padding-left:10px}.clarity-intro h2{font-size:35px}.clarity-disciplines{gap:8px 12px}.clarity-disciplines span+span:before{padding-right:12px}.clarity-projects .studio-case h3{font-size:29px}.clarity-case-meta{display:block}.clarity-study{margin-top:7px}}
+@media(prefers-reduced-motion:reduce){.clarity-projects .studio-case__link,.clarity-projects__bridge a{transition:none}}
+
+/* Neutralise legacy mobile-only hiding now that the navigation describes the studio offer. */
+.offer-clarity-page .site-header nav > a{display:inline-flex;align-items:center}
+.offer-clarity-page .site-header .identity > .brand-monogram{display:inline-block}
+.offer-clarity-page .site-header .identity > .brand-lockup{display:flex}
+.offer-clarity-page .site-header .identity .brand-monogram > span{display:inline}
+
+.offer-clarity-page .site-header nav > a:not(.nav-contact):not(.language){display:inline-flex}
