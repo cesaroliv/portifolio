@@ -1,0 +1,76 @@
+/* Meta Pixel consent banner — isolated from cinematic hero */
+.cia-privacy-prompt {
+  position:fixed;
+  z-index:9999;
+  bottom:max(18px, env(safe-area-inset-bottom));
+  right:max(18px, env(safe-area-inset-right));
+  width:min(430px, calc(100vw - 36px));
+  padding:20px 21px;
+  background:rgba(19,27,31,.97);
+  border:1px solid rgba(223,229,220,.22);
+  border-radius:16px;
+  box-shadow:0 18px 60px rgba(0,0,0,.4);
+  font:400 13px/1.5 Arial, sans-serif;
+  color:#e8ede8;
+  letter-spacing:normal;
+  text-align:left;
+  backdrop-filter:blur(16px);
+}
+.cia-privacy-prompt .cia-privacy-title {
+  display:block;
+  font-weight:700;
+  font-size:15px;
+  margin-bottom:8px;
+  color:#fff;
+}
+.cia-privacy-prompt p {
+  margin:0 0 9px;
+  color:#d3dcd4;
+  font:400 13px/1.48 Arial, sans-serif;
+}
+.cia-privacy-prompt .cia-privacy-policy {
+  color:#d1d2f9;
+  font-weight:600;
+  font-size:12px;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+.cia-privacy-actions {
+  display:flex;
+  gap:10px;
+  margin-top:16px;
+}
+.cia-privacy-actions button {
+  appearance:none;
+  font:700 12px/1.2 Arial, sans-serif;
+  cursor:pointer;
+  border-radius:9px;
+  min-height:42px;
+  padding:11px;
+  flex:1 1 50%;
+}
+.cia-privacy-reject {
+  background:transparent;
+  border:1px solid rgba(232,238,231,.5);
+  color:#f0f2ec;
+}
+.cia-privacy-accept {
+  border:1px solid #a99aff;
+  background:#8874ee;
+  color:#fff;
+}
+.cia-privacy-prompt button:focus-visible,
+[data-cia-privacy-settings]:focus-visible {
+  outline:3px solid #b8afff;
+  outline-offset:3px;
+}
+@media (max-width:480px) {
+  .cia-privacy-prompt {
+    right:12px;
+    left:12px;
+    bottom:max(12px,env(safe-area-inset-bottom));
+    width:auto;
+    padding:15px;
+  }
+  .cia-privacy-actions button {font-size:12px;min-height:44px}
+}
