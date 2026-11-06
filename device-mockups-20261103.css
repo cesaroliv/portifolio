@@ -1,5 +1,7 @@
 /* Original CSS device compositions. The screens are genuine, separately captured desktop/mobile pages. */
 .device-stage{--stage-a:#e3ece2;--stage-b:#c3d3be;--stage-ink:#365345;position:relative;isolation:isolate;container-type:inline-size;width:100%;aspect-ratio:8/5;overflow:hidden;background:radial-gradient(ellipse at 32% 12%,#fff9,transparent 60%),linear-gradient(138deg,var(--stage-a),var(--stage-b));border:1px solid #223e1710;border-radius:3px;color:var(--stage-ink)}
+/* Justiça Dourada — ivory stone and restrained gold; stage matches the cinematic site. */
+.device-stage--justica-dourada{--stage-a:#efe7d7;--stage-b:#bea77f;--stage-ink:#5c4e32}
 .device-stage--lumen-arts{--stage-a:#eae7e1;--stage-b:#cbc8bf;--stage-ink:#514c44}
 .device-stage--papeleria-creativa{--stage-a:#f6e9e5;--stage-b:#e0c5bc;--stage-ink:#725247}
 .device-stage--clinica-dental{--stage-a:#e8eff0;--stage-b:#bbcdd0;--stage-ink:#3e5c60}
